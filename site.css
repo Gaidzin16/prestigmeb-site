@@ -357,9 +357,13 @@ img { max-width: 100%; display: block; }
 
 /* ---------- переключатель красного (аид для показа заказчику) ---------- */
 
-.redswitch {
+.switchbar {
   position: fixed; right: 1rem; bottom: 1rem; z-index: var(--z-preview);
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;
+  max-width: calc(100vw - 2rem);
+}
+.redswitch {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
   background: var(--color-carbon); color: var(--color-on-carbon);
   padding: 0.5rem 0.7rem; border-radius: 999px; font-size: var(--text-xs);
   box-shadow: 0 6px 24px oklch(24% 0.02 45 / 0.28);

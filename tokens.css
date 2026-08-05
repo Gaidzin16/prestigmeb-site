@@ -85,3 +85,42 @@
   --color-accent-soft: oklch(48% 0.205 28 / 0.10);
   --color-focus:       oklch(53% 0.22  28);
 }
+
+/* ============ Варианты заднего фона (для показа заказчику) ============
+   Все — светлая тёплая «ремесленная» гамма. Правят бумагу целиком. */
+
+/* Овсяный — заметно кремовее, тёплее */
+:root[data-bg="oat"] {
+  --color-paper:   oklch(95%   0.018 78);
+  --color-paper-2: oklch(92.5% 0.021 76);
+  --color-paper-3: oklch(89.5% 0.024 74);
+  --color-rule:    oklch(84%   0.016 74);
+  --color-rule-2:  oklch(88%   0.013 74);
+}
+
+/* Песочный — глубже и насыщеннее, тон дерева */
+:root[data-bg="sand"] {
+  --color-paper:   oklch(92.5% 0.024 74);
+  --color-paper-2: oklch(89.5% 0.027 72);
+  --color-paper-3: oklch(86%   0.030 70);
+  --color-rule:    oklch(80%   0.020 72);
+  --color-rule-2:  oklch(85%   0.016 72);
+}
+
+/* Грейж — спокойнее, уводит в нейтрально-серый тёплый */
+:root[data-bg="greige"] {
+  --color-paper:   oklch(95%   0.006 95);
+  --color-paper-2: oklch(92%   0.008 95);
+  --color-paper-3: oklch(88.5% 0.010 92);
+  --color-rule:    oklch(83%   0.007 92);
+  --color-rule-2:  oklch(88%   0.006 92);
+}
+
+/* Лён — воздушнее, ближе к белому, но тёплый */
+:root[data-bg="linen"] {
+  --color-paper:   oklch(97.5% 0.009 76);
+  --color-paper-2: oklch(95%   0.012 74);
+  --color-paper-3: oklch(92%   0.015 72);
+  --color-rule:    oklch(86%   0.011 74);
+  --color-rule-2:  oklch(90%   0.008 74);
+}

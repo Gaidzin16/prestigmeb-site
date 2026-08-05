@@ -316,21 +316,41 @@
 <!-- липкая мобильная CTA -->
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
-<!-- переключатель фирменного красного — аид для показа заказчику, в бой не идёт -->
-<div class="redswitch" role="group" aria-label="Вариант фирменного красного">
-  <span>Красный:</span>
-  <button type="button" data-set="burgundy" aria-pressed="true">Бордо</button>
-  <button type="button" data-set="bright" aria-pressed="false">Ярче</button>
+<!-- переключатели для показа заказчику — аид, в бой не идут -->
+<div class="switchbar">
+  <div class="redswitch" role="group" aria-label="Вариант заднего фона">
+    <span>Фон:</span>
+    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
+    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
+    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
+    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
+    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+  </div>
+  <div class="redswitch" role="group" aria-label="Вариант фирменного красного">
+    <span>Красный:</span>
+    <button type="button" data-set="burgundy" aria-pressed="true">Бордо</button>
+    <button type="button" data-set="bright" aria-pressed="false">Ярче</button>
+  </div>
 </div>
 
 <script>
   // переключатель красного
-  document.querySelectorAll('.redswitch button').forEach(function (b) {
+  document.querySelectorAll('[aria-label="Вариант фирменного красного"] button').forEach(function (b) {
     b.addEventListener('click', function () {
-      var v = b.dataset.set;
-      if (v === 'bright') document.documentElement.setAttribute('data-red', 'bright');
+      if (b.dataset.set === 'bright') document.documentElement.setAttribute('data-red', 'bright');
       else document.documentElement.removeAttribute('data-red');
-      document.querySelectorAll('.redswitch button').forEach(function (x) {
+      b.parentNode.querySelectorAll('button').forEach(function (x) {
+        x.setAttribute('aria-pressed', String(x === b));
+      });
+    });
+  });
+
+  // переключатель фона
+  document.querySelectorAll('[aria-label="Вариант заднего фона"] button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.bg === 'ivory') document.documentElement.removeAttribute('data-bg');
+      else document.documentElement.setAttribute('data-bg', b.dataset.bg);
+      b.parentNode.querySelectorAll('button').forEach(function (x) {
         x.setAttribute('aria-pressed', String(x === b));
       });
     });
