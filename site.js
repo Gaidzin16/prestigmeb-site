@@ -20,13 +20,13 @@
     });
   }
 
-  /* --- Переключатель фирменного красного (аид для показа заказчику) --- */
+  /* --- Палитра акцентов (аид для показа заказчику) --- */
   var redSwitch = document.querySelector('[data-red-switch]');
   if (redSwitch) {
     redSwitch.querySelectorAll('button').forEach(function (b) {
       b.addEventListener('click', function () {
-        if (b.dataset.set === 'bright') document.documentElement.setAttribute('data-red', 'bright');
-        else document.documentElement.removeAttribute('data-red');
+        if (b.dataset.set === 'burgundy') document.documentElement.removeAttribute('data-red');
+        else document.documentElement.setAttribute('data-red', b.dataset.set);
         redSwitch.querySelectorAll('button').forEach(function (x) {
           x.setAttribute('aria-pressed', String(x === b));
         });

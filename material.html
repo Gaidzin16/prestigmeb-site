@@ -199,20 +199,31 @@
 
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
-<!-- переключатель фона — аид для показа заказчику, в бой не идёт -->
-<div class="switchbar">
-  <div class="redswitch" role="group" aria-label="Вариант заднего фона" data-bg-switch>
-    <span>Фон:</span>
-    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
-    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
-    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
-    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
-    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+<!-- Конструктор дизайна — аид для показа заказчику, в продакшн не идёт -->
+<div class="constructor" aria-label="Конструктор дизайна (для показа)">
+  <div class="constructor__group" data-bg-switch>
+    <span class="constructor__label">Фон</span>
+    <div class="constructor__dots">
+      <button class="dot" type="button" data-bg="ivory"  aria-pressed="true"  aria-label="Фон: Слоновая" title="Слоновая"></button>
+      <button class="dot" type="button" data-bg="linen"  aria-pressed="false" aria-label="Фон: Лён" title="Лён"></button>
+      <button class="dot" type="button" data-bg="oat"    aria-pressed="false" aria-label="Фон: Овсяный" title="Овсяный"></button>
+      <button class="dot" type="button" data-bg="sand"   aria-pressed="false" aria-label="Фон: Песочный" title="Песочный"></button>
+      <button class="dot" type="button" data-bg="clay"   aria-pressed="false" aria-label="Фон: Глина" title="Глина"></button>
+      <button class="dot" type="button" data-bg="greige" aria-pressed="false" aria-label="Фон: Грейж" title="Грейж"></button>
+      <button class="dot" type="button" data-bg="sage"   aria-pressed="false" aria-label="Фон: Шалфей" title="Шалфей"></button>
+      <button class="dot" type="button" data-bg="fog"    aria-pressed="false" aria-label="Фон: Туман" title="Туман"></button>
+    </div>
   </div>
-  <div class="redswitch" role="group" aria-label="Вариант фирменного красного" data-red-switch>
-    <span>Красный:</span>
-    <button type="button" data-set="burgundy" aria-pressed="true">Бордо</button>
-    <button type="button" data-set="bright" aria-pressed="false">Ярче</button>
+  <div class="constructor__group" data-red-switch>
+    <span class="constructor__label">Акцент</span>
+    <div class="constructor__dots">
+      <button class="dot" type="button" data-set="burgundy"   aria-pressed="true"  aria-label="Акцент: Бордо" title="Бордо"></button>
+      <button class="dot" type="button" data-set="marsala"    aria-pressed="false" aria-label="Акцент: Марсала" title="Марсала"></button>
+      <button class="dot" type="button" data-set="raspberry"  aria-pressed="false" aria-label="Акцент: Малина" title="Малина"></button>
+      <button class="dot" type="button" data-set="cherry"     aria-pressed="false" aria-label="Акцент: Вишня" title="Вишня"></button>
+      <button class="dot" type="button" data-set="bright"     aria-pressed="false" aria-label="Акцент: Ярче" title="Ярче"></button>
+      <button class="dot" type="button" data-set="terracotta" aria-pressed="false" aria-label="Акцент: Терракота" title="Терракота"></button>
+    </div>
   </div>
 </div>
 

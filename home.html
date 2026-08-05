@@ -316,64 +316,35 @@
 <!-- липкая мобильная CTA -->
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
-<!-- переключатели для показа заказчику — аид, в бой не идут -->
-<div class="switchbar">
-  <div class="redswitch" role="group" aria-label="Вариант заднего фона">
-    <span>Фон:</span>
-    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
-    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
-    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
-    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
-    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+<!-- Конструктор дизайна — аид для показа заказчику, в продакшн не идёт -->
+<div class="constructor" aria-label="Конструктор дизайна (для показа)">
+  <div class="constructor__group" data-bg-switch>
+    <span class="constructor__label">Фон</span>
+    <div class="constructor__dots">
+      <button class="dot" type="button" data-bg="ivory"  aria-pressed="true"  aria-label="Фон: Слоновая" title="Слоновая"></button>
+      <button class="dot" type="button" data-bg="linen"  aria-pressed="false" aria-label="Фон: Лён" title="Лён"></button>
+      <button class="dot" type="button" data-bg="oat"    aria-pressed="false" aria-label="Фон: Овсяный" title="Овсяный"></button>
+      <button class="dot" type="button" data-bg="sand"   aria-pressed="false" aria-label="Фон: Песочный" title="Песочный"></button>
+      <button class="dot" type="button" data-bg="clay"   aria-pressed="false" aria-label="Фон: Глина" title="Глина"></button>
+      <button class="dot" type="button" data-bg="greige" aria-pressed="false" aria-label="Фон: Грейж" title="Грейж"></button>
+      <button class="dot" type="button" data-bg="sage"   aria-pressed="false" aria-label="Фон: Шалфей" title="Шалфей"></button>
+      <button class="dot" type="button" data-bg="fog"    aria-pressed="false" aria-label="Фон: Туман" title="Туман"></button>
+    </div>
   </div>
-  <div class="redswitch" role="group" aria-label="Вариант фирменного красного">
-    <span>Красный:</span>
-    <button type="button" data-set="burgundy" aria-pressed="true">Бордо</button>
-    <button type="button" data-set="bright" aria-pressed="false">Ярче</button>
+  <div class="constructor__group" data-red-switch>
+    <span class="constructor__label">Акцент</span>
+    <div class="constructor__dots">
+      <button class="dot" type="button" data-set="burgundy"   aria-pressed="true"  aria-label="Акцент: Бордо" title="Бордо"></button>
+      <button class="dot" type="button" data-set="marsala"    aria-pressed="false" aria-label="Акцент: Марсала" title="Марсала"></button>
+      <button class="dot" type="button" data-set="raspberry"  aria-pressed="false" aria-label="Акцент: Малина" title="Малина"></button>
+      <button class="dot" type="button" data-set="cherry"     aria-pressed="false" aria-label="Акцент: Вишня" title="Вишня"></button>
+      <button class="dot" type="button" data-set="bright"     aria-pressed="false" aria-label="Акцент: Ярче" title="Ярче"></button>
+      <button class="dot" type="button" data-set="terracotta" aria-pressed="false" aria-label="Акцент: Терракота" title="Терракота"></button>
+    </div>
   </div>
 </div>
 
-<script>
-  // переключатель красного
-  document.querySelectorAll('[aria-label="Вариант фирменного красного"] button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      if (b.dataset.set === 'bright') document.documentElement.setAttribute('data-red', 'bright');
-      else document.documentElement.removeAttribute('data-red');
-      b.parentNode.querySelectorAll('button').forEach(function (x) {
-        x.setAttribute('aria-pressed', String(x === b));
-      });
-    });
-  });
-
-  // переключатель фона
-  document.querySelectorAll('[aria-label="Вариант заднего фона"] button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      if (b.dataset.bg === 'ivory') document.documentElement.removeAttribute('data-bg');
-      else document.documentElement.setAttribute('data-bg', b.dataset.bg);
-      b.parentNode.querySelectorAll('button').forEach(function (x) {
-        x.setAttribute('aria-pressed', String(x === b));
-      });
-    });
-  });
-
-  // липкая CTA появляется после первого экрана
-  var sticky = document.querySelector('.sticky-cta');
-  var hero = document.querySelector('.hero');
-  if (sticky && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) {
-      sticky.classList.toggle('is-shown', !e[0].isIntersecting);
-    }, { rootMargin: '-40px 0px 0px 0px' }).observe(hero);
-  }
-
-  // бургер (демо: показывает меню списком)
-  var burger = document.querySelector('.burger');
-  var nav = document.querySelector('.mastnav');
-  if (burger && nav) burger.addEventListener('click', function () {
-    var open = nav.style.display === 'block';
-    nav.style.display = open ? '' : 'block';
-    burger.setAttribute('aria-expanded', String(!open));
-  });
-</script>
+<script src="site.js"></script>
 
 </body>
 </html>

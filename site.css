@@ -355,26 +355,54 @@ img { max-width: 100%; display: block; }
 .sticky-cta.is-shown { transform: translateY(0); }
 .sticky-cta .btn { width: 100%; }
 
-/* ---------- переключатель красного (аид для показа заказчику) ---------- */
+/* ---------- Конструктор дизайна (аид для показа заказчику, в продакшн не идёт) ----------
+   Палитра фонов + палитра акцентов выбором по образцам-точкам. */
 
-.switchbar {
+.constructor {
   position: fixed; right: 1rem; bottom: 1rem; z-index: var(--z-preview);
-  display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;
-  max-width: calc(100vw - 2rem);
-}
-.redswitch {
-  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
   background: var(--color-carbon); color: var(--color-on-carbon);
-  padding: 0.5rem 0.7rem; border-radius: 999px; font-size: var(--text-xs);
-  box-shadow: 0 6px 24px oklch(24% 0.02 45 / 0.28);
+  border: 1px solid var(--color-rule-carbon); border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem; display: grid; gap: 0.6rem;
+  box-shadow: 0 8px 30px oklch(24% 0.02 45 / 0.30);
+  max-width: calc(100vw - 2rem); font-family: var(--font-body);
 }
-.redswitch span { opacity: 0.75; }
-.redswitch button {
-  font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600; cursor: pointer;
-  border: 1px solid var(--color-rule-carbon); background: transparent; color: var(--color-on-carbon);
-  padding: 0.3rem 0.6rem; border-radius: 999px;
+.constructor__group { display: grid; gap: 0.4rem; }
+.constructor__label { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-on-carbon-2); }
+.constructor__dots { display: flex; flex-wrap: wrap; gap: 0.4rem; max-width: 15rem; }
+
+.dot {
+  width: 1.6rem; height: 1.6rem; border-radius: 999px; cursor: pointer; padding: 0;
+  background: var(--c, var(--color-paper));
+  border: 0; box-shadow: 0 0 0 1px var(--color-rule-carbon) inset;
+  transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
 }
-.redswitch button[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.dot:hover { transform: scale(1.12); }
+.dot:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+.dot[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--color-carbon), 0 0 0 4px var(--color-on-carbon); }
+
+/* Образцы фонов */
+.dot[data-bg="ivory"]  { --c: oklch(96%   0.010 70); }
+.dot[data-bg="linen"]  { --c: oklch(97.5% 0.009 76); }
+.dot[data-bg="oat"]    { --c: oklch(95%   0.018 78); }
+.dot[data-bg="sand"]   { --c: oklch(92.5% 0.024 74); }
+.dot[data-bg="clay"]   { --c: oklch(94%   0.020 55); }
+.dot[data-bg="greige"] { --c: oklch(95%   0.006 95); }
+.dot[data-bg="sage"]   { --c: oklch(94.5% 0.014 135); }
+.dot[data-bg="fog"]    { --c: oklch(95.5% 0.005 240); }
+
+/* Образцы акцентов */
+.dot[data-set="burgundy"]   { --c: oklch(34% 0.115 20); }
+.dot[data-set="marsala"]    { --c: oklch(38% 0.10  15); }
+.dot[data-set="raspberry"]  { --c: oklch(44% 0.16  10); }
+.dot[data-set="cherry"]     { --c: oklch(45% 0.17  25); }
+.dot[data-set="bright"]     { --c: oklch(48% 0.205 28); }
+.dot[data-set="terracotta"] { --c: oklch(50% 0.13  40); }
+
+/* на мобильном поднимаем над липкой кнопкой «Замер» */
+@media (max-width: 640px) {
+  .constructor { bottom: 4.75rem; right: 0.75rem; padding: 0.6rem 0.7rem; }
+  .constructor__dots { max-width: calc(100vw - 3rem); }
+}
 
 /* ---------- вступительная анимация (одна, оркестрованная) ---------- */
 
