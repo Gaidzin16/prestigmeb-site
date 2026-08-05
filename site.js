@@ -20,6 +20,20 @@
     });
   }
 
+  /* --- Переключатель фирменного красного (аид для показа заказчику) --- */
+  var redSwitch = document.querySelector('[data-red-switch]');
+  if (redSwitch) {
+    redSwitch.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.dataset.set === 'bright') document.documentElement.setAttribute('data-red', 'bright');
+        else document.documentElement.removeAttribute('data-red');
+        redSwitch.querySelectorAll('button').forEach(function (x) {
+          x.setAttribute('aria-pressed', String(x === b));
+        });
+      });
+    });
+  }
+
   /* --- Бургер-меню --- */
   var burger = document.querySelector('.burger');
   var nav = document.querySelector('.mastnav');
