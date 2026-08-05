@@ -1,0 +1,207 @@
+<!doctype html>
+<!-- Hallmark · page: карточка проекта · macrostructure: Record / Spec-sheet (галерея → описание+спека → форма → похожие)
+     shares design.md system · nav N6 · footer Ft1 · tokens tokens.css
+     15–20 таких карточек на весь сайт — то, что отличает портфолио от свалки фото. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Белая кухня с островом, эмаль — работа салона «Престиж», Дзержинск</title>
+<meta name="description" content="Кухня на заказ: фасады из эмали в цвет RAL, столешница из жидкого камня без швов, планировка с островом. Изготовлено на собственном производстве в Дзержинске.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<!-- ============ Шапка · N6 масштхед ============ -->
+<header>
+  <div class="topbar">
+    <div class="wrap topbar__row">
+      <span class="topbar__addr">Дзержинск, ул. Грибоедова, 3</span>
+      <span class="topbar__addr">Пн–Пт&nbsp;10:00–19:00</span>
+      <span class="sp"></span>
+      <a class="topbar__phone" href="tel:+79047908282">+7 904 790-82-82</a>
+      <button class="burger" aria-label="Открыть меню" aria-expanded="false">Меню ☰</button>
+    </div>
+  </div>
+  <div class="wrap masthead">
+    <div class="masthead__descriptor">интерьер · дизайн</div>
+    <a class="wordmark" href="home.html">Престиж</a>
+  </div>
+  <nav class="mastnav" aria-label="Основное меню">
+    <div class="wrap">
+      <ul class="mastnav__list">
+        <li><a href="category.html">Кухни</a></li>
+        <li><a href="#">Шкафы-купе</a></li>
+        <li><a href="#">Спальни</a></li>
+        <li><a href="#">Детские</a></li>
+        <li><a href="#">Прихожие</a></li>
+        <li><a href="portfolio.html" aria-current="page">Портфолио</a></li>
+        <li><a href="static.html">Рассрочка</a></li>
+        <li><a href="#">Ещё ▾</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1 · Хлебные крошки -->
+  <nav class="wrap crumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="home.html">Главная</a></li>
+      <li><a href="portfolio.html">Наши работы</a></li>
+      <li><a href="category.html">Кухни</a></li>
+      <li aria-current="page">Белая кухня с островом</li>
+    </ol>
+  </nav>
+
+  <!-- 2 · Галерея -->
+  <section class="wrap" style="padding-top:var(--space-md)" aria-label="Галерея работы">
+    <div class="gallery">
+      <div class="gallery__main photo rise" data-gallery-main role="img" aria-label="Главное фото работы">
+        <span class="photo__label"><b>Белая кухня с островом</b>главное фото · свайп и лайтбокс в бою</span>
+      </div>
+      <ul class="gallery__thumbs">
+        <li><button class="gallery__thumb" type="button" data-gallery-thumb aria-current="true" data-full="<b>Белая кухня с островом</b>общий вид" aria-label="Общий вид"><span class="photo photo__label" style="display:grid;place-content:center">1</span></button></li>
+        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Остров и столешница</b>жидкий камень без швов" aria-label="Остров"><span class="photo photo__label" style="display:grid;place-content:center">2</span></button></li>
+        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Фасады</b>эмаль в цвет RAL, матовая" aria-label="Фасады"><span class="photo photo__label" style="display:grid;place-content:center">3</span></button></li>
+        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Наполнение</b>выдвижные системы Blum" aria-label="Наполнение"><span class="photo photo__label" style="display:grid;place-content:center">4</span></button></li>
+        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Фартук</b>стеновая панель со стеклом" aria-label="Фартук"><span class="photo photo__label" style="display:grid;place-content:center">5</span></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3–4 · Описание + характеристики -->
+  <section class="wrap project-body" aria-labelledby="pr-title">
+    <div>
+      <h1 id="pr-title">Белая кухня с островом</h1>
+      <p class="project-lead">Кухня для просторной квартиры в Дзержинске. Задача была собрать светлую
+        кухню под готовый интерьер: матовая эмаль в цвет стен, остров под варочную панель и мойку,
+        столешница без единого шва по всей длине.</p>
+      <p style="margin-top:var(--space-md);color:var(--color-ink-2)">Всё изготовлено на нашем
+        производстве по фактическим размерам помещения. Собрали и подключили технику за один день.</p>
+      <p style="margin-top:var(--space-lg)"><a class="tlink" href="portfolio.html">Ко всем работам <span class="arw">→</span></a></p>
+    </div>
+    <div>
+      <p class="section__kicker">Характеристики</p>
+      <dl class="spec">
+        <div><dt>Тип</dt><dd>Кухня с островом</dd></div>
+        <div><dt>Материал фасада</dt><dd>Эмаль, матовая, цвет RAL</dd></div>
+        <div><dt>Столешница</dt><dd>Жидкий камень, без швов</dd></div>
+        <div><dt>Планировка</dt><dd>П-образная с островом</dd></div>
+        <div><dt>Срок изготовления</dt><dd>около 35 рабочих дней</dd></div>
+        <div><dt>Город</dt><dd>Дзержинск</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 5 · Форма «Хотите такую же?» -->
+  <section class="section leadform" id="form" aria-labelledby="form-title" style="margin-top:var(--space-2xl)">
+    <div class="wrap">
+      <h2 class="section__title" id="form-title">Хотите такую же?</h2>
+      <div class="form-grid">
+        <form class="form" novalidate>
+          <div class="field">
+            <label for="f-name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-comment">Комментарий <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <textarea id="f-comment" name="comment" rows="3">Хочу кухню как «Белая кухня с островом»</textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="#">политикой</a>.</span>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+        </form>
+        <aside class="form-aside">
+          <p>Повторить один в один не получится — каждая кухня делается по вашим размерам. Но материалы,
+            цвет и планировку можно взять за основу.</p>
+          <p>Замер, дизайн-проект и расчёт стоимости бесплатны.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Похожие работы -->
+  <section class="section" aria-labelledby="rel-title">
+    <div class="wrap">
+      <h2 class="section__title" id="rel-title">Похожие работы</h2>
+      <div class="works-strip">
+        <a class="work work--project" href="project.html"><div class="photo"><span class="photo__label">Кухня · эмаль</span></div><p class="work__cap"><b>Серая кухня в нишу</b></p></a>
+        <a class="work work--project" href="project.html"><div class="photo"><span class="photo__label">Кухня · массив</span></div><p class="work__cap"><b>Классика из ясеня</b></p></a>
+        <a class="work" href="#"><div class="photo"><span class="photo__label">Кухня · пластик</span></div><p class="work__cap">Угловая кухня</p></a>
+        <a class="work work--project" href="project.html"><div class="photo"><span class="photo__label">Кухня · плёнка</span></div><p class="work__cap"><b>Кухня для хрущёвки</b></p></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Ft1 · подвал ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <span class="wordmark">Престиж</span>
+        <p class="foot__slogan">Мебель в ритме жизни…</p>
+      </div>
+      <div>
+        <h4>Каталог</h4>
+        <ul class="foot__links">
+          <li><a href="category.html">Кухни</a></li>
+          <li><a href="#">Шкафы-купе</a></li>
+          <li><a href="#">Спальни</a></li>
+          <li><a href="#">Детские</a></li>
+          <li><a href="#">Прихожие</a></li>
+          <li><a href="material.html">Материалы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <ul class="foot__links">
+          <li><a href="portfolio.html">Портфолио</a></li>
+          <li><a href="static.html">Рассрочка</a></li>
+          <li><a href="#">Как мы работаем</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>Дзержинск, ул. Грибоедова, 3 · +7 904 790-82-82</span>
+      <span>VK · Avito</span>
+      <span class="sp"></span>
+      <a href="#" style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
+      <a href="#" style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
+      <span class="foot__pending">Реквизиты — ждём от заказчика</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="btn" href="#form">Хочу такую же</a></div>
+
+<!-- переключатель фона — аид для показа заказчику, в бой не идёт -->
+<div class="switchbar">
+  <div class="redswitch" role="group" aria-label="Вариант заднего фона" data-bg-switch>
+    <span>Фон:</span>
+    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
+    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
+    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
+    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
+    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

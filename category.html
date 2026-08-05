@@ -1,0 +1,356 @@
+<!doctype html>
+<!-- Hallmark · page: категория · macrostructure: Long Document (обложка → материалы → работы → проза → FAQ)
+     shares design.md system · nav N6 · footer Ft1 · section heads S2 · tokens tokens.css
+     Пример шаблона — «Кухни». Один шаблон на пять категорий. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кухни на заказ в Дзержинске по вашим размерам — салон «Престиж»</title>
+<meta name="description" content="Изготовим кухню по индивидуальным размерам на собственном производстве. Фасады из плёнки ПВХ, пластика, эмали и массива. Бесплатный замер в Дзержинске и области, рассрочка на 8 месяцев без банка.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<!-- ============ Шапка · N6 масштхед ============ -->
+<header>
+  <div class="topbar">
+    <div class="wrap topbar__row">
+      <span class="topbar__addr">Дзержинск, ул. Грибоедова, 3</span>
+      <span class="topbar__addr">Пн–Пт&nbsp;10:00–19:00</span>
+      <span class="sp"></span>
+      <a class="topbar__phone" href="tel:+79047908282">+7 904 790-82-82</a>
+      <button class="burger" aria-label="Открыть меню" aria-expanded="false">Меню ☰</button>
+    </div>
+  </div>
+  <div class="wrap masthead">
+    <div class="masthead__descriptor">интерьер · дизайн</div>
+    <a class="wordmark" href="home.html">Престиж</a>
+  </div>
+  <nav class="mastnav" aria-label="Основное меню">
+    <div class="wrap">
+      <ul class="mastnav__list">
+        <li><a href="category.html" aria-current="page">Кухни</a></li>
+        <li><a href="#">Шкафы-купе</a></li>
+        <li><a href="#">Спальни</a></li>
+        <li><a href="#">Детские</a></li>
+        <li><a href="#">Прихожие</a></li>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="static.html">Рассрочка</a></li>
+        <li><a href="#">Ещё ▾</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1 · Хлебные крошки -->
+  <nav class="wrap crumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="home.html">Главная</a></li>
+      <li aria-current="page">Кухни</li>
+    </ol>
+  </nav>
+
+  <!-- 2 · Обложка -->
+  <section class="wrap pagehead" aria-labelledby="cat-title">
+    <div class="pagehead__grid">
+      <div class="rise">
+        <h1 id="cat-title">Кухни на заказ по вашим размерам</h1>
+        <p class="pagehead__lead">Готовых кухонь у нас нет — каждая делается по фактическим размерам
+          вашего помещения. Современные и классические, прямые и угловые, для просторных кухонь
+          и для хрущёвок. Замер и дизайн-проект бесплатные.</p>
+        <div class="pagehead__cta">
+          <a class="btn" href="#form">Вызвать замерщика бесплатно</a>
+          <a class="tlink" href="#works">Работы по кухням <span class="arw">→</span></a>
+        </div>
+        <!-- 3 · Факты строкой -->
+        <ul class="facts">
+          <li><b>Рассрочка 8 месяцев</b> без банка</li>
+          <li><b>Замер и проект</b> бесплатно</li>
+          <li><b>Гарантия 18 месяцев</b></li>
+          <li><b>Срок</b> до 45 рабочих дней</li>
+        </ul>
+      </div>
+      <div class="pagehead__photo photo rise" role="img" aria-label="Фотография кухни на заказ">
+        <span class="photo__label"><b>Фото кухни</b>из портфолио, во всю ширину обложки</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Место под цены — скрыто, пока нет вилок -->
+  <section class="section price-slot" aria-hidden="true">
+    <div class="wrap"><h2 class="section__title">Стоимость</h2>
+      <p class="section__lead">от N ₽ за погонный метр — блок включается, когда заказчик даст вилки.</p>
+    </div>
+  </section>
+
+  <!-- 5 · Материалы фасадов (только у кухонь) -->
+  <section class="section" aria-labelledby="mat-title">
+    <div class="wrap">
+      <p class="section__kicker">Фасады</p>
+      <h2 class="section__title" id="mat-title">Из чего делаем фасады</h2>
+      <p class="section__lead measure">Шесть материалов — от самого доступного до массива дерева.
+        На каждой карточке коротко, полный разбор — на отдельной странице.</p>
+      <div class="matgrid">
+        <a class="matcard" href="#">
+          <div class="matcard__name">Плёнка ПВХ</div>
+          <p class="matcard__desc">Полимерная плёнка на основу. Любой цвет, имитация дерева, мрамора,
+            гранита и плитки. Самый доступный вариант.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+        <a class="matcard" href="#">
+          <div class="matcard__name">Пластик</div>
+          <p class="matcard__desc">Толщина 0,6–1,8 мм на МДФ. Не царапается и не боится влаги.
+            Arpa, Lemark, Melaton, Abet — несколько сотен цветов.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+        <a class="matcard" href="#">
+          <div class="matcard__name">Пластик в профиле</div>
+          <p class="matcard__desc">Пластиковый фасад в окантовке алюминиевым профилем. Хай-тек и защита
+            торцов от влаги и сколов.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+        <a class="matcard" href="#">
+          <div class="matcard__name">Эмаль</div>
+          <p class="matcard__desc">Красят в несколько слоёв, шлифуют, лакируют. Матовая, глянец,
+            перламутр, металлик. Каталог RAL — 2000 оттенков.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+        <a class="matcard" href="#">
+          <div class="matcard__name">Массив дерева</div>
+          <p class="matcard__desc">Самый дорогой фасад. Ясень и бук, классика и модерн. Италия и Россия,
+            11 чистых цветов, декор оксидной плёнкой.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+        <a class="matcard" href="#">
+          <div class="matcard__name">Рамочные</div>
+          <p class="matcard__desc">В рамку из МДФ вставляется пластик, стекло или ротанг. Выразительный
+            фасад, не похожий на типовую кухню.</p>
+          <span class="matcard__more">Подробнее →</span>
+        </a>
+      </div>
+      <p style="margin-top:var(--space-md);color:var(--color-ink-2);font-size:var(--text-sm)">
+        Отдельно, без своей страницы: <b>фасады со стеклом</b> — матовое, тонированное или зеркало,
+        с фацетом или пескоструйным рисунком.</p>
+    </div>
+  </section>
+
+  <!-- 6 · Работы этой категории -->
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="wrap">
+      <h2 class="section__title" id="works-title">Кухни, которые мы сделали</h2>
+      <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
+        Дзержинска и области.</p>
+      <div class="works-strip">
+        <div class="photo"><span class="photo__label">Кухня 1</span></div>
+        <div class="photo"><span class="photo__label">Кухня 2</span></div>
+        <div class="photo"><span class="photo__label">Кухня 3</span></div>
+        <div class="photo"><span class="photo__label">Кухня 4</span></div>
+      </div>
+      <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="portfolio.html">Все работы по кухням</a></p>
+    </div>
+  </section>
+
+  <!-- 7 · Текст категории -->
+  <section class="section" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 class="section__title" id="about-title">Из чего состоит кухня</h2>
+      <div class="prose">
+        <h3>Корпус</h3>
+        <p>Основа кухни, скрытая за фасадами: навесные и напольные шкафы, ящики. Самый экономичный
+          вариант — ламинированная древесная плита (ЛДСП). Мы используем ЛДСП австрийского
+          и российского производства, класс экологичности E1. Корпус можно сделать из МДФ или массива —
+          это экологичнее, но дороже в два-три раза.</p>
+        <h3>Столешница</h3>
+        <h4>Пластик</h4>
+        <p>Основа из древесно-стружечной плиты, покрытая слоистым пластиком высокого давления.
+          Практичный и недорогой вариант.</p>
+        <h4>Жидкий камень</h4>
+        <p>На основу напыляется смесь полимерной смолы, минерального наполнителя и пигментов.
+          Долговечнее пластика, спокойно переносит удары и горячее, и главное — на поверхности нет швов.
+          Оттенок и текстура выбираются по каталогу.</p>
+        <h3>Стеновая панель</h3>
+        <p>Фартук оформляем панелями из МДФ или стекла. Любой цвет или рисунок, можно напечатать
+          изображение из нашего каталога или из фотобанка.</p>
+        <h3>Фурнитура</h3>
+        <ul>
+          <li><strong>Ручки</strong> — под бронзу, золото, серебро, хром, медь, латунь или никель.</li>
+          <li><strong>Выдвижные системы</strong> — корзины и ящики, волшебные уголки, бутылочницы.</li>
+          <li><strong>Механизмы</strong> — подъёмные, петли с доводчиком, поворотные, направляющие.</li>
+          <li><strong>Сушилки</strong> — для верхних, нижних и угловых шкафов.</li>
+          <li><strong>Рейлинг</strong> — перекладина на фартук, опоры для барной стойки.</li>
+          <li><strong>Подсветка</strong> — споты и светодиодные ленты.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · Как мы работаем (свёрнуто) -->
+  <section class="section" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="section__kicker">Процесс</p>
+      <h2 class="section__title" id="how-title">Как мы работаем</h2>
+      <ul class="steps-mini">
+        <li>Заявка</li>
+        <li>Бесплатный замер</li>
+        <li>Дизайн-проект</li>
+        <li>Изготовление</li>
+        <li>Доставка и сборка</li>
+      </ul>
+      <p style="margin-top:var(--space-md)"><a class="tlink" href="static.html">Подробнее о том, как мы работаем <span class="arw">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- 9 · Вопрос-ответ (аккордеон) -->
+  <section class="section" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="section__title" id="faq-title">Частые вопросы</h2>
+      <div class="faq">
+        <details class="faq__item" open>
+          <summary>У меня нестандартный размер кухни после ремонта — сделаете по моим размерам?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Все кухни изготавливаются по фактическим размерам помещения. Готовой мебели
+            у нас нет в принципе, так что кухня подойдёт по размеру гарантированно.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Сколько времени займёт сборка дома?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Обычно один день. Модули собираем на производстве и привозим кухню частично
+            собранной — у вас на месте остаётся закрепить модули и подогнать по факту.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Сколько стоит замер?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Замер, подбор вариантов дизайна и расчёт кухни бесплатны.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Что если что-то сломается после гарантии?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Новую деталь можно заказать у нас на производстве — мы делаем мебель сами
+            и не зависим от поставок готовых модулей.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Форма заявки (сквозная) -->
+  <section class="section leadform" id="form" aria-labelledby="form-title">
+    <div class="wrap">
+      <h2 class="section__title" id="form-title">Рассчитаем вашу кухню бесплатно</h2>
+      <div class="form-grid">
+        <form class="form" novalidate>
+          <div class="field">
+            <label for="f-name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-comment">Комментарий <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <textarea id="f-comment" name="comment" rows="3"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="#">политикой</a>.</span>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+        </form>
+        <aside class="form-aside">
+          <p>Замер, дизайн-проект и расчёт стоимости бесплатны и ни к чему вас не обязывают.</p>
+          <p>Заявка уходит менеджеру на почту и в Telegram одновременно, поэтому не потеряется.
+            Перезвоним в рабочее время — с понедельника по пятницу с 10:00 до 19:00.</p>
+          <p class="ask"><a class="tlink" href="#">Не готовы к замеру? Задайте вопрос <span class="arw">→</span></a></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · Другие категории -->
+  <section class="section" aria-labelledby="other-title">
+    <div class="wrap">
+      <h2 class="section__title" id="other-title">Другие категории</h2>
+      <div class="cats">
+        <a class="cat" href="#">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">Фото</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Шкафы-купе</h3><p class="cat__desc">Встроенные, угловые, радиусные</p></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">фото нужно</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Спальни</h3><p class="cat__desc">Кровати, шкафы, комоды</p></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">Фото</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Детские</h3><p class="cat__desc">С учётом возраста и роста</p></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">фото нужно</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Прихожие</h3><p class="cat__desc">Открытые, модульные, купе</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Ft1 · подвал ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <span class="wordmark">Престиж</span>
+        <p class="foot__slogan">Мебель в ритме жизни…</p>
+      </div>
+      <div>
+        <h4>Каталог</h4>
+        <ul class="foot__links">
+          <li><a href="category.html">Кухни</a></li>
+          <li><a href="#">Шкафы-купе</a></li>
+          <li><a href="#">Спальни</a></li>
+          <li><a href="#">Детские</a></li>
+          <li><a href="#">Прихожие</a></li>
+          <li><a href="material.html">Материалы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <ul class="foot__links">
+          <li><a href="portfolio.html">Портфолио</a></li>
+          <li><a href="static.html">Рассрочка</a></li>
+          <li><a href="#">Как мы работаем</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>Дзержинск, ул. Грибоедова, 3 · +7 904 790-82-82</span>
+      <span>VK · Avito</span>
+      <span class="sp"></span>
+      <a href="#" style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
+      <a href="#" style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
+      <span class="foot__pending">Реквизиты — ждём от заказчика</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
+
+<!-- переключатель фона — аид для показа заказчику, в бой не идёт -->
+<div class="switchbar">
+  <div class="redswitch" role="group" aria-label="Вариант заднего фона" data-bg-switch>
+    <span>Фон:</span>
+    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
+    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
+    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
+    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
+    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

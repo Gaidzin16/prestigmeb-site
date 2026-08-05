@@ -1,0 +1,240 @@
+<!doctype html>
+<!-- Hallmark · page: портфолио · macrostructure: Catalogue Grid (счётчик → фильтр-чипсы → сетка → показать ещё)
+     shares design.md system · nav N6 · footer Ft1 · tokens tokens.css
+     Ось — тип изделия; материал — под-фильтр только у кухонь. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Наши работы — кухни и мебель на заказ | салон «Престиж», Дзержинск</title>
+<meta name="description" content="Портфолио салона «Престиж»: кухни, шкафы-купе, спальни, детские и прихожие на заказ. Работы с собственного производства, установленные в Дзержинске и Нижегородской области.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<!-- ============ Шапка · N6 масштхед ============ -->
+<header>
+  <div class="topbar">
+    <div class="wrap topbar__row">
+      <span class="topbar__addr">Дзержинск, ул. Грибоедова, 3</span>
+      <span class="topbar__addr">Пн–Пт&nbsp;10:00–19:00</span>
+      <span class="sp"></span>
+      <a class="topbar__phone" href="tel:+79047908282">+7 904 790-82-82</a>
+      <button class="burger" aria-label="Открыть меню" aria-expanded="false">Меню ☰</button>
+    </div>
+  </div>
+  <div class="wrap masthead">
+    <div class="masthead__descriptor">интерьер · дизайн</div>
+    <a class="wordmark" href="home.html">Престиж</a>
+  </div>
+  <nav class="mastnav" aria-label="Основное меню">
+    <div class="wrap">
+      <ul class="mastnav__list">
+        <li><a href="category.html">Кухни</a></li>
+        <li><a href="#">Шкафы-купе</a></li>
+        <li><a href="#">Спальни</a></li>
+        <li><a href="#">Детские</a></li>
+        <li><a href="#">Прихожие</a></li>
+        <li><a href="portfolio.html" aria-current="page">Портфолио</a></li>
+        <li><a href="static.html">Рассрочка</a></li>
+        <li><a href="#">Ещё ▾</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1 · Хлебные крошки -->
+  <nav class="wrap crumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="home.html">Главная</a></li>
+      <li aria-current="page">Наши работы</li>
+    </ol>
+  </nav>
+
+  <!-- 2 · Заголовок + счётчик -->
+  <section class="wrap section" style="border-top:0" aria-labelledby="pf-title">
+    <h1 class="section__title" id="pf-title" style="max-width:24ch">Наши работы</h1>
+    <p class="section__lead measure">Всё, что вы видите, сделано на нашем производстве и стоит
+      в квартирах Дзержинска и области. В портфолио — <span class="count">около&nbsp;420</span> фотографий.</p>
+
+    <!-- 3 · Фильтр по типу -->
+    <div class="chips" data-type-filter role="group" aria-label="Фильтр по типу изделия">
+      <button class="chip" type="button" data-type="all" aria-pressed="true">Все</button>
+      <button class="chip" type="button" data-type="kuhni" aria-pressed="false">Кухни</button>
+      <button class="chip" type="button" data-type="shkafy" aria-pressed="false">Шкафы-купе</button>
+      <button class="chip" type="button" data-type="spalni" aria-pressed="false">Спальни</button>
+      <button class="chip" type="button" data-type="detskie" aria-pressed="false">Детские</button>
+      <button class="chip" type="button" data-type="prihozhie" aria-pressed="false">Прихожие</button>
+    </div>
+
+    <!-- 4 · Под-фильтр по материалу (только у кухонь) -->
+    <div class="chips chips--sub is-hidden" data-material-filter role="group" aria-label="Фильтр по материалу фасада">
+      <button class="chip" type="button" data-material="all" aria-pressed="true">Все материалы</button>
+      <button class="chip" type="button" data-material="plenka" aria-pressed="false">Плёнка ПВХ</button>
+      <button class="chip" type="button" data-material="plastik" aria-pressed="false">Пластик</button>
+      <button class="chip" type="button" data-material="emal" aria-pressed="false">Эмаль</button>
+      <button class="chip" type="button" data-material="massiv" aria-pressed="false">Массив</button>
+      <button class="chip" type="button" data-material="ramochnye" aria-pressed="false">Рамочные</button>
+    </div>
+
+    <!-- 5 · Сетка работ -->
+    <div class="pgrid" data-portfolio>
+      <!-- Плитки-карточки проекта (ведут на project.html) помечены подписью -->
+      <a class="work work--project" data-work data-type="kuhni" data-material="emal" href="project.html">
+        <span class="work__tag">Проект</span>
+        <div class="photo"><span class="photo__label">Кухня · эмаль</span></div>
+        <p class="work__cap"><b>Белая кухня с островом</b> · эмаль, жидкий камень</p>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="plastik" href="#">
+        <div class="photo"><span class="photo__label">Кухня · пластик</span></div>
+        <p class="work__cap">Кухня, пластик Arpa</p>
+      </a>
+      <a class="work work--project" data-work data-type="kuhni" data-material="massiv" href="project.html">
+        <span class="work__tag">Проект</span>
+        <div class="photo"><span class="photo__label">Кухня · массив</span></div>
+        <p class="work__cap"><b>Классика из ясеня</b> · массив, столешница-камень</p>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="plenka" href="#">
+        <div class="photo"><span class="photo__label">Кухня · плёнка</span></div>
+        <p class="work__cap">Угловая кухня, плёнка ПВХ</p>
+      </a>
+      <a class="work" data-work data-type="shkafy" data-material="all" href="#">
+        <div class="photo"><span class="photo__label">Шкаф-купе</span></div>
+        <p class="work__cap">Встроенный шкаф-купе, зеркало</p>
+      </a>
+      <a class="work work--project" data-work data-type="shkafy" data-material="all" href="project.html">
+        <span class="work__tag">Проект</span>
+        <div class="photo"><span class="photo__label">Шкаф-купе</span></div>
+        <p class="work__cap"><b>Гардеробная от стены до стены</b> · ЛДСП, стекло</p>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="ramochnye" href="#">
+        <div class="photo"><span class="photo__label">Кухня · рамочные</span></div>
+        <p class="work__cap">Кухня, рамочные фасады</p>
+      </a>
+      <a class="work" data-work data-type="detskie" data-material="all" href="#">
+        <div class="photo"><span class="photo__label">Детская</span></div>
+        <p class="work__cap">Детская с рабочим местом</p>
+      </a>
+      <!-- Свёрнутая порция — раскрывается по «Показать ещё» -->
+      <a class="work is-collapsed" data-work data-type="kuhni" data-material="plastik" href="#">
+        <div class="photo"><span class="photo__label">Кухня · пластик</span></div>
+        <p class="work__cap">Прямая кухня, пластик Melaton</p>
+      </a>
+      <a class="work is-collapsed" data-work data-type="spalni" data-material="all" href="#">
+        <div class="photo"><span class="photo__label">Спальня</span></div>
+        <p class="work__cap">Шкаф и комод в одной отделке</p>
+      </a>
+      <a class="work is-collapsed" data-work data-type="detskie" data-material="all" href="#">
+        <div class="photo"><span class="photo__label">Детская</span></div>
+        <p class="work__cap">Двухъярусная кровать со столом</p>
+      </a>
+      <a class="work is-collapsed" data-work data-type="kuhni" data-material="emal" href="#">
+        <div class="photo"><span class="photo__label">Кухня · эмаль</span></div>
+        <p class="work__cap">Кухня в цвет RAL, матовая эмаль</p>
+      </a>
+    </div>
+
+    <div class="load-more">
+      <button class="btn btn--ghost" type="button" data-load-more>Показать ещё</button>
+    </div>
+  </section>
+
+  <!-- 6 · Форма заявки -->
+  <section class="section leadform" id="form" aria-labelledby="form-title">
+    <div class="wrap">
+      <h2 class="section__title" id="form-title">Понравилась работа? Сделаем такую же</h2>
+      <div class="form-grid">
+        <form class="form" novalidate>
+          <div class="field">
+            <label for="f-name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-comment">Комментарий <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <textarea id="f-comment" name="comment" rows="3"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="#">политикой</a>.</span>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+        </form>
+        <aside class="form-aside">
+          <p>Приедем в удобное время, снимем размеры и посчитаем стоимость. Замер бесплатный —
+            даже если в итоге закажете не у нас.</p>
+          <p>Заявка уходит менеджеру на почту и в Telegram одновременно, поэтому не потеряется.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Ft1 · подвал ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <span class="wordmark">Престиж</span>
+        <p class="foot__slogan">Мебель в ритме жизни…</p>
+      </div>
+      <div>
+        <h4>Каталог</h4>
+        <ul class="foot__links">
+          <li><a href="category.html">Кухни</a></li>
+          <li><a href="#">Шкафы-купе</a></li>
+          <li><a href="#">Спальни</a></li>
+          <li><a href="#">Детские</a></li>
+          <li><a href="#">Прихожие</a></li>
+          <li><a href="material.html">Материалы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <ul class="foot__links">
+          <li><a href="portfolio.html">Портфолио</a></li>
+          <li><a href="static.html">Рассрочка</a></li>
+          <li><a href="#">Как мы работаем</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>Дзержинск, ул. Грибоедова, 3 · +7 904 790-82-82</span>
+      <span>VK · Avito</span>
+      <span class="sp"></span>
+      <a href="#" style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
+      <a href="#" style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
+      <span class="foot__pending">Реквизиты — ждём от заказчика</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
+
+<!-- переключатель фона — аид для показа заказчику, в бой не идёт -->
+<div class="switchbar">
+  <div class="redswitch" role="group" aria-label="Вариант заднего фона" data-bg-switch>
+    <span>Фон:</span>
+    <button type="button" data-bg="ivory" aria-pressed="true">Слоновая</button>
+    <button type="button" data-bg="oat" aria-pressed="false">Овсяный</button>
+    <button type="button" data-bg="sand" aria-pressed="false">Песочный</button>
+    <button type="button" data-bg="greige" aria-pressed="false">Грейж</button>
+    <button type="button" data-bg="linen" aria-pressed="false">Лён</button>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
