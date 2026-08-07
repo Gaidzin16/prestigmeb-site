@@ -255,21 +255,21 @@ img { max-width: 100%; display: block; }
 .steps-band { position: relative; overflow: hidden; background: var(--color-carbon); color: var(--color-on-carbon); border-top: 0; }
 .steps-band .section__title { color: var(--color-on-carbon); }
 .steps-band__sub { margin-top: var(--space-sm); max-width: 54ch; color: var(--color-on-carbon-2); font-size: var(--text-base); }
-.steps-band .wrap { position: relative; z-index: 3; }
+.steps-band .wrap { position: relative; z-index: 3; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55); }
 .steps-band .tlink { color: var(--color-on-carbon); }
 .steps-band .steps { margin-top: var(--space-lg); grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-2xl); }
 .steps-band .step { border-top-color: var(--color-rule-carbon); }
 .steps-band .steps .step:nth-child(2) { border-top: 0; }         /* верхний ряд (1,2) без разделителя */
 .steps-band .step__t { color: var(--color-on-carbon); }
-.steps-band .step__d { color: var(--color-on-carbon-2); }
+.steps-band .step__d { color: oklch(89% 0.012 70); }             /* ярче для читаемости на фоне */
 
 /* фон-рендер (две копии: цветной внизу, чертёж сверху) */
 .steps-band__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .reveal__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.reveal__img--color { z-index: 0; filter: grayscale(0.7) contrast(1.02) brightness(0.9); }
+.reveal__img--color { z-index: 0; filter: grayscale(0.85) contrast(1.0) brightness(0.5); }
 .reveal__img--blueprint {
   z-index: 1; opacity: 0;                        /* без JS виден приглушённый рендер */
-  filter: grayscale(1) sepia(1) hue-rotate(200deg) saturate(1.4) brightness(0.85) contrast(1.05);
+  filter: grayscale(1) sepia(1) hue-rotate(200deg) saturate(1.2) brightness(0.5) contrast(1.05);
 }
 .reveal--armed .reveal__img--blueprint { opacity: 1; clip-path: inset(0 0 0 0); }
 .steps-band.is-revealed .reveal__img--blueprint { animation: bp-wipe 3.6s var(--ease-in-out) forwards; }
@@ -278,9 +278,9 @@ img { max-width: 100%; display: block; }
 /* затемняющий слой — гарантирует читаемость текста поверх рендера */
 .steps-band__scrim { position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(90deg,
-    color-mix(in oklab, var(--color-carbon) 90%, transparent) 0%,
-    color-mix(in oklab, var(--color-carbon) 76%, transparent) 55%,
-    color-mix(in oklab, var(--color-carbon) 64%, transparent) 100%);
+    color-mix(in oklab, var(--color-carbon) 94%, transparent) 0%,
+    color-mix(in oklab, var(--color-carbon) 90%, transparent) 55%,
+    color-mix(in oklab, var(--color-carbon) 88%, transparent) 100%);
 }
 
 /* световая развёртка — над затемнением, но под текстом */
