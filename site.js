@@ -133,6 +133,22 @@
     });
   }
 
+  /* --- «Проявление проекта»: чертёж → цветной рендер один раз при прокрутке --- */
+  var reveals = document.querySelectorAll('[data-reveal]');
+  if (reveals.length) {
+    reveals.forEach(function (r) { r.classList.add('reveal--armed'); });
+    if ('IntersectionObserver' in window) {
+      var rio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-revealed'); rio.unobserve(e.target); }
+        });
+      }, { threshold: 0.35 });
+      reveals.forEach(function (r) { rio.observe(r); });
+    } else {
+      reveals.forEach(function (r) { r.classList.add('is-revealed'); });
+    }
+  }
+
   /* --- Фильтр каталога образцов по производителю (материалы) --- */
   var swWrap = document.querySelector('[data-swatch]');
   if (swWrap) {
