@@ -249,52 +249,57 @@ img { max-width: 100%; display: block; }
 .step__t { font-size: var(--text-md); font-family: var(--font-display); font-weight: 600; }
 .step__d { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: 0.35rem; max-width: 58ch; }
 
-/* Раскладка «пять шагов» + фигура 3D-проекта справа */
-.steps-wrap { margin-top: var(--space-lg); display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-xl); align-items: start; }
-.steps-wrap .steps { margin-top: 0; }
+/* «Пять шагов» на фоне 3D-проекта: рендер во всю ширину секции, приглушённый
+   (не яркий цвет), под затемнением; текст этапов — поверх. Развёртка чертёж→ghost
+   один раз при прокрутке (data-reveal + site.js «вооружает» и запускает). */
+.steps-band { position: relative; overflow: hidden; background: var(--color-carbon); color: var(--color-on-carbon); border-top: 0; }
+.steps-band .section__title { color: var(--color-on-carbon); }
+.steps-band__sub { margin-top: var(--space-sm); max-width: 54ch; color: var(--color-on-carbon-2); font-size: var(--text-base); }
+.steps-band .wrap { position: relative; z-index: 3; }
+.steps-band .tlink { color: var(--color-on-carbon); }
+.steps-band .steps { margin-top: var(--space-lg); grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-2xl); }
+.steps-band .step { border-top-color: var(--color-rule-carbon); }
+.steps-band .steps .step:nth-child(2) { border-top: 0; }         /* верхний ряд (1,2) без разделителя */
+.steps-band .step__t { color: var(--color-on-carbon); }
+.steps-band .step__d { color: var(--color-on-carbon-2); }
 
-/* Фигура «проявление проекта»: чертёжно-синий монохром → цветной рендер
-   световой развёрткой, один проход при попадании в кадр (data-reveal + site.js).
-   Две копии одного рендера; верхний слой (чертёж) стирается клипом слева направо. */
-.reveal {
-  position: relative; margin: 0; overflow: hidden;
-  border-radius: var(--radius-md); border: 1px solid var(--color-rule);
-  aspect-ratio: 4 / 3; background: var(--color-paper-2);
-}
+/* фон-рендер (две копии: цветной внизу, чертёж сверху) */
+.steps-band__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .reveal__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.reveal__img--color { z-index: 1; }
+.reveal__img--color { z-index: 0; filter: grayscale(0.7) contrast(1.02) brightness(0.9); }
 .reveal__img--blueprint {
-  z-index: 2; opacity: 0;                       /* без JS виден цвет (graceful fallback) */
-  filter: grayscale(1) sepia(1) hue-rotate(178deg) saturate(1.5) brightness(0.95) contrast(1.08);
+  z-index: 1; opacity: 0;                        /* без JS виден приглушённый рендер */
+  filter: grayscale(1) sepia(1) hue-rotate(200deg) saturate(1.4) brightness(0.85) contrast(1.05);
 }
 .reveal--armed .reveal__img--blueprint { opacity: 1; clip-path: inset(0 0 0 0); }
-.reveal.is-revealed .reveal__img--blueprint { animation: bp-wipe 1.7s var(--ease-out) forwards; }
+.steps-band.is-revealed .reveal__img--blueprint { animation: bp-wipe 3.6s var(--ease-in-out) forwards; }
 @keyframes bp-wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
 
+/* затемняющий слой — гарантирует читаемость текста поверх рендера */
+.steps-band__scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg,
+    color-mix(in oklab, var(--color-carbon) 90%, transparent) 0%,
+    color-mix(in oklab, var(--color-carbon) 76%, transparent) 55%,
+    color-mix(in oklab, var(--color-carbon) 64%, transparent) 100%);
+}
+
+/* световая развёртка — над затемнением, но под текстом */
 .reveal__scan {
-  position: absolute; top: 0; bottom: 0; left: 0; width: 56px; z-index: 3; opacity: 0;
-  transform: translateX(-56px); pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85) 60%, #fff 78%, rgba(255,255,255,0.85) 82%, transparent);
+  position: absolute; top: 0; bottom: 0; left: 0; width: 90px; z-index: 2; opacity: 0;
+  transform: translateX(-90px); pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0.82) 78%, rgba(255,255,255,0.5) 84%, transparent);
   mix-blend-mode: screen;
 }
-.reveal.is-revealed .reveal__scan { animation: scan-move 1.7s var(--ease-out) forwards; }
+.steps-band.is-revealed .reveal__scan { animation: scan-move 3.6s var(--ease-in-out) forwards; }
 @keyframes scan-move {
-  0% { transform: translateX(-56px); opacity: 0; }
+  0% { transform: translateX(-90px); opacity: 0; }
   8% { opacity: 1; }
-  92% { opacity: 1; }
-  100% { transform: translateX(calc(100% + 56px)); opacity: 0; }
+  90% { opacity: 1; }
+  100% { transform: translateX(calc(100vw + 90px)); opacity: 0; }
 }
-
-.reveal__cap {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
-  padding: var(--space-lg) var(--space-md) var(--space-sm);
-  font-size: var(--text-xs); color: #fff; line-height: 1.4;
-  background: linear-gradient(to top, rgba(20,15,12,0.82), transparent);
-}
-.reveal__cap b { color: #fff; font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal--armed .reveal__img--blueprint { opacity: 0; animation: none; }  /* сразу цвет */
+  .reveal--armed .reveal__img--blueprint { opacity: 0; animation: none; }  /* сразу приглушённый рендер */
   .reveal__scan { display: none; }
 }
 
@@ -470,8 +475,8 @@ img { max-width: 100%; display: block; }
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .hero__photo { aspect-ratio: 16 / 9; order: -1; }
-  .steps-wrap { grid-template-columns: 1fr; gap: var(--space-lg); }
-  .reveal { order: -1; }
+  .steps-band .steps { grid-template-columns: 1fr; }
+  .steps-band .steps .step:nth-child(2) { border-top: 1px solid var(--color-rule-carbon); }
   .cats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cat--lead { grid-column: span 2; grid-row: auto; }
   .cat--lead .cat__photo { min-height: 200px; }

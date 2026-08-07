@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260807b">
+<link rel="stylesheet" href="site.css?v=20260807c">
 </head>
 <body>
 
@@ -134,24 +134,23 @@
     </div>
   </section>
 
-  <!-- 5 · Как мы работаем -->
-  <section class="section" aria-labelledby="steps-title">
+  <!-- 5 · Как мы работаем · 3D-проект фоном -->
+  <section class="section steps-band" data-reveal aria-labelledby="steps-title">
+    <div class="steps-band__bg" aria-hidden="true">
+      <img class="reveal__img reveal__img--color" src="img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
+      <img class="reveal__img reveal__img--blueprint" src="img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="steps-band__scrim" aria-hidden="true"></div>
+    <span class="reveal__scan" aria-hidden="true"></span>
     <div class="wrap">
       <h2 class="section__title" id="steps-title">Новая кухня в пять шагов</h2>
-      <div class="steps-wrap">
-        <div class="steps">
+      <p class="steps-band__sub">Показываем проект вашей кухни в 3D ещё до изготовления — правки бесплатны.</p>
+      <div class="steps">
         <div class="step"><div class="step__n">1</div><div><div class="step__t">Заявка</div><p class="step__d">Оставьте заявку на сайте или позвоните. Ответим на вопросы и запишем на замер.</p></div></div>
         <div class="step"><div class="step__n">2</div><div><div class="step__t">Бесплатный замер</div><p class="step__d">Замерщик приезжает к вам домой в удобное время и снимает точные размеры. Замер бесплатный, даже если вы закажете не у нас.</p></div></div>
         <div class="step"><div class="step__n">3</div><div><div class="step__t">Дизайн-проект</div><p class="step__d">Рисуем эскиз по вашим размерам. Вы выбираете материалы, цвет и фурнитуру по образцам, мы считаем точную стоимость. Проект тоже бесплатный.</p></div></div>
         <div class="step"><div class="step__n">4</div><div><div class="step__t">Изготовление</div><p class="step__d">Делаем мебель на собственном производстве — от 20 до 45 рабочих дней в зависимости от сложности проекта.</p></div></div>
         <div class="step"><div class="step__n">5</div><div><div class="step__t">Доставка и сборка</div><p class="step__d">Привозим, собираем, врезаем мойку и подключаем технику. Кухню обычно собираем за один день.</p></div></div>
-        </div>
-        <figure class="reveal" data-reveal>
-          <img class="reveal__img reveal__img--color" src="img/proekt-render.jpg" alt="3D-проект кухни в цвете: синие фасады, белый мрамор" loading="lazy" decoding="async">
-          <img class="reveal__img reveal__img--blueprint" src="img/proekt-render.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-          <span class="reveal__scan" aria-hidden="true"></span>
-          <figcaption class="reveal__cap"><b>Шаг&nbsp;3 — дизайн-проект.</b> Так вы видите кухню в 3D до изготовления. Правки бесплатны.</figcaption>
-        </figure>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="tlink" href="#">Подробнее о том, как мы работаем <span class="arw">→</span></a></p>
     </div>
@@ -325,7 +324,7 @@
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
 
-<script src="site.js?v=20260807b"></script>
+<script src="site.js?v=20260807c"></script>
 
 </body>
 </html>
