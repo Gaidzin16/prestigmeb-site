@@ -659,6 +659,12 @@ img { max-width: 100%; display: block; }
 }
 .ral-cat__more { margin-top: var(--space-md); }
 
+/* курированный ряд «ходовые для кухонь» — крупнее, с именами цветов */
+.ral-sub { margin-top: var(--space-xl); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); color: var(--color-ink); }
+.ral-sub--first { margin-top: var(--space-lg); }
+.swatches.swatches--pop { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: var(--space-md) var(--space-sm); margin-top: var(--space-sm); }
+.swatch--pop .swatch__cap { font-size: var(--text-xs); }
+
 /* показать ещё / фильтры прячут плитки */
 .is-collapsed { display: none !important; }
 .is-hidden { display: none !important; }
