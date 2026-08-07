@@ -640,11 +640,24 @@ img { max-width: 100%; display: block; }
 
 /* каталог эмали RAL — плотная сетка реальных цветных плашек (код → hex).
    auto-fill, поэтому одинаково хорош на 320 и 1280; .swatches.swatches--ral
-   специфичнее фиксированных колонок из медиазапросов ниже — они его не трогают. */
-.swatches.swatches--ral { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: var(--space-md) var(--space-xs); }
-.swatch--ral .swatch__chip { aspect-ratio: 4 / 3; background-image: none; }
+   специфичнее фиксированных колонок из медиазапросов ниже — они его не трогают.
+   Подпись — только RAL-код (компактно); полное имя цвета — в title при наведении. */
+.swatches.swatches--ral { grid-template-columns: repeat(auto-fill, minmax(66px, 1fr)); gap: var(--space-sm) var(--space-xs); margin-top: 0; }
+.swatch--ral { cursor: default; }
+.swatch--ral .swatch__chip { aspect-ratio: 1 / 1; background-image: none; }
 .swatch--ral .swatch__chip::after { display: none; }        /* реальный цвет — без плейсхолдер-точек */
+.swatch--ral .swatch__cap { font-size: 0.68rem; }
 .swatch--ral .swatch__cap b { font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
+
+/* каталог свёрнут по умолчанию: виден тизер из пары рядов + затухание.
+   Кнопка «Показать все» снимает клэмп; клик по фильтру-группе тоже (см. site.js). */
+.ral-cat { position: relative; margin-top: var(--space-lg); }
+.ral-cat.is-clamped { max-height: 19rem; overflow: hidden; }
+.ral-cat.is-clamped::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 6rem; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--color-paper));
+}
+.ral-cat__more { margin-top: var(--space-md); }
 
 /* показать ещё / фильтры прячут плитки */
 .is-collapsed { display: none !important; }

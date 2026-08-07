@@ -116,6 +116,23 @@
     });
   }
 
+  /* --- Свёрнутый каталог RAL: кнопка «Показать все» / «Свернуть» --- */
+  var ralCat = document.querySelector('[data-ral-cat]');
+  var ralToggle = document.querySelector('[data-ral-toggle]');
+  var setRal = function (expanded) {
+    if (!ralCat) return;
+    ralCat.classList.toggle('is-clamped', !expanded);
+    if (ralToggle) {
+      ralToggle.setAttribute('aria-expanded', String(expanded));
+      ralToggle.textContent = expanded ? 'Свернуть палитру' : 'Показать все 216 цветов';
+    }
+  };
+  if (ralToggle && ralCat) {
+    ralToggle.addEventListener('click', function () {
+      setRal(ralCat.classList.contains('is-clamped'));
+    });
+  }
+
   /* --- Фильтр каталога образцов по производителю (материалы) --- */
   var swWrap = document.querySelector('[data-swatch]');
   if (swWrap) {
@@ -127,6 +144,7 @@
           s.classList.toggle('is-hidden', !(f === 'all' || s.dataset.producer === f));
         });
         swFilter.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        if (ralCat) setRal(true);   /* выбор группы — разворачиваем каталог целиком */
       });
     });
   }
