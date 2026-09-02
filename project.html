@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260902c">
+<link rel="stylesheet" href="site.css?v=20260902d">
 </head>
 <body>
 
@@ -60,16 +60,24 @@
 
   <!-- 2 · Галерея -->
   <section class="wrap" style="padding-top:var(--space-md)" aria-label="Галерея работы">
-    <div class="gallery">
-      <div class="gallery__main photo rise" data-gallery-main role="img" aria-label="Главное фото работы">
-        <span class="photo__label"><b>Белая кухня с островом</b>главное фото · свайп и лайтбокс в бою</span>
+    <div class="gallery slider" data-slider data-autoplay="0" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Фотографии работы «Белая кухня с островом»">
+      <div class="slider__viewport gallery__main rise">
+        <div class="slider__track">
+          <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-belaya-modern.jpg" alt="Белая кухня с островом: общий вид, Дзержинск" loading="eager" decoding="async"></div></div>
+          <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-belaya-glyanec.jpg" alt="Фасады белой кухни, глянец" loading="lazy" decoding="async"></div></div>
+          <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-ramochnaya-belaya.jpg" alt="Рамочные фасады белой кухни" loading="lazy" decoding="async"></div></div>
+          <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-sero-belaya.jpg" alt="Остров и столешница без швов" loading="lazy" decoding="async"></div></div>
+          <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-seraya-matovaya.jpg" alt="Матовая эмаль в цвет интерьера" loading="lazy" decoding="async"></div></div>
+        </div>
+        <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущее фото">‹</button>
+        <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующее фото">›</button>
       </div>
       <ul class="gallery__thumbs">
-        <li><button class="gallery__thumb" type="button" data-gallery-thumb aria-current="true" data-full="<b>Белая кухня с островом</b>общий вид" aria-label="Общий вид"><span class="photo photo__label" style="display:grid;place-content:center">1</span></button></li>
-        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Остров и столешница</b>жидкий камень без швов" aria-label="Остров"><span class="photo photo__label" style="display:grid;place-content:center">2</span></button></li>
-        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Фасады</b>эмаль в цвет RAL, матовая" aria-label="Фасады"><span class="photo photo__label" style="display:grid;place-content:center">3</span></button></li>
-        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Наполнение</b>выдвижные системы Blum" aria-label="Наполнение"><span class="photo photo__label" style="display:grid;place-content:center">4</span></button></li>
-        <li><button class="gallery__thumb" type="button" data-gallery-thumb data-full="<b>Фартук</b>стеновая панель со стеклом" aria-label="Фартук"><span class="photo photo__label" style="display:grid;place-content:center">5</span></button></li>
+        <li><button class="gallery__thumb" type="button" data-slider-thumb aria-current="true" aria-label="Общий вид"><span class="photo"><img class="photo__img" src="img/kuhnya-belaya-modern.jpg" alt="" loading="lazy" decoding="async"></span></button></li>
+        <li><button class="gallery__thumb" type="button" data-slider-thumb aria-label="Фасады"><span class="photo"><img class="photo__img" src="img/kuhnya-belaya-glyanec.jpg" alt="" loading="lazy" decoding="async"></span></button></li>
+        <li><button class="gallery__thumb" type="button" data-slider-thumb aria-label="Рамочные фасады"><span class="photo"><img class="photo__img" src="img/kuhnya-ramochnaya-belaya.jpg" alt="" loading="lazy" decoding="async"></span></button></li>
+        <li><button class="gallery__thumb" type="button" data-slider-thumb aria-label="Остров и столешница"><span class="photo"><img class="photo__img" src="img/kuhnya-sero-belaya.jpg" alt="" loading="lazy" decoding="async"></span></button></li>
+        <li><button class="gallery__thumb" type="button" data-slider-thumb aria-label="Матовая эмаль"><span class="photo"><img class="photo__img" src="img/kuhnya-seraya-matovaya.jpg" alt="" loading="lazy" decoding="async"></span></button></li>
       </ul>
     </div>
   </section>
@@ -183,7 +191,7 @@
       <span class="sp"></span>
       <a href="#" style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
       <a href="#" style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
-      <span class="foot__pending">Реквизиты — ждём от заказчика</span>
+      <span class="foot__req">ИП Харупкин А. В. · ИНН 524924627894 · ОГРНИП 312524918500016</span>
     </div>
   </div>
 </footer>
@@ -191,6 +199,6 @@
 <div class="sticky-cta"><a class="btn" href="#form">Хочу такую же</a></div>
 
 
-<script src="site.js?v=20260902c"></script>
+<script src="site.js?v=20260902d"></script>
 </body>
 </html>

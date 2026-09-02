@@ -55,20 +55,6 @@
     onScroll();
   }
 
-  /* --- Галерея карточки проекта: миниатюра меняет главное фото --- */
-  var gMain = document.querySelector('[data-gallery-main]');
-  if (gMain) {
-    var gLabel = gMain.querySelector('.photo__label');
-    document.querySelectorAll('[data-gallery-thumb]').forEach(function (t) {
-      t.addEventListener('click', function () {
-        if (gLabel) gLabel.innerHTML = t.dataset.full || t.getAttribute('aria-label') || gLabel.innerHTML;
-        document.querySelectorAll('[data-gallery-thumb]').forEach(function (x) {
-          x.setAttribute('aria-current', String(x === t));
-        });
-      });
-    });
-  }
-
   /* --- Фильтр портфолио: тип (сквозной) + материал (только у кухонь) --- */
   var pgrid = document.querySelector('[data-portfolio]');
   if (pgrid) {
@@ -163,11 +149,13 @@
       var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 0;
       var dotsWrap = root.querySelector('.slider__dots');
       var dots = [];
+      var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-slider-thumb]'));
 
       var go = function (n) {
         idx = (n % slides.length + slides.length) % slides.length;
         track.style.transform = 'translateX(' + (-idx * 100) + '%)';
         dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === idx)); });
+        thumbs.forEach(function (t, i) { t.setAttribute('aria-current', String(i === idx)); });
         slides.forEach(function (s, i) { s.setAttribute('aria-hidden', String(i !== idx)); });
       };
       var next = function () { go(idx + 1); };
@@ -185,6 +173,10 @@
         d.addEventListener('click', function () { go(i); rearm(); });
         dotsWrap.appendChild(d);
         dots.push(d);
+      });
+
+      thumbs.forEach(function (t, i) {
+        t.addEventListener('click', function () { go(i); rearm(); });
       });
 
       var prevBtn = root.querySelector('.slider__arrow--prev');
