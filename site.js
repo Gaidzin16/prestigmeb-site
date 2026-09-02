@@ -149,6 +149,72 @@
     }
   }
 
+  /* --- Слайдеры фото (главная: hero и «Наши работы») --- */
+  var sliders = document.querySelectorAll('[data-slider]');
+  if (sliders.length) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    Array.prototype.forEach.call(sliders, function (root) {
+      var track = root.querySelector('.slider__track');
+      if (!track) return;
+      var slides = Array.prototype.slice.call(track.children);
+      if (slides.length < 2) return;
+
+      var idx = 0, timer = null;
+      var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 0;
+      var dotsWrap = root.querySelector('.slider__dots');
+      var dots = [];
+
+      var go = function (n) {
+        idx = (n % slides.length + slides.length) % slides.length;
+        track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+        dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === idx)); });
+        slides.forEach(function (s, i) { s.setAttribute('aria-hidden', String(i !== idx)); });
+      };
+      var next = function () { go(idx + 1); };
+      var prev = function () { go(idx - 1); };
+
+      var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+      var start = function () { if (delay && !reduce && !timer) timer = setInterval(next, delay); };
+      var rearm = function () { stop(); start(); };
+
+      if (dotsWrap) slides.forEach(function (s, i) {
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'slider__dot';
+        d.setAttribute('aria-label', 'Слайд ' + (i + 1));
+        d.addEventListener('click', function () { go(i); rearm(); });
+        dotsWrap.appendChild(d);
+        dots.push(d);
+      });
+
+      var prevBtn = root.querySelector('.slider__arrow--prev');
+      var nextBtn = root.querySelector('.slider__arrow--next');
+      if (prevBtn) prevBtn.addEventListener('click', function () { prev(); rearm(); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { next(); rearm(); });
+
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      root.addEventListener('focusin', stop);
+      root.addEventListener('focusout', start);
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { prev(); rearm(); }
+        else if (e.key === 'ArrowRight') { next(); rearm(); }
+      });
+
+      var x0 = null;
+      root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      root.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 40) { if (dx < 0) next(); else prev(); rearm(); }
+        x0 = null;
+      }, { passive: true });
+
+      go(0);
+      start();
+    });
+  }
+
   /* --- Лайтбокс портфолио: клик по плитке открывает фото крупно --- */
   var tiles = Array.prototype.slice.call(
     document.querySelectorAll('[data-portfolio] .work')

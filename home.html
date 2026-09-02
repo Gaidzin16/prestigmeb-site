@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260902a">
+<link rel="stylesheet" href="site.css?v=20260902c">
 </head>
 <body>
 
@@ -63,8 +63,18 @@
           <li><b>Гарантия 18 месяцев</b></li>
         </ul>
       </div>
-      <div class="hero__photo photo rise">
-        <img class="photo__img" src="img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async">
+      <div class="slider slider--hero rise" data-slider data-autoplay="6000" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши кухни">
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-modern-bezruchek.jpg" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфей на заказ" loading="lazy" decoding="async"></div></div>
+          </div>
+          <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущее фото">‹</button>
+          <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующее фото">›</button>
+        </div>
+        <div class="slider__dots" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -180,11 +190,21 @@
       <h2 class="section__title" id="works-title">Наши работы</h2>
       <p class="section__lead measure">Всё, что вы видите, сделано на нашем производстве и стоит
         в квартирах Дзержинска и области.</p>
-      <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/garderobnaya.jpg" alt="Открытая гардеробная система на заказ" loading="lazy" decoding="async"></div>
+      <div class="slider slider--works" data-slider data-autoplay="0" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши работы">
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/garderobnaya.jpg" alt="Открытая гардеробная система на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня с золотой патиной на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/detskaya-stenka.jpg" alt="Детская стенка на заказ" loading="lazy" decoding="async"></div></div>
+          </div>
+          <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущая работа">‹</button>
+          <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующая работа">›</button>
+        </div>
+        <div class="slider__dots" aria-hidden="true"></div>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="portfolio.html">Смотреть все работы</a></p>
     </div>
@@ -324,7 +344,7 @@
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
 
-<script src="site.js?v=20260902a"></script>
+<script src="site.js?v=20260902c"></script>
 
 </body>
 </html>
