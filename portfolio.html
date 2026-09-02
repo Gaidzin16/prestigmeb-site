@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260807e">
+<link rel="stylesheet" href="site.css?v=20260902a">
 </head>
 <body>
 
@@ -67,9 +67,7 @@
       <button class="chip" type="button" data-type="all" aria-pressed="true">Все</button>
       <button class="chip" type="button" data-type="kuhni" aria-pressed="false">Кухни</button>
       <button class="chip" type="button" data-type="shkafy" aria-pressed="false">Шкафы-купе</button>
-      <button class="chip" type="button" data-type="spalni" aria-pressed="false">Спальни</button>
       <button class="chip" type="button" data-type="detskie" aria-pressed="false">Детские</button>
-      <button class="chip" type="button" data-type="prihozhie" aria-pressed="false">Прихожие</button>
     </div>
 
     <!-- 4 · Под-фильтр по материалу (только у кухонь) -->
@@ -78,65 +76,56 @@
       <button class="chip" type="button" data-material="plenka" aria-pressed="false">Плёнка ПВХ</button>
       <button class="chip" type="button" data-material="plastik" aria-pressed="false">Пластик</button>
       <button class="chip" type="button" data-material="emal" aria-pressed="false">Эмаль</button>
-      <button class="chip" type="button" data-material="massiv" aria-pressed="false">Массив</button>
       <button class="chip" type="button" data-material="ramochnye" aria-pressed="false">Рамочные</button>
     </div>
 
-    <!-- 5 · Сетка работ -->
+    <!-- 5 · Сетка работ · клик по плитке открывает фото в лайтбоксе (href → само фото как фолбэк без JS) -->
     <div class="pgrid" data-portfolio>
-      <!-- Плитки-карточки проекта (ведут на project.html) помечены подписью -->
-      <a class="work work--project" data-work data-type="kuhni" data-material="emal" href="project.html">
-        <span class="work__tag">Проект</span>
+      <a class="work" data-work data-type="kuhni" data-material="emal" href="img/kuhnya-klassika-zoloto.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня в светлом цвете с фурнитурой под золото на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap"><b>Классическая кухня в светлом цвете</b> · фасады эмаль, фурнитура под золото</p>
       </a>
-      <a class="work" data-work data-type="kuhni" data-material="plastik" href="#">
+      <a class="work" data-work data-type="kuhni" data-material="plastik" href="img/kuhnya-belaya-glyanec.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая угловая кухня с деревянным фартуком на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Белая глянцевая кухня, угловая</p>
       </a>
-      <a class="work work--project" data-work data-type="kuhni" data-material="massiv" href="project.html">
-        <span class="work__tag">Проект</span>
-        <div class="photo"><span class="photo__label">Кухня · массив</span></div>
-        <p class="work__cap"><b>Классика из ясеня</b> · массив, столешница-камень</p>
-      </a>
-      <a class="work" data-work data-type="kuhni" data-material="plenka" href="#">
+      <a class="work" data-work data-type="kuhni" data-material="plenka" href="img/kuhnya-sero-belaya.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-sero-belaya.jpg" alt="Угловая серо-белая кухня с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Угловая кухня, серо-белые матовые фасады</p>
       </a>
-      <a class="work" data-work data-type="shkafy" data-material="all" href="#">
+      <a class="work" data-work data-type="shkafy" data-material="all" href="img/shkaf-kupe-uglovoj.jpg">
         <div class="photo"><img class="photo__img" src="img/shkaf-kupe-uglovoj.jpg" alt="Встроенный угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Встроенный шкаф-купе, зеркало</p>
       </a>
-      <a class="work work--project" data-work data-type="shkafy" data-material="all" href="project.html">
-        <span class="work__tag">Проект</span>
+      <a class="work" data-work data-type="shkafy" data-material="all" href="img/shkaf-kupe-steklo.jpg">
         <div class="photo"><img class="photo__img" src="img/shkaf-kupe-steklo.jpg" alt="Шкаф-купе от стены до стены с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap"><b>Гардеробная от стены до стены</b> · ЛДСП, стекло</p>
       </a>
-      <a class="work" data-work data-type="kuhni" data-material="ramochnye" href="#">
+      <a class="work" data-work data-type="kuhni" data-material="ramochnye" href="img/kuhnya-ramochnaya-belaya.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-ramochnaya-belaya.jpg" alt="Белая классическая кухня с рамочными фасадами и плиткой-кабанчиком на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Классическая кухня, рамочные фасады</p>
       </a>
-      <a class="work" data-work data-type="detskie" data-material="all" href="#">
+      <a class="work" data-work data-type="detskie" data-material="all" href="img/detskaya-stol.jpg">
         <div class="photo"><img class="photo__img" src="img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div>
         <p class="work__cap">Детская с рабочим местом</p>
       </a>
       <!-- Свёрнутая порция — раскрывается по «Показать ещё» -->
-      <a class="work is-collapsed" data-work data-type="kuhni" data-material="plastik" href="#">
+      <a class="work is-collapsed" data-work data-type="kuhni" data-material="plastik" href="img/kuhnya-modern-bezruchek.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-modern-bezruchek.jpg" alt="Кухня в стиле модерн с безручечными фасадами и мраморным фартуком на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Кухня в стиле модерн, безручечные фасады</p>
       </a>
-      <a class="work is-collapsed" data-work data-type="spalni" data-material="all" href="#">
-        <div class="photo"><span class="photo__label">Спальня</span></div>
-        <p class="work__cap">Шкаф и комод в одной отделке</p>
-      </a>
-      <a class="work is-collapsed" data-work data-type="detskie" data-material="all" href="#">
+      <a class="work is-collapsed" data-work data-type="detskie" data-material="all" href="img/detskaya-stenka.jpg">
         <div class="photo"><img class="photo__img" src="img/detskaya-stenka.jpg" alt="Детская на заказ: стенка со стеллажами и ящиками" loading="lazy" decoding="async"></div>
         <p class="work__cap">Детская: стенка со стеллажом и ящиками</p>
       </a>
-      <a class="work is-collapsed" data-work data-type="kuhni" data-material="emal" href="#">
+      <a class="work is-collapsed" data-work data-type="kuhni" data-material="emal" href="img/kuhnya-seraya-matovaya.jpg">
         <div class="photo"><img class="photo__img" src="img/kuhnya-seraya-matovaya.jpg" alt="Серая матовая кухня с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
         <p class="work__cap">Серая матовая кухня в цвет RAL</p>
       </a>
+      <!-- ★ Сюда лягут 2 новых фото от заказчика (шкаф бело-золотой + детская у окна).
+           Как только файлы будут в design/img/, добавляю по образцу:
+           <a class="work" data-work data-type="shkafy" data-material="all" href="img/shkaf-belyj-zoloto.jpg"> … </a>
+           <a class="work" data-work data-type="detskie" data-material="all" href="img/detskaya-stol-okno.jpg"> … </a> -->
     </div>
 
     <div class="load-more">
@@ -224,6 +213,6 @@
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
 
-<script src="site.js?v=20260807e"></script>
+<script src="site.js?v=20260902a"></script>
 </body>
 </html>

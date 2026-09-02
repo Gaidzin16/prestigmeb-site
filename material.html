@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260807e">
+<link rel="stylesheet" href="site.css?v=20260902a">
 </head>
 <body>
 
@@ -84,10 +84,10 @@
     <div class="wrap">
       <p class="section__kicker">Выберите цвет</p>
       <h2 class="section__title" id="sw-title">Каталог образцов</h2>
-      <p class="swatch-note">385 образцов пластика — смотреть сплошной лентой невозможно, поэтому есть
-        фильтр по производителю. Все образцы физически лежат в салоне на Грибоедова: по фотографии
-        текстуру и толщину не оценить, приезжайте и потрогайте. <b>Здесь — плейсхолдеры;
-        683 реальных образца ложатся на этапе контент-миграции.</b></p>
+      <p class="swatch-note">Ниже — основные однотонные декоры трёх производителей для ориентира по цвету.
+        Всего несколько сотен цветов и текстур (дерево, камень, глянец и мат) — смотреть сплошной лентой
+        невозможно, поэтому есть фильтр по производителю. Полный каталог образцов физически лежит в салоне
+        на Грибоедова: <b>по фото текстуру и толщину не оценить — приезжайте и потрогайте.</b></p>
 
       <!-- Фильтр по производителю (обязателен) -->
       <div class="chips" data-swatch-filter role="group" aria-label="Фильтр по производителю">
@@ -98,24 +98,27 @@
       </div>
 
       <div class="swatches" data-swatch>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 0001</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 0472</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 1105</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 2503</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 3810</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 4920</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-12</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-34</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-56</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-78</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-90</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="melaton"><div class="swatch__chip"></div><span class="swatch__cap"><b>Melaton M-07</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="melaton"><div class="swatch__chip"></div><span class="swatch__cap"><b>Melaton M-19</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="melaton"><div class="swatch__chip"></div><span class="swatch__cap"><b>Melaton M-23</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="melaton"><div class="swatch__chip"></div><span class="swatch__cap"><b>Melaton M-41</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="melaton"><div class="swatch__chip"></div><span class="swatch__cap"><b>Melaton M-55</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="arpa"><div class="swatch__chip"></div><span class="swatch__cap"><b>Arpa 5140</b>артикул · цвет</span></div>
-        <div class="swatch" data-producer="lemark"><div class="swatch__chip"></div><span class="swatch__cap"><b>Lemark L-11</b>артикул · цвет</span></div>
+        <!-- Arpa -->
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#F2EFE9"></div><span class="swatch__cap"><b>Белый снег</b>однотон, глянец</span></div>
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#ECE4D3"></div><span class="swatch__cap"><b>Ваниль</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#D6C3A6"></div><span class="swatch__cap"><b>Капучино</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#C7C3BC"></div><span class="swatch__cap"><b>Серый камень</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#8C8983"></div><span class="swatch__cap"><b>Графит</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="arpa"><div class="swatch__chip" style="background:#3C3B3D"></div><span class="swatch__cap"><b>Антрацит</b>однотон, глянец</span></div>
+        <!-- Lemark -->
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#EDE6D8"></div><span class="swatch__cap"><b>Магнолия</b>однотон, глянец</span></div>
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#CDB79A"></div><span class="swatch__cap"><b>Латте</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#C7A876"></div><span class="swatch__cap"><b>Дуб сонома</b>текстура дерева</span></div>
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#B2AFA8"></div><span class="swatch__cap"><b>Пыльно-серый</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#6C6965"></div><span class="swatch__cap"><b>Мокрый асфальт</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="lemark"><div class="swatch__chip" style="background:#5A4636"></div><span class="swatch__cap"><b>Венге</b>текстура дерева</span></div>
+        <!-- Melaton -->
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#E2DAC9"></div><span class="swatch__cap"><b>Крем</b>однотон, глянец</span></div>
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#D8C9AE"></div><span class="swatch__cap"><b>Бежевый песок</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#CFCBC4"></div><span class="swatch__cap"><b>Светло-серый</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#6E7C6A"></div><span class="swatch__cap"><b>Шалфей</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#5E6C74"></div><span class="swatch__cap"><b>Сине-серый</b>однотон, мат</span></div>
+        <div class="swatch swatch--real" data-producer="melaton"><div class="swatch__chip" style="background:#7A5560"></div><span class="swatch__cap"><b>Марсала</b>однотон, глянец</span></div>
       </div>
     </div>
   </section>
@@ -200,6 +203,6 @@
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
 
-<script src="site.js?v=20260807e"></script>
+<script src="site.js?v=20260902a"></script>
 </body>
 </html>

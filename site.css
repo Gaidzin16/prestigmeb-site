@@ -758,3 +758,88 @@ img { max-width: 100%; display: block; }
   .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pgrid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Правки заказчика · 2026-09-02
+   1) ярче преимущества (.facts) и рассрочка (.rass-row)
+   2) лайтбокс портфолио
+   3) реальные цветные плашки пластика (.swatch--real)
+   Блок-оверрайд в конце файла — специфичность решает порядок.
+   ============================================================ */
+
+/* --- Преимущества под hero: акцентная плашка --- */
+.facts {
+  background: var(--color-accent-soft);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 25%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid color-mix(in oklab, var(--color-accent) 25%, transparent);
+}
+.facts li { color: var(--color-ink); border-right-color: color-mix(in oklab, var(--color-accent) 25%, transparent); }
+.facts b { color: var(--color-accent); font-weight: 700; }
+
+/* --- Рассрочка: акцентная карта, крупнее цифры --- */
+.rass-row {
+  background: var(--color-accent-soft);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent);
+  border-top: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-md);
+}
+.rass-row__item + .rass-row__item { border-left-color: color-mix(in oklab, var(--color-accent) 22%, transparent); }
+.rass-row__k { font-size: var(--text-2xl); font-weight: 600; }
+@media (max-width: 640px) {
+  .rass-row__item:nth-child(3) { border-left: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent); }
+  .rass-row__item:nth-child(n+3) { border-top: 1px solid color-mix(in oklab, var(--color-accent) 22%, transparent); }
+}
+
+/* --- Плитки портфолио кликабельны как фото (курсор-зум) --- */
+.work:has(.photo__img) { cursor: zoom-in; }
+
+/* --- Лайтбокс --- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 90; display: none;
+  align-items: center; justify-content: center;
+  background: color-mix(in oklab, var(--color-carbon) 92%, black);
+  padding: var(--space-lg);
+}
+.lightbox.is-open { display: flex; }
+.lightbox__img {
+  max-width: min(1100px, 94vw); max-height: 86vh; width: auto; height: auto;
+  object-fit: contain; border-radius: var(--radius-md);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.lightbox__cap {
+  position: absolute; left: 0; right: 0; bottom: var(--space-md);
+  text-align: center; color: var(--color-on-carbon);
+  font-size: var(--text-sm); padding: 0 var(--space-lg);
+}
+.lightbox__btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 3rem; height: 3rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--color-rule-carbon);
+  background: color-mix(in oklab, var(--color-carbon) 70%, transparent);
+  color: var(--color-on-carbon); font-size: 1.5rem; line-height: 1;
+  display: grid; place-content: center;
+}
+.lightbox__btn:hover { background: var(--color-carbon-2); }
+.lightbox__prev { left: var(--space-md); }
+.lightbox__next { right: var(--space-md); }
+.lightbox__close {
+  position: absolute; top: var(--space-md); right: var(--space-md);
+  width: 2.75rem; height: 2.75rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--color-rule-carbon);
+  background: color-mix(in oklab, var(--color-carbon) 70%, transparent);
+  color: var(--color-on-carbon); font-size: 1.4rem; line-height: 1;
+  display: grid; place-content: center;
+}
+.lightbox__close:hover { background: var(--color-carbon-2); }
+@media (max-width: 640px) {
+  .lightbox__btn { width: 2.5rem; height: 2.5rem; font-size: 1.2rem; }
+  .lightbox { padding: var(--space-sm); }
+}
+
+/* --- Реальные цветные плашки пластика (без плейсхолдер-точек) --- */
+.swatch--real .swatch__chip { background-image: none; }
+.swatch--real .swatch__chip::after { display: none; }
+.swatch--real .swatch__cap b { color: var(--color-ink); }

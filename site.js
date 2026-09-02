@@ -149,6 +149,59 @@
     }
   }
 
+  /* --- Лайтбокс портфолио: клик по плитке открывает фото крупно --- */
+  var tiles = Array.prototype.slice.call(
+    document.querySelectorAll('[data-portfolio] .work')
+  ).filter(function (w) { return w.querySelector('.photo__img'); });
+
+  if (tiles.length) {
+    var lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Просмотр фотографии');
+    lb.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Закрыть">✕</button>' +
+      '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Предыдущее">‹</button>' +
+      '<img class="lightbox__img" alt="">' +
+      '<button class="lightbox__btn lightbox__next" type="button" aria-label="Следующее">›</button>' +
+      '<p class="lightbox__cap"></p>';
+    document.body.appendChild(lb);
+
+    var lbImg = lb.querySelector('.lightbox__img');
+    var lbCap = lb.querySelector('.lightbox__cap');
+    var cur = 0;
+
+    var show = function (i) {
+      cur = (i + tiles.length) % tiles.length;
+      var img = tiles[cur].querySelector('.photo__img');
+      var cap = tiles[cur].querySelector('.work__cap');
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || '';
+      lbCap.textContent = cap ? cap.textContent.trim() : (img.alt || '');
+    };
+    var open = function (i) { show(i); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
+    var close = function () { lb.classList.remove('is-open'); document.body.style.overflow = ''; };
+
+    tiles.forEach(function (w, i) {
+      w.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(i);
+      });
+    });
+
+    lb.querySelector('.lightbox__close').addEventListener('click', close);
+    lb.querySelector('.lightbox__prev').addEventListener('click', function (e) { e.stopPropagation(); show(cur - 1); });
+    lb.querySelector('.lightbox__next').addEventListener('click', function (e) { e.stopPropagation(); show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(cur - 1);
+      else if (e.key === 'ArrowRight') show(cur + 1);
+    });
+  }
+
   /* --- Фильтр каталога образцов по производителю (материалы) --- */
   var swWrap = document.querySelector('[data-swatch]');
   if (swWrap) {
