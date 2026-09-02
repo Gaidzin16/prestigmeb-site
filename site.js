@@ -68,6 +68,7 @@
         var okM = curMat === 'all' || w.dataset.material === curMat;
         w.classList.toggle('is-hidden', !(okT && okM));
       });
+      if (typeof updateMore === 'function') updateMore();
     };
 
     if (typeWrap) typeWrap.querySelectorAll('button').forEach(function (b) {
@@ -91,15 +92,24 @@
     });
   }
 
-  /* --- «Показать ещё»: раскрывает свёрнутые плитки порциями --- */
+  /* --- «Показать ещё»: раскрывает по 12 плиток, подходящих под текущий фильтр --- */
   var moreBtn = document.querySelector('[data-load-more]');
+  var scope = pgrid || document;
+  var updateMore = function () {
+    if (!moreBtn) return;
+    var rest = scope.querySelectorAll('.is-collapsed:not(.is-hidden)').length;
+    moreBtn.style.display = rest ? '' : 'none';
+  };
   if (moreBtn) {
-    var scope = pgrid || document;
     moreBtn.addEventListener('click', function () {
-      var hidden = scope.querySelectorAll('.is-collapsed');
-      Array.prototype.slice.call(hidden, 0, 8).forEach(function (el) { el.classList.remove('is-collapsed'); });
-      if (!scope.querySelectorAll('.is-collapsed').length) moreBtn.parentNode.removeChild(moreBtn);
+      var matching = Array.prototype.filter.call(
+        scope.querySelectorAll('.is-collapsed'),
+        function (el) { return !el.classList.contains('is-hidden'); }
+      );
+      matching.slice(0, 12).forEach(function (el) { el.classList.remove('is-collapsed'); });
+      updateMore();
     });
+    updateMore();
   }
 
   /* --- Свёрнутый каталог RAL: кнопка «Показать все» / «Свернуть» --- */
