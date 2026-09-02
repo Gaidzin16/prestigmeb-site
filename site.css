@@ -253,7 +253,14 @@ img { max-width: 100%; display: block; }
 .slider__slide .photo__img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .slider--hero .slider__viewport { aspect-ratio: 4 / 3; }
 .slider--works { margin-top: var(--space-lg); }
-.slider--works .slider__viewport { aspect-ratio: 3 / 2; }
+/* Фото работ — телефонные снимки разной ориентации (в основном вертикальные).
+   Показываем целиком (contain) в компактной квадратной рамке-паспарту, без «зума». */
+.slider--works .slider__viewport {
+  aspect-ratio: 1 / 1; max-width: 640px; margin-inline: auto;
+  background: linear-gradient(135deg, var(--color-paper-3), var(--color-paper-2));
+}
+.slider--works .slider__slide .photo { background: transparent; }
+.slider--works .slider__slide .photo__img { object-fit: contain; }
 
 .slider__arrow {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
