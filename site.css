@@ -694,7 +694,8 @@ img { max-width: 100%; display: block; }
 .work__cap b { color: var(--color-ink); font-weight: 600; }
 .work:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
 
-.load-more { margin-top: var(--space-xl); text-align: center; }
+.load-more { margin-top: var(--space-xl); display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
+.load-more [hidden] { display: none; }
 
 /* ---------- Карточка проекта (Record / Spec-sheet) ---------- */
 

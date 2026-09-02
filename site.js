@@ -55,61 +55,46 @@
     onScroll();
   }
 
-  /* --- Фильтр портфолио: тип (сквозной) + материал (только у кухонь) --- */
+  /* --- Портфолио: фильтр по типу + постраничный показ (старт 4, шаг +4,
+         «Показать все фото» — со второго нажатия «Показать ещё») --- */
   var pgrid = document.querySelector('[data-portfolio]');
   if (pgrid) {
     var typeWrap = document.querySelector('[data-type-filter]');
-    var subWrap = document.querySelector('[data-material-filter]');
-    var curType = 'all', curMat = 'all';
+    var moreBtn = document.querySelector('[data-load-more]');
+    var allBtn = document.querySelector('[data-load-all]');
+    var BASE = 4, STEP = 4;
+    var curType = 'all', shown = BASE;
+    var works = Array.prototype.slice.call(pgrid.querySelectorAll('[data-work]'));
 
-    var apply = function () {
-      pgrid.querySelectorAll('[data-work]').forEach(function (w) {
-        var okT = curType === 'all' || w.dataset.type === curType;
-        var okM = curMat === 'all' || w.dataset.material === curMat;
-        w.classList.toggle('is-hidden', !(okT && okM));
+    var render = function () {
+      var matched = 0;
+      works.forEach(function (w) {
+        var ok = curType === 'all' || w.dataset.type === curType;
+        w.classList.toggle('is-hidden', !ok);
+        if (ok) {
+          matched++;
+          w.classList.toggle('is-collapsed', matched > shown);
+        } else {
+          w.classList.remove('is-collapsed');
+        }
       });
-      if (typeof updateMore === 'function') updateMore();
+      var remaining = matched - shown;
+      if (moreBtn) moreBtn.hidden = remaining <= 0;
+      if (allBtn) allBtn.hidden = !(remaining > 0 && shown >= BASE + 2 * STEP);
     };
 
     if (typeWrap) typeWrap.querySelectorAll('button').forEach(function (b) {
       b.addEventListener('click', function () {
-        curType = b.dataset.type; curMat = 'all';
+        curType = b.dataset.type; shown = BASE;
         typeWrap.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        if (subWrap) {
-          subWrap.classList.toggle('is-hidden', curType !== 'kuhni');
-          subWrap.querySelectorAll('button').forEach(function (x, i) { x.setAttribute('aria-pressed', String(i === 0)); });
-        }
-        apply();
+        render();
       });
     });
 
-    if (subWrap) subWrap.querySelectorAll('button').forEach(function (b) {
-      b.addEventListener('click', function () {
-        curMat = b.dataset.material;
-        subWrap.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        apply();
-      });
-    });
-  }
+    if (moreBtn) moreBtn.addEventListener('click', function () { shown += STEP; render(); });
+    if (allBtn) allBtn.addEventListener('click', function () { shown = Infinity; render(); });
 
-  /* --- «Показать ещё»: раскрывает по 12 плиток, подходящих под текущий фильтр --- */
-  var moreBtn = document.querySelector('[data-load-more]');
-  var scope = pgrid || document;
-  var updateMore = function () {
-    if (!moreBtn) return;
-    var rest = scope.querySelectorAll('.is-collapsed:not(.is-hidden)').length;
-    moreBtn.style.display = rest ? '' : 'none';
-  };
-  if (moreBtn) {
-    moreBtn.addEventListener('click', function () {
-      var matching = Array.prototype.filter.call(
-        scope.querySelectorAll('.is-collapsed'),
-        function (el) { return !el.classList.contains('is-hidden'); }
-      );
-      matching.slice(0, 12).forEach(function (el) { el.classList.remove('is-collapsed'); });
-      updateMore();
-    });
-    updateMore();
+    render();
   }
 
   /* --- Свёрнутый каталог RAL: кнопка «Показать все» / «Свернуть» --- */
