@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- Hallmark · page: категория · macrostructure: Long Document (обложка → материалы → работы → проза → FAQ)
+<!-- Hallmark · page: категория · macrostructure: Long Document (обложка → типы → материалы → работы → проза → FAQ)
      shares design.md system · nav N6 · footer Ft1 · section heads S2 · tokens tokens.css
-     Пример шаблона — «Кухни». Один шаблон на пять категорий. -->
+     Инстанс шаблона категории — «Шкафы-купе». Материалы как у кухонь, кроме столешницы. -->
 <html lang="ru" data-bg="greige">
 <head>
 <meta charset="utf-8">
@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-<title>Кухни на заказ в Дзержинске по вашим размерам — салон «Престиж»</title>
-<meta name="description" content="Изготовим кухню по индивидуальным размерам на собственном производстве. Фасады из плёнки ПВХ, пластика, эмали и массива. Бесплатный замер в Дзержинске и области, рассрочка на 8 месяцев без банка.">
+<title>Шкафы-купе на заказ в Дзержинске по индивидуальным размерам — салон «Престиж»</title>
+<meta name="description" content="Встроенные, угловые, корпусные и радиусные шкафы-купе по вашим размерам. Собственное производство в Дзержинске, бесплатный замер, рассрочка на 8 месяцев без банка.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
@@ -36,8 +36,8 @@
   <nav class="mastnav" aria-label="Основное меню">
     <div class="wrap">
       <ul class="mastnav__list">
-        <li><a href="category.html" aria-current="page">Кухни</a></li>
-        <li><a href="shkafy.html">Шкафы-купе</a></li>
+        <li><a href="category.html">Кухни</a></li>
+        <li><a href="shkafy.html" aria-current="page">Шкафы-купе</a></li>
         <li><a href="category.html">Детские</a></li>
         <li><a href="category.html">Прихожие</a></li>
         <li><a href="portfolio.html">Портфолио</a></li>
@@ -55,7 +55,7 @@
   <nav class="wrap crumbs" aria-label="Хлебные крошки">
     <ol>
       <li><a href="home.html">Главная</a></li>
-      <li aria-current="page">Кухни</li>
+      <li aria-current="page">Шкафы-купе</li>
     </ol>
   </nav>
 
@@ -63,13 +63,13 @@
   <section class="wrap pagehead" aria-labelledby="cat-title">
     <div class="pagehead__grid">
       <div class="rise">
-        <h1 id="cat-title">Кухни на заказ по вашим размерам</h1>
-        <p class="pagehead__lead">Готовых кухонь у нас нет — каждая делается по фактическим размерам
-          вашего помещения. Современные и классические, прямые и угловые, для просторных кухонь
-          и для хрущёвок. Замер и дизайн-проект бесплатные.</p>
+        <h1 id="cat-title">Шкафы-купе на заказ по индивидуальным размерам</h1>
+        <p class="pagehead__lead">Шкафы в прихожую, гостиную, спальню, детскую и гардеробную.
+          Две, три или четыре раздвижные двери — сколько нужно под ваш проём. Встроенные,
+          угловые, корпусные и радиусные. Замер и дизайн-проект бесплатные.</p>
         <div class="pagehead__cta">
           <a class="btn" href="#form">Вызвать замерщика бесплатно</a>
-          <a class="tlink" href="#works">Работы по кухням <span class="arw">→</span></a>
+          <a class="tlink" href="#works">Работы по шкафам <span class="arw">→</span></a>
         </div>
         <!-- 3 · Факты строкой -->
         <ul class="facts">
@@ -80,7 +80,7 @@
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ, классические фасады, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе на заказ по индивидуальным размерам, Дзержинск" loading="eager" decoding="async">
       </div>
     </div>
   </section>
@@ -92,13 +92,45 @@
     </div>
   </section>
 
-  <!-- 5 · Материалы фасадов (только у кухонь) -->
+  <!-- 4b · Типы шкафов -->
+  <section class="section" aria-labelledby="types-title">
+    <div class="wrap">
+      <p class="section__kicker">Конструкция</p>
+      <h2 class="section__title" id="types-title">Какие бывают шкафы-купе</h2>
+      <p class="section__lead measure">Подберём тип под ваше помещение и то, что вы храните.
+        Наполнение собираем по факту, а не по типовой схеме.</p>
+      <div class="matgrid">
+        <div class="matcard">
+          <div class="matcard__name">Встроенные</div>
+          <p class="matcard__desc">Без собственных стенок — ставятся от стены до стены или в нишу.
+            Дешевле корпусных и вмещают больше.</p>
+        </div>
+        <div class="matcard">
+          <div class="matcard__name">Угловые</div>
+          <p class="matcard__desc">Выручают в маленьких и нестандартных помещениях, где обычный
+            шкаф просто не встаёт.</p>
+        </div>
+        <div class="matcard">
+          <div class="matcard__name">Корпусные</div>
+          <p class="matcard__desc">Отдельно стоящие. Их можно передвинуть, разобрать и перевезти
+            при переезде.</p>
+        </div>
+        <div class="matcard">
+          <div class="matcard__name">Радиусные</div>
+          <p class="matcard__desc">Нестандартной формы, с гнутыми фасадами — вписываются туда,
+            где прямой шкаф выглядит громоздко.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Материалы дверей и корпуса (как у кухонь, кроме столешницы) -->
   <section class="section" aria-labelledby="mat-title">
     <div class="wrap">
-      <p class="section__kicker">Фасады</p>
-      <h2 class="section__title" id="mat-title">Из чего делаем фасады</h2>
-      <p class="section__lead measure">Шесть материалов — от самого доступного до массива дерева.
-        На каждой карточке коротко, полный разбор — на отдельной странице.</p>
+      <p class="section__kicker">Двери и корпус</p>
+      <h2 class="section__title" id="mat-title">Из чего делаем двери и корпус</h2>
+      <p class="section__lead measure">Те же материалы, что и на кухонных фасадах — от самого
+        доступного до массива дерева. На каждой карточке коротко.</p>
       <div class="matgrid">
         <a class="matcard" href="#">
           <div class="matcard__name">Плёнка ПВХ</div>
@@ -133,13 +165,13 @@
         <a class="matcard" href="#">
           <div class="matcard__name">Рамочные</div>
           <p class="matcard__desc">В рамку из МДФ вставляется пластик, стекло или ротанг. Выразительный
-            фасад, не похожий на типовую кухню.</p>
+            фасад, не похожий на типовую корпусную мебель.</p>
           <span class="matcard__more">Подробнее →</span>
         </a>
       </div>
       <p style="margin-top:var(--space-md);color:var(--color-ink-2);font-size:var(--text-sm)">
-        Отдельно, без своей страницы: <b>фасады со стеклом</b> — матовое, тонированное или зеркало,
-        с фацетом или пескоструйным рисунком.</p>
+        Для дверей-купе отдельно: <b>стекло и зеркало</b> — бесцветное, матовое или тонированное,
+        с фацетом, пескоструйным рисунком или фотопечатью по вашему макету.</p>
     </div>
   </section>
 
@@ -154,7 +186,7 @@
       <p class="swatch-note">Оттенок на экране передаётся приблизительно и отличается от эмали —
         <b>окончательный цвет выбирайте по вееру-образцу в салоне на Грибоедова</b>.</p>
 
-      <p class="ral-sub ral-sub--first">Ходовые цвета для кухонь</p>
+      <p class="ral-sub ral-sub--first">Ходовые цвета</p>
       <div class="swatches swatches--pop">
         <div class="swatch swatch--ral swatch--pop" title="RAL 9010 · Чисто-белый"><div class="swatch__chip" style="background:#F1EDE1"></div><span class="swatch__cap"><b>RAL 9010</b>Чисто-белый</span></div>
         <div class="swatch swatch--ral swatch--pop" title="RAL 9003 · Сигнальный белый"><div class="swatch__chip" style="background:#ECECE7"></div><span class="swatch__cap"><b>RAL 9003</b>Сигнальный белый</span></div>
@@ -415,48 +447,45 @@
   <!-- 6 · Работы этой категории -->
   <section class="section" id="works" aria-labelledby="works-title">
     <div class="wrap">
-      <h2 class="section__title" id="works-title">Кухни, которые мы сделали</h2>
+      <h2 class="section__title" id="works-title">Шкафы, которые мы сделали</h2>
       <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
         Дзержинска и области.</p>
       <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белым мрамором на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/kuhnya-belaya-modern.jpg" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/kuhnya-temno-sinyaya.jpg" alt="Тёмно-синяя кухня с белой столешницей на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
+        <div class="photo"><img class="photo__img" src="img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div>
+        <div class="photo"><img class="photo__img" src="img/vk-shkaf-01.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
+        <div class="photo"><img class="photo__img" src="img/vk-shkaf-05.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
+        <div class="photo"><img class="photo__img" src="img/vk-shkaf-08.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
       </div>
-      <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="portfolio.html">Все работы по кухням</a></p>
+      <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="portfolio.html">Все работы по шкафам</a></p>
     </div>
   </section>
 
   <!-- 7 · Текст категории -->
   <section class="section" aria-labelledby="about-title">
     <div class="wrap">
-      <h2 class="section__title" id="about-title">Из чего состоит кухня</h2>
+      <h2 class="section__title" id="about-title">Из чего состоит шкаф-купе</h2>
       <div class="prose">
         <h3>Корпус</h3>
-        <p>Основа кухни, скрытая за фасадами: навесные и напольные шкафы, ящики. Самый экономичный
-          вариант — ламинированная древесная плита (ЛДСП). Мы используем ЛДСП австрийского
-          и российского производства, класс экологичности E1. Корпус можно сделать из МДФ или массива —
-          это экологичнее, но дороже в два-три раза.</p>
-        <h3>Столешница</h3>
-        <h4>Пластик</h4>
-        <p>Основа из древесно-стружечной плиты, покрытая слоистым пластиком высокого давления.
-          Практичный и недорогой вариант.</p>
-        <h4>Жидкий камень</h4>
-        <p>На основу напыляется смесь полимерной смолы, минерального наполнителя и пигментов.
-          Долговечнее пластика, спокойно переносит удары и горячее, и главное — на поверхности нет швов.
-          Оттенок и текстура выбираются по каталогу.</p>
-        <h3>Стеновая панель</h3>
-        <p>Фартук оформляем панелями из МДФ или стекла. Любой цвет или рисунок, можно напечатать
-          изображение из нашего каталога или из фотобанка.</p>
+        <p>Основа шкафа: стенки, полки, ящики. Самый экономичный вариант — ламинированная
+          древесная плита (ЛДСП). Мы используем ЛДСП австрийского и российского производства,
+          класс экологичности E1. Корпус можно сделать из МДФ или массива — это экологичнее,
+          но дороже в два-три раза. У встроенных шкафов роль стенок берут на себя стены и потолок
+          помещения — так дешевле и вместительнее.</p>
+        <h3>Двери</h3>
+        <p>Раздвижные двери-купе собираем из ЛДСП, стекла и зеркала в любой комбинации.
+          Стекло — бесцветное, матовое или тонированное, с фацетом, пескоструйным рисунком
+          или фотопечатью по вашему макету. Эмалевые вставки красим по каталогу RAL Classic
+          (палитра — выше). Две, три или четыре двери — под ширину вашего проёма.</p>
+        <h3>Наполнение</h3>
+        <p>Полки, штанга для одежды, отсеки для обуви и головных уборов, выдвижные ящики,
+          брючницы и корзины. Собираем под то, что вы реально храните, а не по типовой схеме.</p>
         <h3>Фурнитура</h3>
         <ul>
-          <li><strong>Ручки</strong> — под бронзу, золото, серебро, хром, медь, латунь или никель.</li>
-          <li><strong>Выдвижные системы</strong> — корзины и ящики, волшебные уголки, бутылочницы.</li>
-          <li><strong>Механизмы</strong> — подъёмные, петли с доводчиком, поворотные, направляющие.</li>
-          <li><strong>Сушилки</strong> — для верхних, нижних и угловых шкафов.</li>
-          <li><strong>Рейлинг</strong> — перекладина на фартук, опоры для барной стойки.</li>
-          <li><strong>Подсветка</strong> — споты и светодиодные ленты.</li>
+          <li><strong>Раздвижные системы</strong> — направляющие, ролики и уплотнители,
+            подобранные под вес и высоту дверей.</li>
+          <li><strong>Механизмы</strong> — доводчики плавного закрытия, стопоры, петли.</li>
+          <li><strong>Ручки и профиль</strong> — под бронзу, золото, серебро, хром или в цвет корпуса.</li>
+          <li><strong>Подсветка</strong> — споты и светодиодные ленты по периметру и на полках.</li>
         </ul>
       </div>
     </div>
@@ -484,23 +513,23 @@
       <h2 class="section__title" id="faq-title">Частые вопросы</h2>
       <div class="faq">
         <details class="faq__item" open>
-          <summary>У меня нестандартный размер кухни после ремонта — сделаете по моим размерам?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Все кухни изготавливаются по фактическим размерам помещения. Готовой мебели
-            у нас нет в принципе, так что кухня подойдёт по размеру гарантированно.</p>
+          <summary>Сделаете шкаф по нестандартным размерам — от стены до стены, в нишу?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Да, все шкафы изготавливаются по фактическим размерам помещения. Готовых
+            шкафов у нас нет — встроенный шкаф встанет в проём или нишу точно по месту.</p>
         </details>
         <details class="faq__item">
-          <summary>Сколько времени займёт сборка дома?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Обычно один день. Модули собираем на производстве и привозим кухню частично
-            собранной — у вас на месте остаётся закрепить модули и подогнать по факту.</p>
+          <summary>Можно собрать шкаф самостоятельно?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Да. Многие модули мы привозим уже собранными, так что сборка своими
+            силами реальна. Но сборку можно заказать и у нас.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Сколько будет стоить шкаф-купе от стены до стены — 3 метра, высота 2,5?<span class="faq__mark" aria-hidden="true">+</span></summary>
+          <p class="faq__a">Зависит от материала корпуса, дверей и наполнения. Точную цену назовём
+            после замера — он бесплатный и ни к чему вас не обязывает.</p>
         </details>
         <details class="faq__item">
           <summary>Сколько стоит замер?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Замер, подбор вариантов дизайна и расчёт кухни бесплатны.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Что если что-то сломается после гарантии?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Новую деталь можно заказать у нас на производстве — мы делаем мебель сами
-            и не зависим от поставок готовых модулей.</p>
+          <p class="faq__a">Замер, подбор вариантов дизайна и расчёт шкафа бесплатны.</p>
         </details>
       </div>
     </div>
@@ -509,7 +538,7 @@
   <!-- 10 · Форма заявки (сквозная) -->
   <section class="section leadform" id="form" aria-labelledby="form-title">
     <div class="wrap">
-      <h2 class="section__title" id="form-title">Рассчитаем вашу кухню бесплатно</h2>
+      <h2 class="section__title" id="form-title">Рассчитаем ваш шкаф бесплатно</h2>
       <div class="form-grid">
         <form class="form" novalidate>
           <div class="field">
@@ -545,9 +574,9 @@
     <div class="wrap">
       <h2 class="section__title" id="other-title">Другие категории</h2>
       <div class="cats">
-        <a class="cat" href="shkafy.html">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div></div>
-          <div class="cat__body"><h3 class="cat__name">Шкафы-купе</h3><p class="cat__desc">Встроенные, угловые, радиусные</p></div>
+        <a class="cat" href="category.html">
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ, классические фасады" loading="lazy" decoding="async"></div></div>
+          <div class="cat__body"><h3 class="cat__name">Кухни</h3><p class="cat__desc">Прямые, угловые, классика и модерн</p></div>
         </a>
         <a class="cat" href="category.html">
           <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/detskaya-krovat.jpg" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
