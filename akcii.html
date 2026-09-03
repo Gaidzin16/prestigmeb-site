@@ -1,14 +1,13 @@
 <!doctype html>
-<!-- Hallmark · page: статичная · macrostructure: Letter (крошки → H1+лид → одноколоночная проза → форма → ссылки в сторону)
+<!-- Hallmark · page: акции (статичная) · macrostructure: Letter (крошки → H1+лид → сетка карточек-акций → постоянное предложение → форма → ссылки в сторону)
      shares design.md system · nav N6 · footer Ft1 · tokens tokens.css
-     Пример шаблона — «Рассрочка». Один шаблон на rassrochka, kak-rabotaem, garantiya,
-     o-kompanii, otzyvy, akcii, policy, soglasie. -->
+     Экземпляр статичного шаблона. Акции — карточки .cat (пока плейсхолдеры под фото/тексты заказчика). -->
 <html lang="ru" data-bg="greige">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Рассрочка на мебель на 8 месяцев без банка — Дзержинск, салон «Престиж»</title>
-<meta name="description" content="Даём рассрочку сами: 8 месяцев, без банка, без процентов и переплаты. Первый взнос 30%, договор оформляется в салоне. Кухни, шкафы-купе и мебель на заказ в Дзержинске.">
+<title>Акции и скидки на мебель — салон «Престиж», Дзержинск</title>
+<meta name="description" content="Действующие акции салона «Престиж»: мойка из керамогранита в подарок при заказе кухни и рассрочка на 8 месяцев без банка и без процентов. Дзержинск.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Marck+Script&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
@@ -39,8 +38,8 @@
         <li><a href="category.html">Детские</a></li>
         <li><a href="category.html">Прихожие</a></li>
         <li><a href="portfolio.html">Портфолио</a></li>
-        <li><a href="akcii.html">Акции</a></li>
-        <li><a href="static.html" aria-current="page">Рассрочка</a></li>
+        <li><a href="akcii.html" aria-current="page">Акции</a></li>
+        <li><a href="static.html">Рассрочка</a></li>
         <li><a href="material.html">Ещё ▾</a></li>
       </ul>
     </div>
@@ -53,71 +52,41 @@
   <nav class="wrap crumbs" aria-label="Хлебные крошки">
     <ol>
       <li><a href="home.html">Главная</a></li>
-      <li aria-current="page">Рассрочка</li>
+      <li aria-current="page">Акции</li>
     </ol>
   </nav>
 
   <!-- 2 · Заголовок и лид -->
   <section class="wrap section" style="border-top:0" aria-labelledby="art-title">
     <div class="article rise">
-      <h1 class="section__title" id="art-title" style="max-width:22ch">Рассрочка на 8 месяцев без банка</h1>
-      <p class="article__lead">Мебель вы получаете сразу, а платите частями восемь месяцев.
-        Без банка, без процентов и без переплаты — сколько стоит мебель, столько вы и заплатите.</p>
+      <h1 class="section__title" id="art-title" style="max-width:16ch">Акции</h1>
+      <p class="article__lead">Что действует прямо сейчас. По любой акции оставьте заявку —
+        менеджер подтвердит условия и запишет на бесплатный замер.</p>
 
-      <!-- 3 · Тело страницы -->
-      <table class="spec-table">
-        <tbody>
-          <tr><th scope="row">Срок</th><td>8 месяцев</td></tr>
-          <tr><th scope="row">Первый взнос</th><td>30% <span style="color:var(--color-muted)">— уточняем у администратора</span></td></tr>
-          <tr><th scope="row">Проценты</th><td>Нет</td></tr>
-          <tr><th scope="row">Переплата</th><td>Нет</td></tr>
-          <tr><th scope="row">Участие банка</th><td>Не требуется</td></tr>
-          <tr><th scope="row">Гарантия</th><td>Та же, что при оплате целиком</td></tr>
-        </tbody>
-      </table>
-
-      <div class="prose" style="margin-top:var(--space-xl)">
-        <h3>Как это работает</h3>
-        <p>Рассрочку даёт сама компания, а не банк. Поэтому нет заявки, нет одобрения, нет проверки
-          кредитной истории и нет отказа из-за просрочки пятилетней давности по чужому кредиту.</p>
-        <p>Договор оформляется в салоне на Грибоедова, там же вносится первый взнос. Платежи приносите
-          в офис или переводите — как удобнее.</p>
-        <h3>Что нужно от вас</h3>
-        <p>Паспорт и первый взнос. <span style="color:var(--color-muted)">Полный список уточняем
-          у администратора.</span></p>
+      <!-- 3 · Сетка акций -->
+      <div class="cats" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:52rem" role="list">
+        <a class="cat" href="#form" role="listitem">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">фото акции</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Мойка из керамогранита в подарок</h3><p class="cat__desc">При заказе любой кухни дарим мойку из керамогранита. Без ограничения по сроку.</p></div>
+        </a>
+        <a class="cat" href="#form" role="listitem">
+          <div class="cat__photo"><div class="photo"><span class="photo__label">фото акции</span></div></div>
+          <div class="cat__body"><h3 class="cat__name">Акция месяца</h3><p class="cat__desc">Условия уточняются — добавим текст и фото, как только заказчик пришлёт акцию из VK-группы.</p></div>
+        </a>
       </div>
 
-      <h3 class="prose" style="max-width:none;margin-top:var(--space-xl);font-size:var(--text-lg)">Порядок</h3>
-      <ol class="steps-list">
-        <li>Бесплатный замер и дизайн-проект</li>
-        <li>Договор в салоне</li>
-        <li>Первый взнос 30%</li>
-        <li>Изготовление и установка</li>
-        <li>Восемь равных платежей</li>
-      </ol>
-
-      <!-- Вопрос-ответ -->
-      <h3 class="prose" style="max-width:none;margin-top:var(--space-xl);font-size:var(--text-lg)">Частые вопросы</h3>
-      <div class="faq" style="margin-top:var(--space-sm)">
-        <details class="faq__item" open>
-          <summary>Гарантия при рассрочке такая же?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Да. Условия гарантии не зависят от того, платите вы сразу или частями.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Можно закрыть раньше?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Уточняем у администратора — ответ добавим, как только заказчик подтвердит условие.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Что если просрочить платёж?<span class="faq__mark" aria-hidden="true">+</span></summary>
-          <p class="faq__a">Уточняем у администратора — ответ добавим, как только заказчик подтвердит условие.</p>
-        </details>
+      <!-- Постоянное предложение -->
+      <div class="prose" style="margin-top:var(--space-xl)">
+        <h3>Постоянное предложение</h3>
+        <p><strong>Рассрочка на 8 месяцев</strong> — без банка, без процентов и без переплаты.
+          Первый взнос 30%, договор оформляется в салоне. Действует всегда и суммируется с акциями выше.</p>
       </div>
 
       <!-- 5 · Ссылки в сторону -->
       <div class="sidelinks">
-        <a class="tlink" href="#">Как мы работаем <span class="arw">→</span></a>
-        <a class="tlink" href="#">Гарантия 18 месяцев <span class="arw">→</span></a>
+        <a class="tlink" href="static.html">Условия рассрочки <span class="arw">→</span></a>
         <a class="tlink" href="portfolio.html">Наши работы <span class="arw">→</span></a>
+        <a class="tlink" href="home.html#trust-title">Гарантия 18 месяцев <span class="arw">→</span></a>
       </div>
     </div>
   </section>
@@ -125,7 +94,7 @@
   <!-- 4 · Форма заявки -->
   <section class="section leadform" id="form" aria-labelledby="form-title">
     <div class="wrap">
-      <h2 class="section__title" id="form-title">Оформить заказ в рассрочку</h2>
+      <h2 class="section__title" id="form-title">Оставить заявку по акции</h2>
       <div class="form-grid">
         <form class="form" novalidate>
           <div class="field">
@@ -137,7 +106,7 @@
             <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
           </div>
           <div class="field">
-            <label for="f-comment">Комментарий <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <label for="f-comment">Какая акция интересует <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
             <textarea id="f-comment" name="comment" rows="3"></textarea>
           </div>
           <label class="consent">
@@ -147,7 +116,7 @@
           <button class="btn" type="submit">Отправить заявку</button>
         </form>
         <aside class="form-aside">
-          <p>Оставьте заявку — расскажем про условия рассрочки под ваш заказ и запишем на бесплатный замер.</p>
+          <p>Оставьте заявку — подтвердим условия акции под ваш заказ и запишем на бесплатный замер.</p>
           <p>Заявка уходит менеджеру на почту и в Telegram одновременно, поэтому не потеряется.</p>
         </aside>
       </div>
