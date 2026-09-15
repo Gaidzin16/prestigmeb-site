@@ -190,6 +190,37 @@ img { max-width: 100%; display: block; }
 .photo__label b { display: block; color: var(--color-ink-2); font-weight: 600; margin-bottom: 2px; }
 .hero__photo { aspect-ratio: 4 / 3; }
 
+/* Первый экран — фоновый декор: мебельные эскизы + тёплое свечение */
+.hero-band { position: relative; overflow: clip; }
+.hero-band > .hero { position: relative; z-index: 1; }
+.hero__fx { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero__defs { position: absolute; width: 0; height: 0; }
+.hero__glow {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 90% at 20% 6%, oklch(97.5% 0.014 76) 0%, transparent 55%),
+    radial-gradient(90% 80% at 100% 100%, oklch(90% 0.012 60 / 0.6) 0%, transparent 60%);
+}
+.hero__sketch { position: absolute; color: var(--color-ink); height: auto; }
+.hero__sketch use {
+  fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+/* верхняя полоса (над контентом) */
+.hero__sketch--wardrobe { left: 1%;    top: 5%;  width: clamp(52px, 7vw, 78px);   opacity: 0.13; stroke-width: 2.0; transform: rotate(-3deg); }
+.hero__sketch--shelf    { left: 27%;   top: 1%;  width: clamp(64px, 8vw, 96px);   opacity: 0.12; stroke-width: 2.0; transform: rotate(2deg); }
+.hero__sketch--lamp     { right: 34%;  top: 3%;  width: clamp(44px, 6vw, 64px);   opacity: 0.15; stroke-width: 2.2; }
+.hero__sketch--chair    { right: 21%;  top: 1%;  width: clamp(54px, 7vw, 78px);   opacity: 0.14; stroke-width: 2.2; transform: rotate(4deg); }
+.hero__sketch--ruler    { right: 2%;   top: 12%; width: clamp(90px, 11vw, 140px); opacity: 0.18; stroke-width: 2.2; transform: rotate(-4deg); }
+/* нижний ряд (приподнят и сдвинут правее, целиком в кадре) */
+.hero__sketch--kitchen  { left: 3%;    bottom: 5%; width: clamp(200px, 22vw, 320px); opacity: 0.11; stroke-width: 1.7; transform: rotate(2deg); }
+.hero__sketch--dresser  { left: 26%;   bottom: 6%; width: clamp(88px, 11vw, 120px);  opacity: 0.11; stroke-width: 2.0; transform: rotate(2deg); }
+.hero__sketch--sofa     { left: 40%;   bottom: 5%; width: clamp(116px, 14vw, 164px); opacity: 0.11; stroke-width: 2.0; transform: rotate(-2deg); }
+@media (max-width: 820px) {
+  .hero__sketch { display: none; }
+  .hero__glow { opacity: 0.6; }
+}
+
 /* ---------- 2 · Рассрочка ---------- */
 
 .rassrochka { background: var(--color-paper-2); }
