@@ -655,8 +655,8 @@ img { max-width: 100%; display: block; }
   background: var(--color-paper); padding: var(--space-md);
   transition: border-color var(--dur-short) var(--ease-out);
 }
-.matcard:hover { border-color: var(--color-ink-2); }
-.matcard:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+a.matcard:hover { border-color: var(--color-ink-2); }
+a.matcard:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
 .matcard__name { font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; }
 .matcard__desc { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: 0.4rem; }
 .matcard__more { margin-top: auto; padding-top: var(--space-sm); font-size: var(--text-sm); font-weight: 600; color: var(--color-accent); }
