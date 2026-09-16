@@ -468,9 +468,9 @@ img { max-width: 100%; display: block; }
 /* ---------- 10 · Контакты ---------- */
 
 .contacts-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-xl); margin-top: var(--space-lg); align-items: start; }
-.contacts dl { margin: 0; display: grid; gap: var(--space-md); }
+dl.contacts { margin: 0; display: grid; gap: var(--space-md); }
 .contacts dt { font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); }
-.contacts dd { margin: 0.15rem 0 0; font-size: var(--text-md); font-weight: 500; }
+.contacts dd { margin: 0.35rem 0 0; font-size: var(--text-md); font-weight: 500; line-height: 1.6; }
 .contacts dd a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule); }
 .contacts dd a:hover { border-color: var(--color-accent); color: var(--color-accent); }
 .contacts .map { aspect-ratio: 16 / 10; }
