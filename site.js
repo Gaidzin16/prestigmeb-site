@@ -1,5 +1,5 @@
 /* Hallmark · Престиж — общее поведение страниц второго уровня.
- * Главная (home.html) имеет собственный инлайн-скрипт; здесь — категория,
+ * Главная (index.html) имеет собственный инлайн-скрипт; здесь — категория,
  * портфолио, карточка проекта, статика, материалы.
  * Всё опционально: код срабатывает только если соответствующий блок есть в DOM.
  */
@@ -225,10 +225,16 @@
     var lbCap = lb.querySelector('.lightbox__cap');
     var cur = 0;
 
+    /* Листаем только плитки, не скрытые фильтром */
+    var visible = function () {
+      var v = tiles.filter(function (w) { return !w.classList.contains('is-hidden'); });
+      return v.length ? v : tiles;
+    };
     var show = function (i) {
-      cur = (i + tiles.length) % tiles.length;
-      var img = tiles[cur].querySelector('.photo__img');
-      var cap = tiles[cur].querySelector('.work__cap');
+      var list = visible();
+      cur = (i + list.length) % list.length;
+      var img = list[cur].querySelector('.photo__img');
+      var cap = list[cur].querySelector('.work__cap');
       lbImg.src = img.currentSrc || img.src;
       lbImg.alt = img.alt || '';
       lbCap.textContent = cap ? cap.textContent.trim() : (img.alt || '');
@@ -239,7 +245,7 @@
     tiles.forEach(function (w, i) {
       w.addEventListener('click', function (e) {
         e.preventDefault();
-        open(i);
+        open(visible().indexOf(w));
       });
     });
 
