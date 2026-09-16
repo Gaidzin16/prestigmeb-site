@@ -1,0 +1,4 @@
+# Секреты и журнал заявок наружу не отдаём
+<FilesMatch "^(config\.php|config\.example\.php|leads\.log)$">
+  Require all denied
+</FilesMatch>

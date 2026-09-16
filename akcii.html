@@ -20,7 +20,7 @@
 <meta property="og:description" content="Действующие акции салона «Престиж»: мойка из керамогранита в подарок при заказе кухни и рассрочка на 8 месяцев без банка и без процентов. Дзержинск.">
 <meta property="og:image" content="https://prestigmeb.ru/img/akciya-kuhnya-100k.jpg">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="site.css?v=20260916">
+<link rel="stylesheet" href="site.css?v=20260916b">
 </head>
 <body>
 
@@ -116,7 +116,9 @@
     <div class="wrap">
       <h2 class="section__title" id="form-title">Оставить заявку по акции</h2>
       <div class="form-grid">
-        <form class="form" novalidate>
+        <form class="form" novalidate data-lead action="api/lead.php" method="post">
+          <input type="hidden" name="subject" value="Акции">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="field">
             <label for="f-name">Ваше имя</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -134,6 +136,7 @@
             <span>Согласен на обработку персональных данных в соответствии с <a href="policy.html">политикой</a>.</span>
           </label>
           <button class="btn" type="submit">Отправить заявку</button>
+          <p class="form__status" role="status" aria-live="polite" hidden></p>
         </form>
         <aside class="form-aside">
           <p>Оставьте заявку — подтвердим условия акции под ваш заказ и запишем на бесплатный замер.</p>
@@ -189,6 +192,6 @@
 <div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
 
 
-<script src="site.js?v=20260916"></script>
+<script src="site.js?v=20260916b"></script>
 </body>
 </html>

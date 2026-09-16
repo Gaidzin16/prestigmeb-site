@@ -456,6 +456,11 @@ img { max-width: 100%; display: block; }
 .consent input { margin-top: 0.2rem; accent-color: var(--color-accent); width: 1.05rem; height: 1.05rem; flex: none; }
 .consent a { color: var(--color-accent); }
 .form .btn { margin-top: var(--space-xs); justify-self: start; }
+.form__status { margin: 0; font-size: var(--text-sm); line-height: 1.5; }
+.form__status--error { color: var(--color-accent); }
+.form__status--ok { font-size: var(--text-base); font-weight: 600; }
+.form.is-sent > :not(.form__status) { display: none; }
+.field .is-invalid, .consent .is-invalid { border-color: var(--color-accent); outline: 1px solid var(--color-accent); }
 .form-aside { font-size: var(--text-base); color: var(--color-ink-2); }
 .form-aside p + p { margin-top: var(--space-md); }
 .form-aside .ask { margin-top: var(--space-md); }

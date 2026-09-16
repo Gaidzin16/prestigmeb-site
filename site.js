@@ -261,6 +261,72 @@
     });
   }
 
+  /* --- Формы заявок: проверка полей, отправка в api/lead.php, экран «Спасибо» --- */
+  var leadForms = document.querySelectorAll('form[data-lead]');
+  Array.prototype.forEach.call(leadForms, function (form) {
+    var status = form.querySelector('.form__status');
+    var btn = form.querySelector('button[type="submit"]');
+    var say = function (msg, kind) {
+      if (!status) return;
+      status.textContent = msg;
+      status.hidden = !msg;
+      status.className = 'form__status' + (kind ? ' form__status--' + kind : '');
+    };
+    var mark = function (el, bad) {
+      if (!el) return;
+      el.classList.toggle('is-invalid', !!bad);
+      el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.elements.name, phone = form.elements.phone, consent = form.elements.consent;
+      var digits = (phone.value || '').replace(/\D/g, '');
+      var errors = [];
+      mark(name, !name.value.trim()); if (!name.value.trim()) errors.push('Напишите, как к вам обращаться.');
+      mark(phone, digits.length < 10); if (digits.length < 10) errors.push('Проверьте номер телефона.');
+      mark(consent, !consent.checked); if (!consent.checked) errors.push('Нужно согласие на обработку данных.');
+      if (errors.length) { say(errors.join(' '), 'error'); (name.value.trim() ? (digits.length < 10 ? phone : consent) : name).focus(); return; }
+
+      var data = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+        comment: (form.elements.comment && form.elements.comment.value || '').trim(),
+        subject: (form.elements.subject && form.elements.subject.value) || '',
+        website: (form.elements.website && form.elements.website.value) || '',
+        consent: true,
+        page: location.href
+      };
+      /* Демо на GitHub Pages: сервера нет, честно предупреждаем */
+      if (/github\.io$/.test(location.hostname)) {
+        say('Это демо-версия сайта — отправка заявок заработает после переезда на хостинг. Пока звоните: +7 904 790-82-82', 'error');
+        return;
+      }
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Отправляем…';
+      say('', '');
+
+      fetch(form.getAttribute('action') || 'api/lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        return r.json().catch(function () { return { ok: false }; }).then(function (j) { return j; });
+      }).then(function (j) {
+        if (j && j.ok) {
+          form.classList.add('is-sent');
+          say('Спасибо, заявка принята. Перезвоним в рабочее время — Пн–Пт с 10:00 до 19:00.', 'ok');
+          form.reset();
+        } else {
+          say((j && j.error) || 'Не получилось отправить. Позвоните нам: +7 904 790-82-82', 'error');
+          btn.disabled = false; btn.textContent = label;
+        }
+      }).catch(function () {
+        say('Не получилось отправить. Позвоните нам: +7 904 790-82-82', 'error');
+        btn.disabled = false; btn.textContent = label;
+      });
+    });
+  });
+
   /* --- Фильтр каталога образцов по производителю (материалы) --- */
   var swWrap = document.querySelector('[data-swatch]');
   if (swWrap) {
