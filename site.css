@@ -644,7 +644,6 @@ img { max-width: 100%; display: block; }
 .pagehead__cta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); align-items: center; }
 
 /* блок «место под цены» — скрыт, пока нет вилок */
-.price-slot { display: none; }
 
 /* ---------- Карточки материалов фасадов ---------- */
 
