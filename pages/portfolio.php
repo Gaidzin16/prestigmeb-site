@@ -1,0 +1,169 @@
+<?php
+/* Hallmark · page: портфолио · macrostructure: Catalogue Grid (счётчик → фильтр-чипсы → сетка → показать ещё)
+     shares design.md system · nav N6 · footer Ft1 · tokens tokens.css
+     Ось — тип изделия; материал — под-фильтр только у кухонь. */
+$page += [
+  'title' => 'Наши работы — кухни и мебель на заказ, салон «Престиж», Дзержинск',
+  'description' => 'Портфолио салона «Престиж»: кухни, шкафы-купе, детские и прихожие на заказ. Работы с собственного производства, установленные в Дзержинске и Нижегородской области.',
+];
+require PARTIALS . '/head.php';
+require PARTIALS . '/header.php';
+?>
+<main>
+
+  <!-- 1 · Хлебные крошки -->
+  <nav class="wrap crumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li aria-current="page">Наши работы</li>
+    </ol>
+  </nav>
+
+  <!-- 2 · Заголовок + счётчик -->
+  <section class="wrap section pagedecor" data-deco="works" style="border-top:0" aria-labelledby="pf-title">
+    <h1 class="section__title" id="pf-title" style="max-width:24ch">Наши работы</h1>
+    <p class="section__lead measure">Всё, что вы видите, сделано на нашем производстве и стоит
+      в квартирах Дзержинска и области. Галерею постоянно пополняем.</p>
+
+    <!-- 3 · Фильтр по типу -->
+    <div class="chips" data-type-filter role="group" aria-label="Фильтр по типу изделия">
+      <button class="chip" type="button" data-type="all" aria-pressed="true">Все</button>
+      <button class="chip" type="button" data-type="kuhni" aria-pressed="false">Кухни</button>
+      <button class="chip" type="button" data-type="shkafy" aria-pressed="false">Шкафы-купе</button>
+      <button class="chip" type="button" data-type="detskie" aria-pressed="false">Детские</button>
+      <button class="chip" type="button" data-type="prihozhie" aria-pressed="false">Прихожие</button>
+    </div>
+
+    <!-- 4 · Сетка работ · клик по плитке открывает фото в лайтбоксе (href → само фото как фолбэк без JS) -->
+    <div class="pgrid" data-portfolio>
+      <a class="work" data-work data-type="kuhni" data-material="emal" href="/img/kuhnya-klassika-zoloto.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня в светлом цвете с фурнитурой под золото на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="plastik" href="/img/kuhnya-belaya-glyanec.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая угловая кухня с деревянным фартуком на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="plenka" href="/img/kuhnya-sero-belaya.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-sero-belaya.jpg" alt="Угловая серо-белая кухня с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="shkafy" data-material="all" href="/img/shkaf-kupe-uglovoj.jpg">
+        <div class="photo"><img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" alt="Встроенный угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="shkafy" data-material="all" href="/img/shkaf-kupe-steklo.jpg">
+        <div class="photo"><img class="photo__img" src="/img/shkaf-kupe-steklo.jpg" alt="Шкаф-купе от стены до стены с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="ramochnye" href="/img/kuhnya-ramochnaya-belaya.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-ramochnaya-belaya.jpg" alt="Белая классическая кухня с рамочными фасадами и плиткой-кабанчиком на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="detskie" data-material="all" href="/img/detskaya-stol.jpg">
+        <div class="photo"><img class="photo__img" src="/img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="prihozhie" data-material="all" href="/img/prihozhaya-belaya-zoloto.jpg">
+        <div class="photo"><img class="photo__img" src="/img/prihozhaya-belaya-zoloto.jpg" alt="Встроенная прихожая на заказ: белые фасады, рифлёная секция, витрина и золотая окантовка" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="detskie" data-material="all" href="/img/detskaya-stol-okno.jpg">
+        <div class="photo"><img class="photo__img" src="/img/detskaya-stol-okno.jpg" alt="Детская на заказ: два рабочих места вдоль окна, стеллажи и тумбы дуб с белым" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="prihozhie" data-material="all" href="/img/prihozhaya-belaya-zoloto-obshiy.jpg">
+        <div class="photo"><img class="photo__img" src="/img/prihozhaya-belaya-zoloto-obshiy.jpg" alt="Встроенная прихожая на заказ, общий вид: шкаф в пол, зеркало, консоль" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="kuhni" data-material="plastik" href="/img/kuhnya-modern-bezruchek.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-modern-bezruchek.jpg" alt="Кухня в стиле модерн с безручечными фасадами и мраморным фартуком на заказ" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="work" data-work data-type="detskie" data-material="all" href="/img/detskaya-stenka.jpg">
+        <div class="photo"><img class="photo__img" src="/img/detskaya-stenka.jpg" alt="Детская на заказ: стенка со стеллажами и ящиками" loading="lazy" decoding="async"></div>
+      </a>
+      <!-- Свёрнутая порция — раскрывается по «Показать ещё» -->
+      <a class="work is-collapsed" data-work data-type="kuhni" data-material="emal" href="/img/kuhnya-seraya-matovaya.jpg">
+        <div class="photo"><img class="photo__img" src="/img/kuhnya-seraya-matovaya.jpg" alt="Серая матовая кухня с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
+      </a>
+
+      <!-- Партия фото из архива работ (VK) — кухни -->
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-01.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-01.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-02.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-02.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-03.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-03.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-04.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-04.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-05.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-05.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-06.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-06.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-07.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-07.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-08.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-08.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-09.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-09.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-10.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-10.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-11.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-11.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-12.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-12.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-13.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-13.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-14.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-14.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-15.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-15.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-16.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-16.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-17.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-17.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-18.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-18.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-19.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-19.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="kuhni" href="/img/vk-kuhnya-20.jpg"><div class="photo"><img class="photo__img" src="/img/vk-kuhnya-20.jpg" alt="Кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+
+      <!-- Детские -->
+      <a class="work is-collapsed" data-work data-type="detskie" href="/img/vk-detskaya-04.jpg"><div class="photo"><img class="photo__img" src="/img/vk-detskaya-04.jpg" alt="Детская на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="detskie" href="/img/vk-detskaya-05.jpg"><div class="photo"><img class="photo__img" src="/img/vk-detskaya-05.jpg" alt="Детская на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="detskie" href="/img/vk-detskaya-06.jpg"><div class="photo"><img class="photo__img" src="/img/vk-detskaya-06.jpg" alt="Детская на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+
+      <!-- Шкафы-купе -->
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-01.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-01.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-02.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-02.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-03.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-03.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-04.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-04.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-05.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-05.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-06.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-06.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-07.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-07.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-08.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-08.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-09.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-09.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-10.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-10.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="shkafy" href="/img/vk-shkaf-11.jpg"><div class="photo"><img class="photo__img" src="/img/vk-shkaf-11.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+
+      <!-- Прихожие -->
+      <a class="work is-collapsed" data-work data-type="prihozhie" href="/img/vk-prihozhaya-01.jpg"><div class="photo"><img class="photo__img" src="/img/vk-prihozhaya-01.jpg" alt="Прихожая на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+      <a class="work is-collapsed" data-work data-type="prihozhie" href="/img/vk-prihozhaya-02.jpg"><div class="photo"><img class="photo__img" src="/img/vk-prihozhaya-02.jpg" alt="Прихожая на заказ, Дзержинск" loading="lazy" decoding="async"></div></a>
+    </div>
+
+    <div class="load-more">
+      <button class="btn btn--ghost" type="button" data-load-more>Показать ещё</button>
+      <button class="btn btn--ghost" type="button" data-load-all hidden>Показать все фото</button>
+    </div>
+  </section>
+
+  <!-- 6 · Форма заявки -->
+  <section class="section leadform" id="form" aria-labelledby="form-title">
+    <div class="wrap">
+      <h2 class="section__title" id="form-title">Понравилась работа? Сделаем такую же</h2>
+      <div class="form-grid">
+        <form class="form" novalidate data-lead action="/api/lead.php" method="post">
+          <input type="hidden" name="subject" value="Портфолио">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="field">
+            <label for="f-name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-comment">Комментарий <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <textarea id="f-comment" name="comment" rows="3"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="/policy/">политикой</a>.</span>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="form__status" role="status" aria-live="polite" hidden></p>
+        </form>
+        <aside class="form-aside">
+          <p>Приедем в удобное время, снимем размеры и посчитаем стоимость. Замер бесплатный —
+            даже если в итоге закажете не у нас.</p>
+          <p>Заявка уходит менеджеру на почту и во ВКонтакте одновременно, поэтому не потеряется.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<?php require PARTIALS . '/footer.php';

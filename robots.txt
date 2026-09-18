@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /policy.html
-Disallow: /soglasie.html
+Disallow: /policy/
+Disallow: /soglasie/
 Disallow: /*?*
 
 Sitemap: https://prestigmeb.ru/sitemap.xml

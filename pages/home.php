@@ -1,59 +1,12 @@
-<!doctype html>
-<html lang="ru" data-bg="greige">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-<title>Кухни и мебель на заказ в Дзержинске — салон «Престиж»</title>
-<meta name="description" content="Изготавливаем кухни, шкафы-купе и корпусную мебель по вашим размерам с 2004 года. Собственное производство в Дзержинске, работаем по всей Нижегородской области. Замер и дизайн-проект бесплатно, рассрочка на 8 месяцев без банка.">
-<link rel="canonical" href="https://prestigmeb.ru/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="Салон «Престиж»">
-<meta property="og:url" content="https://prestigmeb.ru/">
-<meta property="og:title" content="Кухни и мебель на заказ в Дзержинске — салон «Престиж»">
-<meta property="og:description" content="Изготавливаем кухни, шкафы-купе и корпусную мебель по вашим размерам с 2004 года. Собственное производство в Дзержинске, работаем по всей Нижегородской области. Замер и дизайн-проект бесплатно, рассрочка на 8 месяцев без банка.">
-<meta property="og:image" content="https://prestigmeb.ru/img/kuhnya-sinyaya-mramor.jpg">
-<link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="site.css?v=20260917">
-</head>
-<body>
-
-<!-- ============ Шапка · N6 мастхед ============ -->
-<header>
-  <div class="topbar">
-    <div class="wrap topbar__row">
-      <span class="topbar__addr">Дзержинск, ул. Грибоедова, 3</span>
-      <span class="topbar__addr">Пн–Пт&nbsp;10:00–19:00</span>
-      <span class="sp"></span>
-      <a class="topbar__phone" href="tel:+79047908282">+7 904 790-82-82</a>
-      <a class="topbar__vk" href="https://vk.ru/club210473860" target="_blank" rel="noopener" aria-label="Мы во ВКонтакте" style="display:inline-flex;align-items:center;color:var(--color-accent)"><svg width="19" height="19" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M75.6 168.267H126.747C128.427 253.76 166.133 289.973 196 297.44V168.267H244.16V242.053C273.653 238.88 304.64 205.28 315.093 168.267H363.253C359.283 187.474 351.408 205.66 340.108 221.68C328.809 237.7 314.322 251.212 297.573 261.373C316.271 270.656 332.788 283.796 346.008 299.936C359.229 316.076 368.845 334.845 374.213 355H321.2C316.4 337.489 306.516 321.792 292.788 309.859C279.061 297.925 262.116 290.313 244.16 287.973V355H238.373C136.267 355 78.0267 285.013 75.6 168.267Z"/></svg></a>
-      <a class="topbar__avito" href="https://www.avito.ru/dzerzhinsk/mebel_i_interer/kuhni_na_zakaz_4572454241" target="_blank" rel="noopener" aria-label="Avito" style="display:inline-flex;align-items:center;margin-left:10px;color:var(--color-accent)"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Manrope,Arial,sans-serif">a</text></svg></a>
-      <button class="burger" aria-label="Открыть меню" aria-expanded="false">Меню ☰</button>
-    </div>
-  </div>
-
-  <div class="wrap masthead">
-    <a class="wordmark wordmark--logo" href="./" aria-label="Престиж — интерьер, дизайн"><img src="img/logo.png" alt="Престиж — интерьер, дизайн" width="680" height="257" style="display:block;width:clamp(190px,42vw,300px);height:auto;margin:0 auto"></a>
-  </div>
-
-  <nav class="mastnav" aria-label="Основное меню">
-    <div class="wrap">
-      <ul class="mastnav__list">
-        <li><a href="category.html">Кухни</a></li>
-        <li><a href="shkafy.html">Шкафы-купе</a></li>
-        <li><a href="detskie.html">Детские</a></li>
-        <li><a href="prihozhie.html">Прихожие</a></li>
-        <li><a href="portfolio.html">Портфолио</a></li>
-        <li><a href="akcii.html">Акции</a></li>
-        <li><a href="static.html">Рассрочка</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<?php
+$page += [
+  'title' => 'Кухни и мебель на заказ в Дзержинске — салон «Престиж»',
+  'description' => 'Изготавливаем кухни, шкафы-купе и корпусную мебель по вашим размерам с 2004 года. Собственное производство в Дзержинске, работаем по всей Нижегородской области. Замер и дизайн-проект бесплатно, рассрочка на 8 месяцев без банка.',
+  'og_image' => '/img/kuhnya-sinyaya-mramor.jpg',
+];
+require PARTIALS . '/head.php';
+require PARTIALS . '/header.php';
+?>
 <main>
 
   <!-- 1 · Первый экран -->
@@ -126,10 +79,10 @@
       <div class="slider slider--hero rise" data-slider data-autoplay="6000" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши кухни">
         <div class="slider__viewport">
           <div class="slider__track">
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-modern-bezruchek.jpg" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-modern-bezruchek.jpg" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ" loading="lazy" decoding="async"></div></div>
           </div>
           <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущее фото">‹</button>
           <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующее фото">›</button>
@@ -153,7 +106,7 @@
         <div class="rass-row__item"><div class="rass-row__k">8&nbsp;мес.</div><div class="rass-row__v">равными частями</div></div>
         <div class="rass-row__item"><div class="rass-row__k">30%</div><div class="rass-row__v">первый взнос</div></div>
       </div>
-      <p style="margin-top:var(--space-lg)"><a class="tlink" href="static.html">Условия рассрочки <span class="arw">→</span></a></p>
+      <p style="margin-top:var(--space-lg)"><a class="tlink" href="/rassrochka/">Условия рассрочки <span class="arw">→</span></a></p>
     </div>
   </section>
 
@@ -162,23 +115,23 @@
     <div class="wrap">
       <h2 class="section__title" id="cats-title">Что мы делаем</h2>
       <div class="cats">
-        <a class="cat cat--lead" href="category.html">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/kuhnya-belaya-modern.jpg" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div></div>
+        <a class="cat cat--lead" href="/kuhni/">
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-modern.jpg" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div></div>
           <div class="cat__body">
             <h3 class="cat__name">Кухни на заказ</h3>
             <p class="cat__desc">Фасады из плёнки, пластика, эмали и массива. Прямые, угловые, с островом.</p>
           </div>
         </a>
-        <a class="cat" href="shkafy.html">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div></div>
+        <a class="cat" href="/shkafy-kupe/">
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Шкафы-купе</h3><p class="cat__desc">Встроенные, угловые, радиусные</p></div>
         </a>
-        <a class="cat" href="detskie.html">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/detskaya-krovat.jpg" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
+        <a class="cat" href="/detskie/">
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/detskaya-krovat.jpg" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Детские</h3><p class="cat__desc">С учётом возраста и роста</p></div>
         </a>
-        <a class="cat" href="prihozhie.html">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
+        <a class="cat" href="/prihozhie/">
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Прихожие</h3><p class="cat__desc">Открытые, модульные, купе</p></div>
         </a>
       </div>
@@ -188,8 +141,8 @@
   <!-- 4 · Как мы работаем · 3D-проект фоном (разделяет «Что делаем» и остальное) -->
   <section class="section steps-band" data-reveal aria-labelledby="steps-title">
     <div class="steps-band__bg" aria-hidden="true">
-      <img class="reveal__img reveal__img--color" src="img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
-      <img class="reveal__img reveal__img--blueprint" src="img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
+      <img class="reveal__img reveal__img--color" src="/img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
+      <img class="reveal__img reveal__img--blueprint" src="/img/proekt-render.jpg" alt="" loading="lazy" decoding="async">
     </div>
     <div class="steps-band__scrim" aria-hidden="true"></div>
     <span class="reveal__scan" aria-hidden="true"></span>
@@ -203,7 +156,7 @@
         <div class="step"><div class="step__n">4</div><div><div class="step__t">Изготовление</div><p class="step__d">Делаем мебель на собственном производстве — от 20 до 45 рабочих дней в зависимости от сложности проекта.</p></div></div>
         <div class="step"><div class="step__n">5</div><div><div class="step__t">Доставка и сборка</div><p class="step__d">Привозим, собираем, врезаем мойку и подключаем технику. Кухню обычно собираем за один день.</p></div></div>
       </div>
-      <p style="margin-top:var(--space-lg)"><a class="tlink" href="static.html">Подробнее о том, как мы работаем <span class="arw">→</span></a></p>
+      <p style="margin-top:var(--space-lg)"><a class="tlink" href="/rassrochka/">Подробнее о том, как мы работаем <span class="arw">→</span></a></p>
     </div>
   </section>
 
@@ -250,20 +203,20 @@
       <div class="slider slider--works" data-slider data-autoplay="0" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши работы">
         <div class="slider__viewport">
           <div class="slider__track">
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/garderobnaya.jpg" alt="Открытая гардеробная система на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня с золотой патиной на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="img/detskaya-stenka.jpg" alt="Детская стенка на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/garderobnaya.jpg" alt="Открытая гардеробная система на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня с золотой патиной на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/detskaya-stenka.jpg" alt="Детская стенка на заказ" loading="lazy" decoding="async"></div></div>
           </div>
           <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущая работа">‹</button>
           <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующая работа">›</button>
         </div>
         <div class="slider__dots" aria-hidden="true"></div>
       </div>
-      <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="portfolio.html">Смотреть все работы</a></p>
+      <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="/portfolio/">Смотреть все работы</a></p>
     </div>
   </section>
 
@@ -301,7 +254,7 @@
     <div class="wrap">
       <h2 class="section__title" id="form-title">Запишитесь на бесплатный замер</h2>
       <div class="form-grid">
-        <form class="form" novalidate data-lead action="api/lead.php" method="post">
+        <form class="form" novalidate data-lead action="/api/lead.php" method="post">
           <input type="hidden" name="subject" value="Главная">
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="field">
@@ -318,7 +271,7 @@
           </div>
           <label class="consent">
             <input type="checkbox" name="consent" required>
-            <span>Согласен на обработку персональных данных в соответствии с <a href="policy.html">политикой</a>.</span>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="/policy/">политикой</a>.</span>
           </label>
           <button class="btn" type="submit">Отправить заявку</button>
           <p class="form__status" role="status" aria-live="polite" hidden></p>
@@ -358,52 +311,4 @@
 
 </main>
 
-<!-- ============ Ft1 · подвал ============ -->
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot__top">
-      <div class="foot__brand">
-        <span class="wordmark">Престиж</span>
-        <p class="foot__slogan">Мебель в ритме жизни…</p>
-      </div>
-      <div>
-        <h4>Каталог</h4>
-        <ul class="foot__links">
-          <li><a href="category.html">Кухни</a></li>
-          <li><a href="shkafy.html">Шкафы-купе</a></li>
-          <li><a href="detskie.html">Детские</a></li>
-          <li><a href="prihozhie.html">Прихожие</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Компания</h4>
-        <ul class="foot__links">
-          <li><a href="portfolio.html">Портфолио</a></li>
-          <li><a href="akcii.html">Акции</a></li>
-          <li><a href="static.html">Рассрочка</a></li>
-          <li><a href="./#steps-title">Как мы работаем</a></li>
-          <li><a href="./#trust-title">Гарантия</a></li>
-          <li><a href="./#rev-title">Отзывы</a></li>
-          <li><a href="./#cont-title">Контакты</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot__bottom">
-      <span>Дзержинск, ул. Грибоедова, 3 · +7 904 790-82-82</span>
-      <span><a href="https://vk.ru/club210473860" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">ВКонтакте</a> · <a href="https://www.avito.ru/dzerzhinsk/mebel_i_interer/kuhni_na_zakaz_4572454241" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">Avito</a></span>
-      <span class="sp"></span>
-      <a href="policy.html" style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
-      <a href="soglasie.html" style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
-      <span class="foot__req">ИП Харупкин А. В. · ИНН 524924627894 · ОГРНИП 312524918500016</span>
-    </div>
-  </div>
-</footer>
-
-<!-- липкая мобильная CTA -->
-<div class="sticky-cta"><a class="btn" href="#form">Бесплатный замер</a></div>
-
-
-<script src="site.js?v=20260917"></script>
-
-</body>
-</html>
+<?php require PARTIALS . '/footer.php';
