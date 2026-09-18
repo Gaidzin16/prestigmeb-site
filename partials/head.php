@@ -24,5 +24,5 @@
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="/site.css?v=<?= ASSET_V ?>">
 </head>
-<body>
+<body data-phone="<?= e($site['phones'][0]['text']) ?>" data-hours="<?= e($site['hours']) ?>">
 

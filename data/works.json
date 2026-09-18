@@ -1,5 +1,6 @@
 [
     {
+        "id": "dfe6b5b6",
         "file": "kuhnya-klassika-zoloto.jpg",
         "alt": "Классическая кухня в светлом цвете с фурнитурой под золото на заказ",
         "type": "kuhni",
@@ -9,6 +10,7 @@
         "category": null
     },
     {
+        "id": "f4b5b0e1",
         "file": "kuhnya-belaya-glyanec.jpg",
         "alt": "Белая глянцевая угловая кухня с деревянным фартуком на заказ",
         "type": "kuhni",
@@ -18,6 +20,7 @@
         "category": null
     },
     {
+        "id": "6dd4a27c",
         "file": "kuhnya-sero-belaya.jpg",
         "alt": "Угловая серо-белая кухня с деревянной столешницей на заказ",
         "type": "kuhni",
@@ -27,6 +30,7 @@
         "category": null
     },
     {
+        "id": "f903be73",
         "file": "shkaf-kupe-uglovoj.jpg",
         "alt": "Встроенный угловой шкаф-купе с зеркальными фасадами на заказ",
         "type": "shkafy",
@@ -36,6 +40,7 @@
         "category": null
     },
     {
+        "id": "320c0053",
         "file": "shkaf-kupe-steklo.jpg",
         "alt": "Шкаф-купе от стены до стены с фасадами из сатинового стекла на заказ",
         "type": "shkafy",
@@ -45,6 +50,7 @@
         "category": 1
     },
     {
+        "id": "6b232206",
         "file": "kuhnya-ramochnaya-belaya.jpg",
         "alt": "Белая классическая кухня с рамочными фасадами и плиткой-кабанчиком на заказ",
         "type": "kuhni",
@@ -54,6 +60,7 @@
         "category": null
     },
     {
+        "id": "db4c090a",
         "file": "detskaya-stol.jpg",
         "alt": "Детская на заказ: письменный стол и стеллаж",
         "type": "detskie",
@@ -63,6 +70,7 @@
         "category": null
     },
     {
+        "id": "0ec9a405",
         "file": "prihozhaya-belaya-zoloto.jpg",
         "alt": "Встроенная прихожая на заказ: белые фасады, рифлёная секция, витрина и золотая окантовка",
         "type": "prihozhie",
@@ -72,6 +80,7 @@
         "category": 2
     },
     {
+        "id": "df3d243e",
         "file": "detskaya-stol-okno.jpg",
         "alt": "Детская на заказ: два рабочих места вдоль окна, стеллажи и тумбы дуб с белым",
         "type": "detskie",
@@ -81,6 +90,7 @@
         "category": 2
     },
     {
+        "id": "ff403c23",
         "file": "prihozhaya-belaya-zoloto-obshiy.jpg",
         "alt": "Встроенная прихожая на заказ, общий вид: шкаф в пол, зеркало, консоль",
         "type": "prihozhie",
@@ -90,6 +100,7 @@
         "category": null
     },
     {
+        "id": "4d12e82c",
         "file": "kuhnya-modern-bezruchek.jpg",
         "alt": "Кухня в стиле модерн с безручечными фасадами и мраморным фартуком на заказ",
         "type": "kuhni",
@@ -99,6 +110,7 @@
         "category": null
     },
     {
+        "id": "15971ca4",
         "file": "detskaya-stenka.jpg",
         "alt": "Детская на заказ: стенка со стеллажами и ящиками",
         "type": "detskie",
@@ -108,6 +120,7 @@
         "category": 1
     },
     {
+        "id": "fb050ab8",
         "file": "kuhnya-seraya-matovaya.jpg",
         "alt": "Серая матовая кухня с деревянной столешницей на заказ",
         "type": "kuhni",
@@ -117,6 +130,7 @@
         "category": null
     },
     {
+        "id": "94a65368",
         "file": "vk-kuhnya-01.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -126,6 +140,7 @@
         "category": null
     },
     {
+        "id": "ec282fc1",
         "file": "vk-kuhnya-02.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -135,6 +150,7 @@
         "category": null
     },
     {
+        "id": "470b0595",
         "file": "vk-kuhnya-03.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -144,6 +160,7 @@
         "category": null
     },
     {
+        "id": "e2a7c05b",
         "file": "vk-kuhnya-04.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -153,6 +170,7 @@
         "category": null
     },
     {
+        "id": "9eab7ba7",
         "file": "vk-kuhnya-05.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -162,6 +180,7 @@
         "category": null
     },
     {
+        "id": "01ba05b4",
         "file": "vk-kuhnya-06.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -171,6 +190,7 @@
         "category": null
     },
     {
+        "id": "848d7f5f",
         "file": "vk-kuhnya-07.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -180,6 +200,7 @@
         "category": null
     },
     {
+        "id": "4e3c7288",
         "file": "vk-kuhnya-08.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -189,6 +210,7 @@
         "category": null
     },
     {
+        "id": "7bddfcda",
         "file": "vk-kuhnya-09.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -198,6 +220,7 @@
         "category": null
     },
     {
+        "id": "722f1d39",
         "file": "vk-kuhnya-10.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -207,6 +230,7 @@
         "category": null
     },
     {
+        "id": "78c32cd8",
         "file": "vk-kuhnya-11.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -216,6 +240,7 @@
         "category": null
     },
     {
+        "id": "ca85c401",
         "file": "vk-kuhnya-12.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -225,6 +250,7 @@
         "category": null
     },
     {
+        "id": "7354a3bc",
         "file": "vk-kuhnya-13.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -234,6 +260,7 @@
         "category": null
     },
     {
+        "id": "e1a6a809",
         "file": "vk-kuhnya-14.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -243,6 +270,7 @@
         "category": null
     },
     {
+        "id": "6d149689",
         "file": "vk-kuhnya-15.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -252,6 +280,7 @@
         "category": null
     },
     {
+        "id": "7b617a63",
         "file": "vk-kuhnya-16.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -261,6 +290,7 @@
         "category": null
     },
     {
+        "id": "ce8bc5a4",
         "file": "vk-kuhnya-17.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -270,6 +300,7 @@
         "category": null
     },
     {
+        "id": "ab409376",
         "file": "vk-kuhnya-18.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -279,6 +310,7 @@
         "category": null
     },
     {
+        "id": "3c287fae",
         "file": "vk-kuhnya-19.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -288,6 +320,7 @@
         "category": null
     },
     {
+        "id": "b1a81947",
         "file": "vk-kuhnya-20.jpg",
         "alt": "Кухня на заказ, Дзержинск",
         "type": "kuhni",
@@ -297,6 +330,7 @@
         "category": null
     },
     {
+        "id": "c14990d9",
         "file": "vk-detskaya-04.jpg",
         "alt": "Детская на заказ, Дзержинск",
         "type": "detskie",
@@ -306,6 +340,7 @@
         "category": 3
     },
     {
+        "id": "46dd53bd",
         "file": "vk-detskaya-05.jpg",
         "alt": "Детская на заказ, Дзержинск",
         "type": "detskie",
@@ -315,6 +350,7 @@
         "category": null
     },
     {
+        "id": "8ff0ffe1",
         "file": "vk-detskaya-06.jpg",
         "alt": "Детская на заказ, Дзержинск",
         "type": "detskie",
@@ -324,6 +360,7 @@
         "category": 4
     },
     {
+        "id": "cf855e73",
         "file": "vk-shkaf-01.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -333,6 +370,7 @@
         "category": 2
     },
     {
+        "id": "379a6932",
         "file": "vk-shkaf-02.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -342,6 +380,7 @@
         "category": null
     },
     {
+        "id": "319a23d7",
         "file": "vk-shkaf-03.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -351,6 +390,7 @@
         "category": null
     },
     {
+        "id": "5567ec82",
         "file": "vk-shkaf-04.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -360,6 +400,7 @@
         "category": null
     },
     {
+        "id": "ea8e3701",
         "file": "vk-shkaf-05.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -369,6 +410,7 @@
         "category": 3
     },
     {
+        "id": "b64940c8",
         "file": "vk-shkaf-06.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -378,6 +420,7 @@
         "category": null
     },
     {
+        "id": "4fc43030",
         "file": "vk-shkaf-07.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -387,6 +430,7 @@
         "category": null
     },
     {
+        "id": "291296de",
         "file": "vk-shkaf-08.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -396,6 +440,7 @@
         "category": 4
     },
     {
+        "id": "55ad33ea",
         "file": "vk-shkaf-09.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -405,6 +450,7 @@
         "category": null
     },
     {
+        "id": "159df471",
         "file": "vk-shkaf-10.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -414,6 +460,7 @@
         "category": null
     },
     {
+        "id": "1a61e12a",
         "file": "vk-shkaf-11.jpg",
         "alt": "Шкаф-купе на заказ, Дзержинск",
         "type": "shkafy",
@@ -423,6 +470,7 @@
         "category": null
     },
     {
+        "id": "6bf7070c",
         "file": "vk-prihozhaya-01.jpg",
         "alt": "Прихожая на заказ, Дзержинск",
         "type": "prihozhie",
@@ -432,6 +480,7 @@
         "category": 3
     },
     {
+        "id": "4772bbeb",
         "file": "vk-prihozhaya-02.jpg",
         "alt": "Прихожая на заказ, Дзержинск",
         "type": "prihozhie",
@@ -441,6 +490,7 @@
         "category": 4
     },
     {
+        "id": "25e4b23c",
         "file": "kuhnya-seraya-modern.jpg",
         "alt": "Серая кухня модерн с деревянной столешницей на заказ",
         "type": "kuhni",
@@ -450,6 +500,7 @@
         "category": 4
     },
     {
+        "id": "24fd52b1",
         "file": "garderobnaya.jpg",
         "alt": "Открытая гардеробная система на заказ",
         "type": "shkafy",
@@ -459,6 +510,7 @@
         "category": null
     },
     {
+        "id": "ac6eab7c",
         "file": "prihozhaya-mramor.jpg",
         "alt": "Прихожая на заказ: мрамор, зеркало, встроенный шкаф",
         "type": "prihozhie",
@@ -468,6 +520,7 @@
         "category": 1
     },
     {
+        "id": "a946b4dd",
         "file": "kuhnya-sinyaya-mramor.jpg",
         "alt": "Синяя классическая кухня с белым мрамором на заказ",
         "type": "kuhni",
@@ -477,6 +530,7 @@
         "category": 1
     },
     {
+        "id": "499cc95e",
         "file": "kuhnya-belaya-modern.jpg",
         "alt": "Белая угловая кухня в стиле модерн на заказ",
         "type": "kuhni",
@@ -486,6 +540,7 @@
         "category": 2
     },
     {
+        "id": "1ae87286",
         "file": "kuhnya-temno-sinyaya.jpg",
         "alt": "Тёмно-синяя кухня с белой столешницей на заказ",
         "type": "kuhni",

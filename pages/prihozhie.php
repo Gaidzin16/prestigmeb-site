@@ -211,7 +211,7 @@ require PARTIALS . '/header.php';
           </div>
           <label class="consent">
             <input type="checkbox" name="consent" required>
-            <span>Согласен на обработку персональных данных в соответствии с <a href="/policy/">политикой</a>.</span>
+            <span>Даю <a href="/soglasie/">согласие на обработку персональных данных</a> и принимаю <a href="/policy/">политику конфиденциальности</a>.</span>
           </label>
           <button class="btn" type="submit">Отправить заявку</button>
           <p class="form__status" role="status" aria-live="polite" hidden></p>
@@ -219,7 +219,7 @@ require PARTIALS . '/header.php';
         <aside class="form-aside">
           <p>Замер, дизайн-проект и расчёт стоимости бесплатны и ни к чему вас не обязывают.</p>
           <p>Заявка уходит менеджеру на почту и во ВКонтакте одновременно, поэтому не потеряется.
-            Перезвоним в рабочее время — с понедельника по пятницу с 10:00 до 19:00.</p>
+            Перезвоним в рабочее время — <?= e($site['hours']) ?>.</p>
           <p class="ask"><a class="tlink" href="/#cont-title">Не готовы к замеру? Задайте вопрос <span class="arw">→</span></a></p>
         </aside>
       </div>

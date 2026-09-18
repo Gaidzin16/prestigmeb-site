@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         /* --- работы --- */
         case 'works/save': {
-            $works = load('works');
-            $rows = $_POST['w'] ?? [];
-            foreach ($works as $i => &$w) {
-                $r = $rows[$i] ?? null; if (!$r) continue;
+            $works = load_works();
+            $rows = is_array($_POST['w'] ?? null) ? $_POST['w'] : [];
+            foreach ($works as &$w) {
+                $r = $rows[$w['id']] ?? null; if (!is_array($r)) continue;
                 $w['alt'] = clean((string)($r['alt'] ?? ''), 200);
                 $w['type'] = isset($TYPES[$r['type'] ?? '']) ? $r['type'] : $w['type'];
                 $w['material'] = isset($MATERIALS[$r['material'] ?? '']) && $r['material'] !== '' ? $r['material'] : null;
@@ -48,10 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $w['category'] = ($r['category'] ?? '') !== '' ? max(1, (int)$r['category']) : null;
             }
             unset($w);
-            /* порядок: скрытое поле order = список индексов */
-            $order = array_map('intval', array_filter(explode(',', (string)($_POST['order'] ?? '')), 'strlen'));
-            if (count($order) === count($works) && count(array_unique($order)) === count($works)) {
-                $works = array_map(fn($i) => $works[$i], $order);
+            /* порядок: скрытое поле order = список id; применяем только полную перестановку без чужих id */
+            $byId = array_column($works, null, 'id');
+            $order = array_values(array_filter(explode(',', (string)($_POST['order'] ?? '')), 'strlen'));
+            if (count($order) === count($works) && count(array_unique($order)) === count($works) && !array_diff($order, array_keys($byId))) {
+                $works = array_map(fn($id) => $byId[$id], $order);
             }
             save('works', $works);
             git_sync('работы — правка списка');
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         }
         case 'works/upload': {
-            $works = load('works');
+            $works = load_works();
             $type = isset($TYPES[$_POST['type'] ?? '']) ? $_POST['type'] : 'kuhni';
             $files = $_FILES['photos'] ?? null; $n = 0; $errs = [];
             if ($files) foreach ($files['name'] as $k => $name) {
@@ -68,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 try {
                     $file = store_image($one, $TYPES[$type]);
                     /* новые — в начало портфолио */
-                    array_unshift($works, ['file' => $file, 'alt' => $TYPES[$type] . ' на заказ, Дзержинск', 'type' => $type,
+                    array_unshift($works, ['id' => new_id(), 'file' => $file, 'alt' => $TYPES[$type] . ' на заказ, Дзержинск', 'type' => $type,
                                            'material' => null, 'portfolio' => true, 'home' => null, 'category' => null]);
                     $n++;
                 } catch (Throwable $ex) { $errs[] = clean((string)$name, 80) . ': ' . $ex->getMessage(); }
@@ -78,8 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         }
         case 'works/delete': {
-            $works = load('works'); $i = (int)($_POST['i'] ?? -1);
-            if (isset($works[$i])) {
+            $works = load_works(); $i = works_index($works, (string)($_POST['i'] ?? ''));
+            if ($i !== null) {
                 remove_image($works[$i]['file']);
                 array_splice($works, $i, 1);
                 save('works', $works); git_sync('работы — удалено фото');

@@ -11,6 +11,12 @@ $cfg = file_exists(__DIR__ . '/config.php')
     ? require __DIR__ . '/config.php'
     : require __DIR__ . '/config.example.php';
 
+/* Хосты, с которых принимаем заявки. Заголовку Host верить нельзя — nginx примет любой. */
+const SITE_HOSTS = ['prestigmeb.ru', 'www.prestigmeb.ru', '147.45.189.198'];
+/* Телефон для сообщений об ошибке — из data/site.json, чтобы правки в админке попадали и сюда */
+$siteData = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/site.json'), true) ?: [];
+$phoneHint = 'Позвоните нам: ' . ($siteData['phones'][0]['text'] ?? '+7 904 790-82-82');
+
 function fail($msg, $code = 400) {
     http_response_code($code);
     echo json_encode(['ok' => false, 'error' => $msg], JSON_UNESCAPED_UNICODE);
@@ -38,8 +44,7 @@ $get = function ($k, $max = 500) use ($in) {
 
 /* --- Только со своего сайта: если браузер прислал Origin, хост должен совпадать --- */
 $origin = (string)($_SERVER['HTTP_ORIGIN'] ?? '');
-$host = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? ''));
-if ($origin !== '' && strcasecmp((string)parse_url($origin, PHP_URL_HOST), $host) !== 0) {
+if ($origin !== '' && !in_array(strtolower((string)parse_url($origin, PHP_URL_HOST)), SITE_HOSTS, true)) {
     fail('Запрос не с сайта', 403);
 }
 
@@ -57,7 +62,7 @@ $hits = file_exists($rateFile) ? array_filter(
     array_map('intval', file($rateFile, FILE_IGNORE_NEW_LINES)),
     function ($t) use ($cfg) { return $t > time() - $cfg['rate_window']; }
 ) : [];
-if (count($hits) >= $cfg['rate_limit']) fail('Слишком много заявок. Позвоните нам: +7 904 790-82-82', 429);
+if (count($hits) >= $cfg['rate_limit']) fail('Слишком много заявок. ' . $phoneHint, 429);
 
 /* --- Проверка полей --- */
 $name    = $get('name', 100);
@@ -73,7 +78,7 @@ if (strlen($digits) < 10 || strlen($digits) > 15) fail('Проверьте но�
 if (!$consent) fail('Нужно согласие на обработку данных');
 if (preg_match('~https?://|www\.~i', $name . ' ' . $comment)) fail('Уберите ссылки из сообщения');
 /* Страница — только адрес этого сайта; иначе в журнал попадёт что угодно, в т. ч. javascript: */
-if ($page !== '' && (!preg_match('~^https?://([^/?#]+)~i', $page, $m) || strcasecmp($m[1], $host) !== 0)) $page = '';
+if ($page !== '' && (!preg_match('~^https?://([^/?#]+)~i', $page, $m) || !in_array(strtolower($m[1]), SITE_HOSTS, true))) $page = '';
 
 /* Телефон в единый вид +7 XXX XXX-XX-XX */
 if (strlen($digits) === 11 && ($digits[0] === '8' || $digits[0] === '7')) $digits = '7' . substr($digits, 1);
@@ -139,7 +144,7 @@ if (!empty($cfg['vk_token']) && !empty($cfg['vk_peer_id']) && function_exists('c
 
 if (!$mailOk && !$vkOk) {
     /* Заявка в журнале, но ни один канал не сработал — честно говорим клиенту */
-    fail('Не получилось отправить. Позвоните нам: +7 904 790-82-82', 500);
+    fail('Не получилось отправить. ' . $phoneHint, 500);
 }
 
 echo json_encode(['ok' => true], JSON_UNESCAPED_UNICODE);

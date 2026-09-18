@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 const SITE_URL = 'https://prestigmeb.ru';
-const ASSET_V  = '20260918';
+const ASSET_V  = '20260918b';
 define('ROOT', __DIR__);
 define('PARTIALS', ROOT . '/partials');
 define('DATA_DIR', ROOT . '/data');
@@ -43,7 +43,13 @@ $legacy = [
     '/soglasie.html' => '/soglasie/',
 ];
 
-$path = rawurldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
+$uri = (string)($_SERVER['REQUEST_URI'] ?? '/');
+/* «//kuhni» parse_url прочитал бы как хост → путь пустой → главная. Двойные слэши схлопываем и уводим 301. */
+if (preg_match('#//#', strtok($uri, '?'))) {
+    header('Location: ' . preg_replace('#/{2,}#', '/', strtok($uri, '?')), true, 301);
+    exit;
+}
+$path = rawurldecode(parse_url($uri, PHP_URL_PATH) ?: '/');
 
 if (isset($legacy[$path])) {
     header('Location: ' . $legacy[$path], true, 301);

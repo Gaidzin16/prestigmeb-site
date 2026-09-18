@@ -46,11 +46,13 @@ function login_state(): array {
     [$n, $t] = array_map('intval', explode(' ', (string)file_get_contents($f)) + [0, 0]);
     return time() - $t < LOGIN_LOCK_SEC ? [$n, $t] : [0, 0];
 }
+function mask_login(string $l): string { return $l === '' ? '(пусто)' : mb_substr($l, 0, 2) . str_repeat('*', max(1, mb_strlen($l) - 2)); }
 function login_locked(): bool { return login_state()[0] >= LOGIN_TRIES; }
 function login_fail(string $login): void {
     [$n] = login_state();
     file_put_contents(login_lock_file(), ($n + 1) . ' ' . time(), LOCK_EX);
-    alog('неверный пароль: ' . $login . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-') . ' попытка ' . ($n + 1));
+    /* логин маскируем: в это поле по ошибке часто вводят пароль */
+    alog('неверный пароль: ' . mask_login($login) . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-') . ' попытка ' . ($n + 1));
 }
 /* Пользователи: api/admin-users.json (пишется при смене пароля), иначе config.php → admin_users */
 define('USERS_FILE', ROOT . '/api/admin-users.json');
@@ -70,7 +72,7 @@ function set_password(string $login, string $password): void {
 }
 function try_login(string $login, string $password): bool {
     $users = admin_users();
-    if (login_locked()) { alog('вход при блокировке: ' . $login . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-')); return false; }
+    if (login_locked()) { alog('вход при блокировке: ' . mask_login($login) . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-')); return false; }
     if (isset($users[$login]) && password_verify($password, $users[$login])) {
         session_regenerate_id(true);
         $_SESSION['user'] = $login;
@@ -107,6 +109,23 @@ function save(string $name, array $data): void {
     }
 }
 function array_values_if_list(array $a): array { return array_is_list($a) || $a === [] ? array_values($a) : $a; }
+
+/* Работы адресуются по стабильному id, а не по индексу: иначе две открытые вкладки
+ * (удалили в одной — сохранили в другой) сдвигают правки на соседние фото. */
+function new_id(): string { return bin2hex(random_bytes(4)); }
+function load_works(): array {
+    $works = load('works'); $added = false;
+    foreach ($works as &$w) {
+        if (empty($w['id']) || !is_string($w['id'])) { $w = ['id' => new_id()] + $w; $added = true; }
+    }
+    unset($w);
+    if ($added) save('works', $works);
+    return $works;
+}
+function works_index(array $works, string $id): ?int {
+    foreach ($works as $i => $w) if (($w['id'] ?? null) === $id) return $i;
+    return null;
+}
 
 function clean(string $s, int $max = 2000): string {
     $s = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F]/u', '', $s) ?? '';

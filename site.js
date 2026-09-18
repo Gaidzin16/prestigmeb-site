@@ -5,6 +5,9 @@
  */
 (function () {
   'use strict';
+  /* Контакты — из data-* на <body> (partials/head.php ← data/site.json), чтобы правки в админке попадали и в сообщения */
+  var sitePhone = document.body.getAttribute('data-phone') || '+7 904 790-82-82';
+  var siteHours = document.body.getAttribute('data-hours') || 'Пн–Пт 10:00–19:00';
 
   /* --- Переключатель заднего фона (аид для показа заказчику, в продакшн не идёт) --- */
   var bgSwitch = document.querySelector('[data-bg-switch]');
@@ -299,7 +302,7 @@
       };
       /* Демо на GitHub Pages: сервера нет, честно предупреждаем */
       if (/github\.io$/.test(location.hostname)) {
-        say('Это демо-версия сайта — отправка заявок заработает после переезда на хостинг. Пока звоните: +7 904 790-82-82', 'error');
+        say('Это демо-версия сайта — отправка заявок заработает после переезда на хостинг. Пока звоните: ' + sitePhone, 'error');
         return;
       }
       btn.disabled = true; var label = btn.textContent; btn.textContent = 'Отправляем…';
@@ -314,14 +317,14 @@
       }).then(function (j) {
         if (j && j.ok) {
           form.classList.add('is-sent');
-          say('Спасибо, заявка принята. Перезвоним в рабочее время — Пн–Пт с 10:00 до 19:00.', 'ok');
+          say('Спасибо, заявка принята. Перезвоним в рабочее время — ' + siteHours + '.', 'ok');
           form.reset();
         } else {
-          say((j && j.error) || 'Не получилось отправить. Позвоните нам: +7 904 790-82-82', 'error');
+          say((j && j.error) || 'Не получилось отправить. Позвоните нам: ' + sitePhone, 'error');
           btn.disabled = false; btn.textContent = label;
         }
       }).catch(function () {
-        say('Не получилось отправить. Позвоните нам: +7 904 790-82-82', 'error');
+        say('Не получилось отправить. Позвоните нам: ' + sitePhone, 'error');
         btn.disabled = false; btn.textContent = label;
       });
     });

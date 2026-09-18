@@ -1,4 +1,4 @@
-<?php $works = load('works'); ?>
+<?php $works = load_works(); ?>
 <p class="hint">Порядок здесь = порядок в портфолио (первые 12 видны сразу, остальные под «Показать ещё»).
   Перетаскивайте карточки или используйте стрелки. <b>Главная</b> и <b>Категория</b> — номер позиции
   в слайдере на главной и в ленте из 4 фото на странице раздела; пусто — не показывать.</p>
@@ -36,24 +36,24 @@
 
   <ol class="works" id="works-list">
     <?php foreach ($works as $i => $w): ?>
-    <li class="work" data-i="<?= $i ?>" data-type="<?= e($w['type']) ?>" draggable="true">
+    <li class="work" data-i="<?= e($w['id']) ?>" data-type="<?= e($w['type']) ?>" draggable="true">
       <div class="work__photo"><img src="/img/<?= e($w['file']) ?>" alt="" loading="lazy"><span class="work__n"><?= $i + 1 ?></span></div>
       <div class="work__body">
-        <label>Подпись (alt)<input name="w[<?= $i ?>][alt]" value="<?= e($w['alt']) ?>" maxlength="200"></label>
+        <label>Подпись (alt)<input name="w[<?= e($w['id']) ?>][alt]" value="<?= e($w['alt']) ?>" maxlength="200"></label>
         <div class="row">
-          <label>Раздел<select name="w[<?= $i ?>][type]"><?php foreach ($TYPES as $k => $t): ?><option value="<?= $k ?>"<?= $w['type'] === $k ? ' selected' : '' ?>><?= e($t) ?></option><?php endforeach; ?></select></label>
-          <label>Материал<select name="w[<?= $i ?>][material]"><?php foreach ($MATERIALS as $k => $t): ?><option value="<?= $k ?>"<?= ($w['material'] ?? '') === $k ? ' selected' : '' ?>><?= e($t) ?></option><?php endforeach; ?></select></label>
+          <label>Раздел<select name="w[<?= e($w['id']) ?>][type]"><?php foreach ($TYPES as $k => $t): ?><option value="<?= $k ?>"<?= $w['type'] === $k ? ' selected' : '' ?>><?= e($t) ?></option><?php endforeach; ?></select></label>
+          <label>Материал<select name="w[<?= e($w['id']) ?>][material]"><?php foreach ($MATERIALS as $k => $t): ?><option value="<?= $k ?>"<?= ($w['material'] ?? '') === $k ? ' selected' : '' ?>><?= e($t) ?></option><?php endforeach; ?></select></label>
         </div>
         <div class="row row--flags">
-          <label class="check"><input type="checkbox" name="w[<?= $i ?>][portfolio]" value="1"<?= !empty($w['portfolio']) ? ' checked' : '' ?>> В портфолио</label>
-          <label>Главная<input type="number" name="w[<?= $i ?>][home]" value="<?= e((string)($w['home'] ?? '')) ?>" min="1" max="20" inputmode="numeric"></label>
-          <label>Категория<input type="number" name="w[<?= $i ?>][category]" value="<?= e((string)($w['category'] ?? '')) ?>" min="1" max="4" inputmode="numeric"></label>
+          <label class="check"><input type="checkbox" name="w[<?= e($w['id']) ?>][portfolio]" value="1"<?= !empty($w['portfolio']) ? ' checked' : '' ?>> В портфолио</label>
+          <label>Главная<input type="number" name="w[<?= e($w['id']) ?>][home]" value="<?= e((string)($w['home'] ?? '')) ?>" min="1" max="20" inputmode="numeric"></label>
+          <label>Категория<input type="number" name="w[<?= e($w['id']) ?>][category]" value="<?= e((string)($w['category'] ?? '')) ?>" min="1" max="4" inputmode="numeric"></label>
         </div>
       </div>
       <div class="work__tools">
         <button type="button" class="ico" data-move="-1" title="Выше">↑</button>
         <button type="button" class="ico" data-move="1" title="Ниже">↓</button>
-        <button type="button" class="ico ico--del" data-delete="<?= $i ?>" title="Удалить">✕</button>
+        <button type="button" class="ico ico--del" data-delete="<?= e($w['id']) ?>" title="Удалить">✕</button>
       </div>
     </li>
     <?php endforeach; ?>
