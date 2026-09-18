@@ -27,11 +27,21 @@ if (stripos($_SERVER['CONTENT_TYPE'] ?? '', 'application/json') !== false) {
 } else {
     $in = $_POST;
 }
+/* Все поля — одна строка: переводы строк схлопываем, чтобы нельзя было
+ * подделать записи в leads.log (формат «=== дата | ip» / «Поле: значение»). */
 $get = function ($k, $max = 500) use ($in) {
-    $v = isset($in[$k]) ? (string)$in[$k] : '';
-    $v = trim(preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F]/u', '', $v));
-    return mb_substr($v, 0, $max);
+    $v = isset($in[$k]) && !is_array($in[$k]) ? (string)$in[$k] : '';
+    $v = preg_replace('/[\x00-\x1F\x7F]+/u', ' ', $v) ?? '';
+    $v = preg_replace('/ {2,}/', ' ', $v) ?? '';
+    return mb_substr(trim($v), 0, $max);
 };
+
+/* --- Только со своего сайта: если браузер прислал Origin, хост должен совпадать --- */
+$origin = (string)($_SERVER['HTTP_ORIGIN'] ?? '');
+$host = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? ''));
+if ($origin !== '' && strcasecmp((string)parse_url($origin, PHP_URL_HOST), $host) !== 0) {
+    fail('Запрос не с сайта', 403);
+}
 
 /* --- Антиспам: скрытое поле, которое человек не заполнит --- */
 if ($get('website') !== '') {
@@ -40,7 +50,8 @@ if ($get('website') !== '') {
 }
 
 /* --- Антиспам: лимит по IP --- */
-$ip = $_SERVER['HTTP_X_REAL_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+/* nginx стоит первым, прокси нет — заголовкам X-Real-IP / X-Forwarded-For верить нельзя */
+$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 $rateFile = sys_get_temp_dir() . '/prestige-rate-' . md5($ip);
 $hits = file_exists($rateFile) ? array_filter(
     array_map('intval', file($rateFile, FILE_IGNORE_NEW_LINES)),
@@ -61,6 +72,8 @@ $digits = preg_replace('/\D/', '', $phone);
 if (strlen($digits) < 10 || strlen($digits) > 15) fail('Проверьте номер телефона');
 if (!$consent) fail('Нужно согласие на обработку данных');
 if (preg_match('~https?://|www\.~i', $name . ' ' . $comment)) fail('Уберите ссылки из сообщения');
+/* Страница — только адрес этого сайта; иначе в журнал попадёт что угодно, в т. ч. javascript: */
+if ($page !== '' && (!preg_match('~^https?://([^/?#]+)~i', $page, $m) || strcasecmp($m[1], $host) !== 0)) $page = '';
 
 /* Телефон в единый вид +7 XXX XXX-XX-XX */
 if (strlen($digits) === 11 && ($digits[0] === '8' || $digits[0] === '7')) $digits = '7' . substr($digits, 1);
@@ -81,7 +94,9 @@ $lines[] = "Время: $when";
 $text = implode("\n", $lines);
 
 /* --- Журнал (всегда, до отправки) --- */
+$logNew = !file_exists($cfg['log_file']);
 @file_put_contents($cfg['log_file'], "=== $when | $ip\n$text\n\n", FILE_APPEND | LOCK_EX);
+if ($logNew) @chmod($cfg['log_file'], 0600);
 file_put_contents($rateFile, implode("\n", array_merge($hits, [time()])));
 
 /* --- Почта --- */

@@ -37,16 +37,20 @@ function check_csrf(): void {
 
 /* Защита от перебора: после 5 ошибок подряд с IP — пауза 15 минут */
 function login_lock_file(): string { return sys_get_temp_dir() . '/prestige-admin-' . md5($_SERVER['REMOTE_ADDR'] ?? ''); }
-function login_locked(): bool {
+const LOGIN_TRIES = 5;
+const LOGIN_LOCK_SEC = 900;
+/* [число ошибок, время последней]; после истечения паузы счётчик начинается заново */
+function login_state(): array {
     $f = login_lock_file();
-    if (!is_file($f)) return false;
+    if (!is_file($f)) return [0, 0];
     [$n, $t] = array_map('intval', explode(' ', (string)file_get_contents($f)) + [0, 0]);
-    return $n >= 5 && time() - $t < 900;
+    return time() - $t < LOGIN_LOCK_SEC ? [$n, $t] : [0, 0];
 }
-function login_fail(): void {
-    $f = login_lock_file();
-    $n = is_file($f) ? (int)explode(' ', (string)file_get_contents($f))[0] : 0;
-    file_put_contents($f, ($n + 1) . ' ' . time());
+function login_locked(): bool { return login_state()[0] >= LOGIN_TRIES; }
+function login_fail(string $login): void {
+    [$n] = login_state();
+    file_put_contents(login_lock_file(), ($n + 1) . ' ' . time(), LOCK_EX);
+    alog('неверный пароль: ' . $login . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-') . ' попытка ' . ($n + 1));
 }
 /* Пользователи: api/admin-users.json (пишется при смене пароля), иначе config.php → admin_users */
 define('USERS_FILE', ROOT . '/api/admin-users.json');
@@ -66,17 +70,27 @@ function set_password(string $login, string $password): void {
 }
 function try_login(string $login, string $password): bool {
     $users = admin_users();
-    if (login_locked()) return false;
+    if (login_locked()) { alog('вход при блокировке: ' . $login . ' ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-')); return false; }
     if (isset($users[$login]) && password_verify($password, $users[$login])) {
         session_regenerate_id(true);
         $_SESSION['user'] = $login;
         @unlink(login_lock_file());
-        alog('вход');
+        alog('вход ip=' . ($_SERVER['REMOTE_ADDR'] ?? '-'));
         return true;
     }
-    login_fail();
+    login_fail($login);
     usleep(500000);
     return false;
+}
+function logout(): void {
+    alog('выход');
+    $_SESSION = [];
+    if (ini_get('session.use_cookies')) {
+        $p = session_get_cookie_params();
+        setcookie(session_name(), '', ['expires' => time() - 86400, 'path' => $p['path'], 'domain' => $p['domain'],
+                                       'secure' => $p['secure'], 'httponly' => $p['httponly'], 'samesite' => $p['samesite']]);
+    }
+    session_destroy();
 }
 
 /* ---------- данные ---------- */
@@ -110,6 +124,7 @@ function phone_tel(string $text): string {
 
 /* ---------- фото ---------- */
 const MAX_SIDE = 1600;
+const MAX_PIXELS = 30_000_000;
 function translit(string $s): string {
     static $map = ['а'=>'a','б'=>'b','в'=>'v','г'=>'g','д'=>'d','е'=>'e','ё'=>'e','ж'=>'zh','з'=>'z','и'=>'i','й'=>'j','к'=>'k','л'=>'l','м'=>'m','н'=>'n','о'=>'o','п'=>'p','р'=>'r','с'=>'s','т'=>'t','у'=>'u','ф'=>'f','х'=>'h','ц'=>'c','ч'=>'ch','ш'=>'sh','щ'=>'sch','ъ'=>'','ы'=>'y','ь'=>'','э'=>'e','ю'=>'yu','я'=>'ya'];
     $s = mb_strtolower($s);
@@ -122,11 +137,15 @@ function translit(string $s): string {
 function store_image(array $file, string $prefix): string {
     if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
         throw new RuntimeException($file['error'] === UPLOAD_ERR_INI_SIZE || $file['error'] === UPLOAD_ERR_FORM_SIZE
-            ? 'Файл больше 20 МБ' : 'Файл не загрузился (код ' . $file['error'] . ')');
+            ? 'Файл больше 20 МБ' : 'Файл не загрузился (код ' . (int)$file['error'] . ')');
     }
     $info = @getimagesize($file['tmp_name']);
     if (!$info || !in_array($info[2], [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP], true)) {
         throw new RuntimeException('Нужен JPEG, PNG или WebP');
+    }
+    /* Размер в пикселях проверяем до декодирования: 30 Мп в GD — это уже ~120 МБ памяти */
+    if ($info[0] * $info[1] > MAX_PIXELS) {
+        throw new RuntimeException('Слишком большое изображение: ' . $info[0] . '×' . $info[1] . ' px (максимум 30 Мп)');
     }
     $im = @imagecreatefromstring((string)file_get_contents($file['tmp_name']));
     if (!$im) throw new RuntimeException('Не удалось прочитать изображение');

@@ -9,7 +9,7 @@
       <span class="sp"></span><span class="muted"><?= e($l['when']) ?></span></div>
     <?php foreach ($l['fields'] as $k => $v): if (in_array($k, ['Имя', 'Телефон', 'Время'], true) || $v === '') continue; ?>
       <div class="lead__row"><span class="muted"><?= e($k) ?>:</span>
-        <?php if ($k === 'Страница'): ?><a href="<?= e($v) ?>" target="_blank" rel="noopener"><?= e(preg_replace('#^https?://[^/]+#', '', $v) ?: '/') ?></a><?php else: ?><?= e($v) ?><?php endif; ?>
+        <?php if ($k === 'Страница' && preg_match('#^https?://#i', $v)): /* ссылка только для http(s) — иначе javascript: и т. п. */ ?><a href="<?= e($v) ?>" target="_blank" rel="noopener"><?= e(preg_replace('#^https?://[^/]+#i', '', $v) ?: '/') ?></a><?php else: ?><?= e($v) ?><?php endif; ?>
       </div>
     <?php endforeach; ?>
   </li>

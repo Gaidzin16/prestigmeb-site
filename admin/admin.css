@@ -30,6 +30,8 @@ a { color: var(--color-accent); }
 .top__nav a:hover, .top__site:hover, .top__out:hover { background: var(--color-paper-3); }
 .top__nav a[aria-current] { background: var(--color-accent); color: var(--color-on-accent); }
 .top__out { color: var(--color-muted); }
+.top__out-form { display: inline; margin: 0; }
+button.top__out { background: none; border: 0; font: inherit; cursor: pointer; }
 
 .page { padding: var(--space-lg) 1rem var(--space-3xl); max-width: 64rem; margin: 0 auto; }
 

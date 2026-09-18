@@ -7,7 +7,7 @@
 <title><?= e($titles[$section]) ?> — админка «Престиж»</title>
 <link rel="icon" href="/img/favicon-32.png">
 <link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/admin/admin.css?v=1">
+<link rel="stylesheet" href="/admin/admin.css?v=2">
 </head>
 <body>
 <header class="top">
@@ -19,8 +19,8 @@
   </nav>
   <span class="sp"></span>
   <a class="top__site" href="/" target="_blank" rel="noopener">Открыть сайт ↗</a>
-  <a class="top__out" href="?s=logout">Выйти</a>
+  <form class="top__out-form" method="post" action="?s=logout"><?= csrf_field() ?><button class="top__out" type="submit">Выйти</button></form>
 </header>
 <main class="page">
-<?php if ($flash): ?><p class="msg <?= $flash['ok'] ? 'msg--ok' : 'msg--err' ?>"><?= $flash['msg'] ?></p><?php endif; ?>
+<?php if ($flash): ?><p class="msg <?= $flash['ok'] ? 'msg--ok' : 'msg--err' ?>"><?= e($flash['msg']) ?></p><?php endif; ?>
 <h1><?= e($titles[$section]) ?></h1>

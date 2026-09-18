@@ -11,7 +11,8 @@ function flash(string $msg, bool $ok = true): void { $_SESSION['flash'] = ['msg'
 function redirect(string $to): never { header('Location: ' . $to); exit; }
 
 /* ---------- вход / выход ---------- */
-if ($section === 'logout') { alog('выход'); session_destroy(); redirect('./'); }
+/* Выход — только POST с CSRF-токеном, чтобы чужая страница не могла разлогинить */
+if ($section === 'logout') { if ($_SERVER['REQUEST_METHOD'] === 'POST') { check_csrf(); logout(); } redirect('./'); }
 if (!is_logged_in()) {
     $err = '';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     array_unshift($works, ['file' => $file, 'alt' => $TYPES[$type] . ' на заказ, Дзержинск', 'type' => $type,
                                            'material' => null, 'portfolio' => true, 'home' => null, 'category' => null]);
                     $n++;
-                } catch (Throwable $ex) { $errs[] = e($name) . ': ' . $ex->getMessage(); }
+                } catch (Throwable $ex) { $errs[] = clean((string)$name, 80) . ': ' . $ex->getMessage(); }
             }
             if ($n) { save('works', $works); git_sync("работы — добавлено фото: $n"); }
             flash(($n ? "Загружено фото: $n. " : '') . ($errs ? 'Ошибки: ' . implode('; ', $errs) : ''), !$errs);
@@ -140,6 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $site['phones'] = array_map(fn($l) => ['tel' => phone_tel($l), 'text' => $l], lines((string)($_POST['phones'] ?? '')));
             if (!$site['phones']) throw new RuntimeException('Нужен хотя бы один телефон');
             if (!filter_var($site['email'], FILTER_VALIDATE_EMAIL)) throw new RuntimeException('Проверьте адрес почты');
+            foreach (['vk', 'avito', 'route'] as $k) { /* ссылки идут в href на сайте — только http(s) */
+                if ($site[$k] !== '' && !preg_match('#^https?://#i', $site[$k])) throw new RuntimeException('Ссылка должна начинаться с https://');
+            }
             save('site', $site); git_sync('контакты');
             flash('Контакты сохранены');
             break;
@@ -151,6 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mb_strlen($new) < 10) throw new RuntimeException('Новый пароль — не короче 10 символов');
             if ($new !== (string)($_POST['confirm'] ?? '')) throw new RuntimeException('Пароли не совпадают');
             set_password($_SESSION['user'], $new);
+            session_regenerate_id(true);
             flash('Пароль изменён');
             break;
         }

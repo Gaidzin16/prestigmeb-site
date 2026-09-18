@@ -7,7 +7,7 @@
 <title>Вход — админка «Престиж»</title>
 <link rel="icon" href="/img/favicon-32.png">
 <link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/admin/admin.css?v=1">
+<link rel="stylesheet" href="/admin/admin.css?v=2">
 </head>
 <body class="login">
 <form class="login__box" method="post" autocomplete="on">
