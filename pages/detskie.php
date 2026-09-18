@@ -108,10 +108,7 @@ require PARTIALS . '/header.php';
       <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
         Дзержинска и области.</p>
       <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="/img/detskaya-stenka.jpg" alt="Детская стенка на заказ: шкаф, стеллаж и рабочий стол" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/detskaya-stol-okno.jpg" alt="Детская с письменным столом у окна на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-detskaya-04.jpg" alt="Детская мебель на заказ, Дзержинск" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-detskaya-06.jpg" alt="Детская мебель на заказ, Дзержинск" loading="lazy" decoding="async"></div>
+<?php render_category_strip('detskie'); ?>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="/portfolio/">Все работы по детским</a></p>
     </div>

@@ -29,25 +29,7 @@ require PARTIALS . '/header.php';
 
       <!-- 3 · Сетка акций -->
       <div class="cats" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:52rem" role="list">
-        <a class="cat" href="#form" role="listitem">
-          <div class="cat__photo" style="flex:none"><div class="photo" style="aspect-ratio:3/2"><img class="photo__img" src="/img/akciya-kuhnya-100k.jpg" alt="Кухня по акции: серые матовые верхние фасады, графитовый низ, столешница и фартук под дерево, чёрная мойка" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'photo__label',textContent:'фото акции'}))"></div></div>
-          <div class="cat__body">
-            <h3 class="cat__name">Кухня за 100&nbsp;000&nbsp;₽</h3>
-            <p class="cat__desc">Кухня по вашим размерам за фиксированную цену — с беспроцентной рассрочкой на 8 месяцев без банка.</p>
-            <ul style="margin:.7rem 0 0;padding-left:1.1rem;font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.55">
-              <li>Фасады и корпус Kronospan</li>
-              <li>Ширина до 2400&nbsp;мм</li>
-              <li>Столешница «Скиф»/«Кедр» 28&nbsp;мм</li>
-              <li>Фурнитура Boyard</li>
-              <li>Много цветов на выбор</li>
-            </ul>
-            <p class="cat__desc" style="margin-top:.7rem;font-style:italic">Количество кухонь по акции ограничено.</p>
-          </div>
-        </a>
-        <a class="cat" href="#form" role="listitem">
-          <div class="cat__photo" style="flex:none"><div class="photo" style="aspect-ratio:3/2"><img class="photo__img" src="/img/akciya-mojka-keramogranit.jpg" alt="Мойка из керамогранита — в подарок при заказе кухни" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'photo__label',textContent:'фото акции'}))"></div></div>
-          <div class="cat__body"><h3 class="cat__name">Мойка из керамогранита в подарок</h3><p class="cat__desc">При заказе любой кухни дарим мойку из керамогранита. Без ограничения по сроку.</p></div>
-        </a>
+<?php render_promos(); ?>
       </div>
 
       <!-- Постоянное предложение -->

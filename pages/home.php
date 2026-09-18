@@ -203,13 +203,7 @@ require PARTIALS . '/header.php';
       <div class="slider slider--works" data-slider data-autoplay="0" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши работы">
         <div class="slider__viewport">
           <div class="slider__track">
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе с зеркальными фасадами на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/detskaya-stol.jpg" alt="Детская на заказ: письменный стол и стеллаж" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/garderobnaya.jpg" alt="Открытая гардеробная система на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-klassika-zoloto.jpg" alt="Классическая кухня с золотой патиной на заказ" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/detskaya-stenka.jpg" alt="Детская стенка на заказ" loading="lazy" decoding="async"></div></div>
+<?php render_home_slider(); ?>
           </div>
           <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущая работа">‹</button>
           <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующая работа">›</button>
@@ -225,26 +219,7 @@ require PARTIALS . '/header.php';
     <div class="wrap">
       <h2 class="section__title" id="rev-title">Что говорят клиенты</h2>
       <div class="reviews-grid">
-        <blockquote class="review">
-          <p class="review__q">«Сделали бесплатный замер, составили эскиз, подобрали материал. Месяц ждали
-            изготовление, установили за один день быстро и красиво! Рассрочка на 8 месяцев без банка,
-            без переплат. Советую!»</p>
-          <div class="review__who">Александр и Ирина Максимовы</div>
-          <div class="review__where">отзыв с сайта</div>
-        </blockquote>
-        <blockquote class="review">
-          <p class="review__q">«Заказывал кухню матери, сам живу в другом городе. Замерщик приехал по
-            заявке, сам согласовал время. Матери понравилась кухня. Понравилось, что не пришлось
-            участвовать в организации».</p>
-          <div class="review__who">Александр Маркин</div>
-          <div class="review__where">отзыв с сайта</div>
-        </blockquote>
-        <blockquote class="review">
-          <p class="review__q">«Не первый раз заказываю мебель в этой организации, делают всё прекрасно,
-            качественно. Спасибо, что есть такие исполнители».</p>
-          <div class="review__who">Сергей Пискунов</div>
-          <div class="review__where">отзыв с сайта</div>
-        </blockquote>
+<?php render_reviews(); ?>
       </div>
     </div>
   </section>
@@ -293,16 +268,16 @@ require PARTIALS . '/header.php';
       <h2 class="section__title" id="cont-title">Приезжайте в салон</h2>
       <div class="contacts-grid">
         <dl class="contacts">
-          <div><dt>Адрес</dt><dd>Дзержинск, ул. Грибоедова, д. 3</dd></div>
+          <div><dt>Адрес</dt><dd><?= e($site['address_short']) ?></dd></div>
           <div><dt>Телефоны</dt><dd>
-            <a href="tel:+79047908282">+7 904 790-82-82</a><br>
-            <a href="tel:+79103847019">+7 910 384-70-19</a><br>
-            <a href="tel:+78313231917">8 (8313) 23-19-17</a>
+<?php foreach ($site['phones'] as $i => $p): ?>
+            <a href="tel:<?= e($p['tel']) ?>"><?= e($p['text']) ?></a><?= $i < count($site['phones']) - 1 ? '<br>' : '' ?>
+<?php endforeach; ?>
           </dd></div>
-          <div><dt>Почта</dt><dd><a href="mailto:prestig-meb@mail.ru">prestig-meb@mail.ru</a></dd></div>
-          <div><dt>Соцсети</dt><dd><a href="https://vk.ru/club210473860" target="_blank" rel="noopener">ВКонтакте</a> · <a href="https://www.avito.ru/dzerzhinsk/mebel_i_interer/kuhni_na_zakaz_4572454241" target="_blank" rel="noopener">Avito</a></dd></div>
-          <div><dt>Часы</dt><dd>Пн–Пт 10:00–19:00<br><span style="color:var(--color-muted);font-size:var(--text-sm)">Сб, Вс — выходные. Заявки на сайте — круглосуточно</span></dd></div>
-          <div><a class="btn btn--ghost" href="https://yandex.ru/maps/?rtext=~56.243204%2C43.454592&rtt=auto&z=17" target="_blank" rel="noopener">Построить маршрут</a></div>
+          <div><dt>Почта</dt><dd><a href="mailto:<?= e($site['email']) ?>"><?= e($site['email']) ?></a></dd></div>
+          <div><dt>Соцсети</dt><dd><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener">ВКонтакте</a> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener">Avito</a></dd></div>
+          <div><dt>Часы</dt><dd><?= e($site['hours']) ?><br><span style="color:var(--color-muted);font-size:var(--text-sm)"><?= e($site['hours_note']) ?></span></dd></div>
+          <div><a class="btn btn--ghost" href="<?= e($site['route']) ?>" target="_blank" rel="noopener">Построить маршрут</a></div>
         </dl>
         <div class="map photo"><span class="photo__label"><b>Карта</b>ул. Грибоедова, 3</span></div>
       </div>

@@ -369,10 +369,7 @@ require PARTIALS . '/header.php';
       <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
         Дзержинска и области.</p>
       <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белым мрамором на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-modern.jpg" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/kuhnya-temno-sinyaya.jpg" alt="Тёмно-синяя кухня с белой столешницей на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/kuhnya-seraya-modern.jpg" alt="Серая кухня модерн с деревянной столешницей на заказ" loading="lazy" decoding="async"></div>
+<?php render_category_strip('kuhni'); ?>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="/portfolio/">Все работы по кухням</a></p>
     </div>

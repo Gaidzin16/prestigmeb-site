@@ -401,10 +401,7 @@ require PARTIALS . '/header.php';
       <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
         Дзержинска и области.</p>
       <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="/img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-shkaf-01.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-shkaf-05.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-shkaf-08.jpg" alt="Шкаф-купе на заказ, Дзержинск" loading="lazy" decoding="async"></div>
+<?php render_category_strip('shkafy'); ?>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="/portfolio/">Все работы по шкафам</a></p>
     </div>

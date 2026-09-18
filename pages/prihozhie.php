@@ -111,10 +111,7 @@ require PARTIALS . '/header.php';
       <p class="section__lead measure">Всё сделано на нашем производстве и стоит в квартирах
         Дзержинска и области.</p>
       <div class="works-strip">
-        <div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" alt="Светлая прихожая с фактурой мрамора на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/prihozhaya-belaya-zoloto.jpg" alt="Белая прихожая с золотой патиной на заказ" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-prihozhaya-01.jpg" alt="Прихожая на заказ, Дзержинск" loading="lazy" decoding="async"></div>
-        <div class="photo"><img class="photo__img" src="/img/vk-prihozhaya-02.jpg" alt="Прихожая на заказ, Дзержинск" loading="lazy" decoding="async"></div>
+<?php render_category_strip('prihozhie'); ?>
       </div>
       <p style="margin-top:var(--space-lg)"><a class="btn btn--ghost" href="/portfolio/">Все работы по прихожим</a></p>
     </div>

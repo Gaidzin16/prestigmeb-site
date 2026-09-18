@@ -26,7 +26,7 @@ require PARTIALS . '/header.php';
         <li><a class="tlink" href="/portfolio/">Наши работы <span class="arw">→</span></a></li>
         <li><a class="tlink" href="/#cont-title">Контакты <span class="arw">→</span></a></li>
       </ul>
-      <p style="margin-top:var(--space-lg)">Или позвоните: <a href="tel:+79047908282">+7 904 790-82-82</a> — Пн–Пт 10:00–19:00.</p>
+      <p style="margin-top:var(--space-lg)">Или позвоните: <a href="tel:<?= e($site['phones'][0]['tel']) ?>"><?= e($site['phones'][0]['text']) ?></a> — Пн–Пт 10:00–19:00.</p>
     </div>
   </section>
 </main>

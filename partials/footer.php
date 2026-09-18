@@ -29,12 +29,12 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>Дзержинск, ул. Грибоедова, 3 · +7 904 790-82-82</span>
-      <span><a href="https://vk.ru/club210473860" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">ВКонтакте</a> · <a href="https://www.avito.ru/dzerzhinsk/mebel_i_interer/kuhni_na_zakaz_4572454241" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">Avito</a></span>
+      <span><?= e($site['address_short']) ?> · <?= e($site['phones'][0]['text']) ?></span>
+      <span><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">ВКонтакте</a> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">Avito</a></span>
       <span class="sp"></span>
       <a href="/policy/"<?= nav_current('policy') ?> style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
       <a href="/soglasie/"<?= nav_current('soglasie') ?> style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
-      <span class="foot__req">ИП Харупкин А. В. · ИНН 524924627894 · ОГРНИП 312524918500016</span>
+      <span class="foot__req"><?= e($site['requisites']) ?></span>
     </div>
   </div>
 </footer>

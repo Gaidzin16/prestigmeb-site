@@ -20,6 +20,9 @@ function data(string $name): array {
     return $cache[$name];
 }
 
+require PARTIALS . '/render.php';
+$site = data('site');
+
 $routes = [
     '/'             => 'home',
     '/kuhni/'       => 'kuhni',
