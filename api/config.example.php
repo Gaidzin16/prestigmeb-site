@@ -19,6 +19,11 @@ return [
     'rate_limit' => 5,
     'rate_window' => 3600,
 
+    /* Админка: логин => хэш пароля. Хэш: php -r 'echo password_hash("пароль", PASSWORD_DEFAULT);' */
+    'admin_users' => [
+        // 'prestige' => '$2y$10$...',
+    ],
+
     /* Файл-журнал заявок (резерв на случай, если почта/ВК не дошли) */
     'log_file' => __DIR__ . '/leads.log',
 ];
