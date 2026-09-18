@@ -1,0 +1,25 @@
+# Деплой на VPS Timeweb после каждого push в main.
+# Секреты репо: DEPLOY_SSH_KEY (приватный ключ), DEPLOY_HOST (IP), DEPLOY_KNOWN_HOSTS (ssh-keyscan).
+name: Deploy to server
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+      - name: Pull on server
+        run: ssh -o BatchMode=yes deploy@${{ secrets.DEPLOY_HOST }} '~/deploy.sh'
