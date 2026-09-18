@@ -1,4 +1,5 @@
 # Только на сервере, никогда в git
 api/config.php
 api/leads.log
+api/admin-users.json
 admin/admin.log

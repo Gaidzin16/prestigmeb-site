@@ -48,9 +48,24 @@ function login_fail(): void {
     $n = is_file($f) ? (int)explode(' ', (string)file_get_contents($f))[0] : 0;
     file_put_contents($f, ($n + 1) . ' ' . time());
 }
-function try_login(string $login, string $password): bool {
+/* Пользователи: api/admin-users.json (пишется при смене пароля), иначе config.php → admin_users */
+define('USERS_FILE', ROOT . '/api/admin-users.json');
+function admin_users(): array {
     global $cfg;
-    $users = $cfg['admin_users'] ?? [];
+    if (is_file(USERS_FILE)) return json_decode((string)file_get_contents(USERS_FILE), true) ?: [];
+    return $cfg['admin_users'] ?? [];
+}
+function set_password(string $login, string $password): void {
+    $users = admin_users();
+    $users[$login] = password_hash($password, PASSWORD_DEFAULT);
+    if (file_put_contents(USERS_FILE, json_encode($users, JSON_PRETTY_PRINT) . "\n", LOCK_EX) === false) {
+        throw new RuntimeException('Не удалось записать файл пользователей');
+    }
+    @chmod(USERS_FILE, 0600);
+    alog('смена пароля');
+}
+function try_login(string $login, string $password): bool {
+    $users = admin_users();
     if (login_locked()) return false;
     if (isset($users[$login]) && password_verify($password, $users[$login])) {
         session_regenerate_id(true);

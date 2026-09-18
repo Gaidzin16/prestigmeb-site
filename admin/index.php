@@ -144,6 +144,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             flash('Контакты сохранены');
             break;
         }
+        /* --- пароль --- */
+        case 'password/save': {
+            $cur = (string)($_POST['current'] ?? ''); $new = (string)($_POST['new'] ?? '');
+            if (!password_verify($cur, admin_users()[$_SESSION['user']] ?? '')) throw new RuntimeException('Текущий пароль неверный');
+            if (mb_strlen($new) < 10) throw new RuntimeException('Новый пароль — не короче 10 символов');
+            if ($new !== (string)($_POST['confirm'] ?? '')) throw new RuntimeException('Пароли не совпадают');
+            set_password($_SESSION['user'], $new);
+            flash('Пароль изменён');
+            break;
+        }
         default:
             flash('Неизвестное действие', false);
         }
@@ -154,9 +164,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 /* ---------- вывод ---------- */
-$views = ['works', 'promos', 'reviews', 'contacts', 'leads'];
+$views = ['works', 'promos', 'reviews', 'contacts', 'leads', 'password'];
 if (!in_array($section, $views, true)) $section = 'works';
-$titles = ['works' => 'Работы', 'promos' => 'Акции', 'reviews' => 'Отзывы', 'contacts' => 'Контакты', 'leads' => 'Заявки'];
+$titles = ['works' => 'Работы', 'promos' => 'Акции', 'reviews' => 'Отзывы', 'contacts' => 'Контакты', 'leads' => 'Заявки', 'password' => 'Пароль'];
 require __DIR__ . '/views/layout-top.php';
 require __DIR__ . "/views/$section.php";
 require __DIR__ . '/views/layout-bottom.php';
