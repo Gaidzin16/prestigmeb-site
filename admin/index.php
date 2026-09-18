@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST['r'] ?? [] as $r) {
                 $t = clean((string)($r['text'] ?? ''), 1000);
                 if ($t === '') continue;
-                $out[] = ['text' => trim($t, '«»" '), 'who' => clean((string)($r['who'] ?? ''), 80), 'where' => clean((string)($r['where'] ?? ''), 80)];
+                $out[] = ['text' => trim(preg_replace('/^[«"\s]+|[»"\s]+$/u', '', $t) ?? $t), 'who' => clean((string)($r['who'] ?? ''), 80), 'where' => clean((string)($r['where'] ?? ''), 80)];
             }
             save('reviews', $out); git_sync('отзывы');
             flash('Отзывы сохранены');
