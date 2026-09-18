@@ -1,497 +1,506 @@
 [
-  {
-    "file": "kuhnya-klassika-zoloto.jpg",
-    "alt": "Классическая кухня в светлом цвете с фурнитурой под золото на заказ",
-    "type": "kuhni",
-    "material": "emal",
-    "portfolio": true,
-    "home": 6,
-    "category": null
-  },
-  {
-    "file": "kuhnya-belaya-glyanec.jpg",
-    "alt": "Белая глянцевая угловая кухня с деревянным фартуком на заказ",
-    "type": "kuhni",
-    "material": "plastik",
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "kuhnya-sero-belaya.jpg",
-    "alt": "Угловая серо-белая кухня с деревянной столешницей на заказ",
-    "type": "kuhni",
-    "material": "plenka",
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "shkaf-kupe-uglovoj.jpg",
-    "alt": "Встроенный угловой шкаф-купе с зеркальными фасадами на заказ",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": 2,
-    "category": null
-  },
-  {
-    "file": "shkaf-kupe-steklo.jpg",
-    "alt": "Шкаф-купе от стены до стены с фасадами из сатинового стекла на заказ",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 1
-  },
-  {
-    "file": "kuhnya-ramochnaya-belaya.jpg",
-    "alt": "Белая классическая кухня с рамочными фасадами и плиткой-кабанчиком на заказ",
-    "type": "kuhni",
-    "material": "ramochnye",
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "detskaya-stol.jpg",
-    "alt": "Детская на заказ: письменный стол и стеллаж",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": 3,
-    "category": null
-  },
-  {
-    "file": "prihozhaya-belaya-zoloto.jpg",
-    "alt": "Встроенная прихожая на заказ: белые фасады, рифлёная секция, витрина и золотая окантовка",
-    "type": "prihozhie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 2
-  },
-  {
-    "file": "detskaya-stol-okno.jpg",
-    "alt": "Детская на заказ: два рабочих места вдоль окна, стеллажи и тумбы дуб с белым",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 2
-  },
-  {
-    "file": "prihozhaya-belaya-zoloto-obshiy.jpg",
-    "alt": "Встроенная прихожая на заказ, общий вид: шкаф в пол, зеркало, консоль",
-    "type": "prihozhie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "kuhnya-modern-bezruchek.jpg",
-    "alt": "Кухня в стиле модерн с безручечными фасадами и мраморным фартуком на заказ",
-    "type": "kuhni",
-    "material": "plastik",
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "detskaya-stenka.jpg",
-    "alt": "Детская на заказ: стенка со стеллажами и ящиками",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": 7,
-    "category": 1
-  },
-  {
-    "file": "kuhnya-seraya-matovaya.jpg",
-    "alt": "Серая матовая кухня с деревянной столешницей на заказ",
-    "type": "kuhni",
-    "material": "emal",
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-01.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-02.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-03.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-04.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-05.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-06.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-07.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-08.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-09.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-10.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-11.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-12.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-13.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-14.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-15.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-16.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-17.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-18.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-19.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-kuhnya-20.jpg",
-    "alt": "Кухня на заказ, Дзержинск",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-detskaya-04.jpg",
-    "alt": "Детская на заказ, Дзержинск",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 3
-  },
-  {
-    "file": "vk-detskaya-05.jpg",
-    "alt": "Детская на заказ, Дзержинск",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-detskaya-06.jpg",
-    "alt": "Детская на заказ, Дзержинск",
-    "type": "detskie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 4
-  },
-  {
-    "file": "vk-shkaf-01.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 2
-  },
-  {
-    "file": "vk-shkaf-02.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-03.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-04.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-05.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 3
-  },
-  {
-    "file": "vk-shkaf-06.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-07.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-08.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 4
-  },
-  {
-    "file": "vk-shkaf-09.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-10.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-shkaf-11.jpg",
-    "alt": "Шкаф-купе на заказ, Дзержинск",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": null
-  },
-  {
-    "file": "vk-prihozhaya-01.jpg",
-    "alt": "Прихожая на заказ, Дзержинск",
-    "type": "prihozhie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 3
-  },
-  {
-    "file": "vk-prihozhaya-02.jpg",
-    "alt": "Прихожая на заказ, Дзержинск",
-    "type": "prihozhie",
-    "material": null,
-    "portfolio": true,
-    "home": null,
-    "category": 4
-  },
-  {
-    "file": "kuhnya-seraya-modern.jpg",
-    "alt": "Серая кухня модерн с деревянной столешницей на заказ",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": false,
-    "home": 1,
-    "category": 4
-  },
-  {
-    "file": "garderobnaya.jpg",
-    "alt": "Открытая гардеробная система на заказ",
-    "type": "shkafy",
-    "material": null,
-    "portfolio": false,
-    "home": 4,
-    "category": null
-  },
-  {
-    "file": "prihozhaya-mramor.jpg",
-    "alt": "Прихожая на заказ: мрамор, зеркало, встроенный шкаф",
-    "type": "prihozhie",
-    "material": null,
-    "portfolio": false,
-    "home": 5,
-    "category": 1
-  },
-  {
-    "file": "kuhnya-sinyaya-mramor.jpg",
-    "alt": "Синяя классическая кухня с белым мрамором на заказ",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": false,
-    "home": null,
-    "category": 1
-  },
-  {
-    "file": "kuhnya-belaya-modern.jpg",
-    "alt": "Белая угловая кухня в стиле модерн на заказ",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": false,
-    "home": null,
-    "category": 2
-  },
-  {
-    "file": "kuhnya-temno-sinyaya.jpg",
-    "alt": "Тёмно-синяя кухня с белой столешницей на заказ",
-    "type": "kuhni",
-    "material": null,
-    "portfolio": false,
-    "home": null,
-    "category": 3
-  }
+    {
+        "file": "works/detskie-20260918-8afd.jpg",
+        "alt": "Детские на заказ, Дзержинск",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "kuhnya-klassika-zoloto.jpg",
+        "alt": "Классическая кухня в светлом цвете с фурнитурой под золото на заказ",
+        "type": "kuhni",
+        "material": "emal",
+        "portfolio": true,
+        "home": 6,
+        "category": null
+    },
+    {
+        "file": "kuhnya-belaya-glyanec.jpg",
+        "alt": "Белая глянцевая угловая кухня с деревянным фартуком на заказ",
+        "type": "kuhni",
+        "material": "plastik",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "kuhnya-sero-belaya.jpg",
+        "alt": "Угловая серо-белая кухня с деревянной столешницей на заказ",
+        "type": "kuhni",
+        "material": "plenka",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "shkaf-kupe-uglovoj.jpg",
+        "alt": "Встроенный угловой шкаф-купе с зеркальными фасадами на заказ",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": 2,
+        "category": null
+    },
+    {
+        "file": "shkaf-kupe-steklo.jpg",
+        "alt": "Шкаф-купе от стены до стены с фасадами из сатинового стекла на заказ",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 1
+    },
+    {
+        "file": "kuhnya-ramochnaya-belaya.jpg",
+        "alt": "Белая классическая кухня с рамочными фасадами и плиткой-кабанчиком на заказ",
+        "type": "kuhni",
+        "material": "ramochnye",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "detskaya-stol.jpg",
+        "alt": "Детская на заказ: письменный стол и стеллаж",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": 3,
+        "category": null
+    },
+    {
+        "file": "prihozhaya-belaya-zoloto.jpg",
+        "alt": "Встроенная прихожая на заказ: белые фасады, рифлёная секция, витрина и золотая окантовка",
+        "type": "prihozhie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 2
+    },
+    {
+        "file": "detskaya-stol-okno.jpg",
+        "alt": "Детская на заказ: два рабочих места вдоль окна, стеллажи и тумбы дуб с белым",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 2
+    },
+    {
+        "file": "prihozhaya-belaya-zoloto-obshiy.jpg",
+        "alt": "Встроенная прихожая на заказ, общий вид: шкаф в пол, зеркало, консоль",
+        "type": "prihozhie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "kuhnya-modern-bezruchek.jpg",
+        "alt": "Кухня в стиле модерн с безручечными фасадами и мраморным фартуком на заказ",
+        "type": "kuhni",
+        "material": "plastik",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "detskaya-stenka.jpg",
+        "alt": "Детская на заказ: стенка со стеллажами и ящиками",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": 7,
+        "category": 1
+    },
+    {
+        "file": "kuhnya-seraya-matovaya.jpg",
+        "alt": "Серая матовая кухня с деревянной столешницей на заказ",
+        "type": "kuhni",
+        "material": "emal",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-01.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-02.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-03.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-04.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-05.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-06.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-07.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-08.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-09.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-10.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-11.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-12.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-13.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-14.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-15.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-16.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-17.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-18.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-19.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-kuhnya-20.jpg",
+        "alt": "Кухня на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-detskaya-04.jpg",
+        "alt": "Детская на заказ, Дзержинск",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 3
+    },
+    {
+        "file": "vk-detskaya-05.jpg",
+        "alt": "Детская на заказ, Дзержинск",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-detskaya-06.jpg",
+        "alt": "Детская на заказ, Дзержинск",
+        "type": "detskie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 4
+    },
+    {
+        "file": "vk-shkaf-01.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 2
+    },
+    {
+        "file": "vk-shkaf-02.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-03.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-04.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-05.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 3
+    },
+    {
+        "file": "vk-shkaf-06.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-07.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-08.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 4
+    },
+    {
+        "file": "vk-shkaf-09.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-10.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-shkaf-11.jpg",
+        "alt": "Шкаф-купе на заказ, Дзержинск",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "file": "vk-prihozhaya-01.jpg",
+        "alt": "Прихожая на заказ, Дзержинск",
+        "type": "prihozhie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 3
+    },
+    {
+        "file": "vk-prihozhaya-02.jpg",
+        "alt": "Прихожая на заказ, Дзержинск",
+        "type": "prihozhie",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": 4
+    },
+    {
+        "file": "kuhnya-seraya-modern.jpg",
+        "alt": "Серая кухня модерн с деревянной столешницей на заказ",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": false,
+        "home": 1,
+        "category": 4
+    },
+    {
+        "file": "garderobnaya.jpg",
+        "alt": "Открытая гардеробная система на заказ",
+        "type": "shkafy",
+        "material": null,
+        "portfolio": false,
+        "home": 4,
+        "category": null
+    },
+    {
+        "file": "prihozhaya-mramor.jpg",
+        "alt": "Прихожая на заказ: мрамор, зеркало, встроенный шкаф",
+        "type": "prihozhie",
+        "material": null,
+        "portfolio": false,
+        "home": 5,
+        "category": 1
+    },
+    {
+        "file": "kuhnya-sinyaya-mramor.jpg",
+        "alt": "Синяя классическая кухня с белым мрамором на заказ",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": false,
+        "home": null,
+        "category": 1
+    },
+    {
+        "file": "kuhnya-belaya-modern.jpg",
+        "alt": "Белая угловая кухня в стиле модерн на заказ",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": false,
+        "home": null,
+        "category": 2
+    },
+    {
+        "file": "kuhnya-temno-sinyaya.jpg",
+        "alt": "Тёмно-синяя кухня с белой столешницей на заказ",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": false,
+        "home": null,
+        "category": 3
+    }
 ]
