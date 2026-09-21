@@ -548,5 +548,55 @@
         "portfolio": false,
         "home": null,
         "category": 3
+    },
+    {
+        "id": "2c7d0f46",
+        "file": "works/kuhnya-massiv-arhiv-1.jpg",
+        "alt": "Кухня из массива вишни с колоннами и люстрой, классика — на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": "massiv",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "id": "471fa704",
+        "file": "works/kuhnya-massiv-arhiv-2.jpg",
+        "alt": "Угловая кухня из массива в тёмном цвете со стеклянными витринами",
+        "type": "kuhni",
+        "material": "massiv",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "id": "75f1a581",
+        "file": "works/kuhnya-massiv-arhiv-3.jpg",
+        "alt": "Кухня из массива дуба медового цвета с витражными фасадами",
+        "type": "kuhni",
+        "material": "massiv",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "id": "2f32e4bb",
+        "file": "works/kuhnya-massiv-arhiv-4.jpg",
+        "alt": "Кухня из массива цвета слоновой кости с патиной и барной стойкой",
+        "type": "kuhni",
+        "material": "massiv",
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
+        "id": "f7752297",
+        "file": "works/kuhnya-massiv-arhiv-5.jpg",
+        "alt": "Светлая кухня из массива с патиной и открытыми полками",
+        "type": "kuhni",
+        "material": "massiv",
+        "portfolio": true,
+        "home": null,
+        "category": null
     }
 ]
