@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 const SITE_URL = 'https://prestigmeb.ru';
-const ASSET_V  = '20260921';
+const ASSET_V  = '20260921b';
 define('ROOT', __DIR__);
 define('PARTIALS', ROOT . '/partials');
 define('DATA_DIR', ROOT . '/data');
@@ -41,6 +41,34 @@ $legacy = [
     '/detskie.html' => '/detskie/', '/prihozhie.html' => '/prihozhie/', '/portfolio.html' => '/portfolio/',
     '/akcii.html' => '/akcii/', '/static.html' => '/rassrochka/', '/policy.html' => '/policy/',
     '/soglasie.html' => '/soglasie/',
+    /* Старый сайт (2017–2026), карта: plans/structure.md §3; полный список — archive/manifest.json */
+    '/shkafyi-kupe/' => '/shkafy-kupe/',
+    '/spalni/' => '/',
+    '/about/' => '/',
+    '/contacts/' => '/#contacts',
+    '/reviews/' => '/#reviews',
+    '/installments/' => '/rassrochka/',
+    '/sales/' => '/akcii/',
+    '/sales/mojka-iz-keramogranita/' => '/akcii/',
+    '/sales/novogodnie-podarki-vsem-pokupatelyam/' => '/akcii/',
+    '/sales/skidki-ot-10-do/' => '/akcii/',
+    /* страницы материалов — на «Кухни», где каталог материалов и RAL */
+    '/ldsp/' => '/kuhni/', '/plastik/' => '/kuhni/', '/plastik-arpa/' => '/kuhni/',
+    '/plastik/plastik-lemark/' => '/kuhni/', '/plastik/plastik-melaton/' => '/kuhni/',
+    '/stoleshnitsyi/' => '/kuhni/', '/stenovyie-paneli/' => '/kuhni/',
+    '/stenovyie-paneli-s-fotopechatyu/' => '/kuhni/',
+    /* разделы портфолио — общая лента с предвыбранным фильтром по типу */
+    '/portfolio/plenka-pvh/' => '/portfolio/?type=kuhni',
+    '/portfolio/plastik-bez-alyuminiya/' => '/portfolio/?type=kuhni',
+    '/portfolio/plastik-v-alyuminievom-profile/' => '/portfolio/?type=kuhni',
+    '/portfolio/emal-krashenyie/' => '/portfolio/?type=kuhni',
+    '/portfolio/massiv/' => '/portfolio/?type=kuhni',
+    '/portfolio/ramochnyie/' => '/portfolio/?type=kuhni',
+    '/portfolio/shkafyi-kupe/' => '/portfolio/?type=shkafy',
+    '/portfolio/detskie/' => '/portfolio/?type=detskie',
+    '/portfolio/kuhnya-v-hruschevku-plastik/' => '/portfolio/?type=kuhni',
+    '/portfolio/kuhnya-v-hruschevku-plastik-1/' => '/portfolio/?type=kuhni',
+    '/portfolio/kuhnya-v-hruschevku-pereplanirovka/' => '/portfolio/?type=kuhni',
 ];
 
 $uri = (string)($_SERVER['REQUEST_URI'] ?? '/');
@@ -51,8 +79,9 @@ if (preg_match('#//#', strtok($uri, '?'))) {
 }
 $path = rawurldecode(parse_url($uri, PHP_URL_PATH) ?: '/');
 
-if (isset($legacy[$path])) {
-    header('Location: ' . $legacy[$path], true, 301);
+$lp = isset($legacy[$path]) ? $path : (isset($legacy[$path . '/']) ? $path . '/' : null);
+if ($lp !== null) {
+    header('Location: ' . $legacy[$lp], true, 301);
     exit;
 }
 /* /kuhni → /kuhni/ (один канонический вид) */

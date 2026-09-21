@@ -93,6 +93,12 @@
         render();
       });
     });
+    /* /portfolio/?type=kuhni — старые адреса разделов портфолио ведут сюда через 301 */
+    if (typeWrap) {
+      var want = (location.search.match(/[?&]type=([a-z]+)/) || [])[1];
+      var pre = want && typeWrap.querySelector('button[data-type="' + want + '"]');
+      if (pre) pre.click();
+    }
 
     if (moreBtn) moreBtn.addEventListener('click', function () { shown += STEP; render(); });
     if (allBtn) allBtn.addEventListener('click', function () { shown = Infinity; render(); });

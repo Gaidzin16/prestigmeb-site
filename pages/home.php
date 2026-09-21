@@ -215,7 +215,7 @@ require PARTIALS . '/header.php';
   </section>
 
   <!-- Отзывы -->
-  <section class="section" aria-labelledby="rev-title">
+  <section class="section" id="reviews" aria-labelledby="rev-title">
     <div class="wrap">
       <h2 class="section__title" id="rev-title">Что говорят клиенты</h2>
       <div class="reviews-grid">
@@ -263,7 +263,7 @@ require PARTIALS . '/header.php';
   </section>
 
   <!-- 9 · Контакты -->
-  <section class="section" aria-labelledby="cont-title">
+  <section class="section" id="contacts" aria-labelledby="cont-title">
     <div class="wrap">
       <h2 class="section__title" id="cont-title">Приезжайте в салон</h2>
       <div class="contacts-grid">
