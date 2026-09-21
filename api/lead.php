@@ -122,24 +122,29 @@ if (!empty($cfg['mail_to'])) {
 
 /* --- ВКонтакте: сообщение от сообщества администратору --- */
 $vkOk = false;
-if (!empty($cfg['vk_token']) && !empty($cfg['vk_peer_id']) && function_exists('curl_init')) {
-    $ch = curl_init('https://api.vk.com/method/messages.send');
-    curl_setopt_array($ch, [
-        CURLOPT_POST => true,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 8,
-        CURLOPT_POSTFIELDS => http_build_query([
-            'access_token' => $cfg['vk_token'],
-            'v' => '5.199',
-            'peer_id' => (int)$cfg['vk_peer_id'],
-            'random_id' => random_int(1, PHP_INT_MAX),
-            'message' => "Новая заявка с сайта\n\n$text",
-        ]),
-    ]);
-    $res = json_decode((string)curl_exec($ch), true);
-    curl_close($ch);
-    $vkOk = isset($res['response']);
-    if (!$vkOk) @file_put_contents($cfg['log_file'], "  [vk error] " . json_encode($res, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND);
+/* Получатели: число, «1,2,3» или массив — каждому админу отдельно (или в беседу с ботом группы) */
+$peers = is_array($cfg['vk_peer_id'] ?? null) ? $cfg['vk_peer_id'] : explode(',', (string)($cfg['vk_peer_id'] ?? ''));
+$peers = array_filter(array_map('intval', $peers));
+if (!empty($cfg['vk_token']) && $peers && function_exists('curl_init')) {
+    foreach ($peers as $peer) {
+        $ch = curl_init('https://api.vk.com/method/messages.send');
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 8,
+            CURLOPT_POSTFIELDS => http_build_query([
+                'access_token' => $cfg['vk_token'],
+                'v' => '5.199',
+                'peer_id' => $peer,
+                'random_id' => random_int(1, PHP_INT_MAX),
+                'message' => "Новая заявка с сайта\n\n$text",
+            ]),
+        ]);
+        $res = json_decode((string)curl_exec($ch), true);
+        curl_close($ch);
+        if (isset($res['response'])) $vkOk = true;
+        else @file_put_contents($cfg['log_file'], "  [vk error] peer=$peer " . json_encode($res, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND);
+    }
 }
 
 if (!$mailOk && !$vkOk) {
