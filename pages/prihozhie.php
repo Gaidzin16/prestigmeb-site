@@ -6,6 +6,7 @@ $page += [
   'title' => 'Прихожие на заказ в Дзержинске по индивидуальным размерам — салон «Престиж»',
   'description' => 'Открытые, модульные прихожие и прихожие-купе по вашим размерам. Отдельно стоящие, встроенные и угловые. Бесплатный замер в Дзержинске и области, рассрочка на 8 месяцев без банка.',
   'og_image' => '/img/prihozhaya-klassika.jpg',
+  'lcp' => 'prihozhaya-klassika',
 ];
 require PARTIALS . '/head.php';
 require PARTIALS . '/header.php';
@@ -41,7 +42,7 @@ require PARTIALS . '/header.php';
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="/img/prihozhaya-klassika.jpg" srcset="/img/prihozhaya-klassika-800.jpg 800w, /img/prihozhaya-klassika.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Прихожая на заказ: кремовый шкаф с витриной и туалетный столик, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="/img/prihozhaya-klassika.jpg" srcset="/img/prihozhaya-klassika-800.jpg 800w, /img/prihozhaya-klassika.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Прихожая на заказ: кремовый шкаф с витриной и туалетный столик, Дзержинск" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>

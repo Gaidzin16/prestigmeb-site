@@ -6,6 +6,7 @@ $page += [
   'title' => 'Мебель для детской на заказ в Дзержинске по вашим размерам — салон «Престиж»',
   'description' => 'Детская мебель с учётом возраста и роста ребёнка: кровати, письменные столы, шкафы и стеллажи. Безопасные материалы, бесплатный замер в Дзержинске, рассрочка на 8 месяцев без банка.',
   'og_image' => '/img/detskaya-krovat.jpg',
+  'lcp' => 'detskaya-krovat',
 ];
 require PARTIALS . '/head.php';
 require PARTIALS . '/header.php';
@@ -41,7 +42,7 @@ require PARTIALS . '/header.php';
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="/img/detskaya-krovat.jpg" srcset="/img/detskaya-krovat-800.jpg 800w, /img/detskaya-krovat.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Детская на заказ: угловой шкаф, комод и кровать, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="/img/detskaya-krovat.jpg" srcset="/img/detskaya-krovat-800.jpg 800w, /img/detskaya-krovat.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Детская на заказ: угловой шкаф, комод и кровать, Дзержинск" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>

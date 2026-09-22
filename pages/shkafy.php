@@ -6,6 +6,7 @@ $page += [
   'title' => 'Шкафы-купе на заказ в Дзержинске по индивидуальным размерам — салон «Престиж»',
   'description' => 'Встроенные, угловые, корпусные и радиусные шкафы-купе по вашим размерам. Собственное производство в Дзержинске, бесплатный замер, рассрочка на 8 месяцев без банка.',
   'og_image' => '/img/shkaf-kupe-uglovoj.jpg',
+  'lcp' => 'shkaf-kupe-uglovoj',
 ];
 require PARTIALS . '/head.php';
 require PARTIALS . '/header.php';
@@ -41,7 +42,7 @@ require PARTIALS . '/header.php';
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" srcset="/img/shkaf-kupe-uglovoj-800.jpg 800w, /img/shkaf-kupe-uglovoj.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Угловой шкаф-купе на заказ по индивидуальным размерам, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" srcset="/img/shkaf-kupe-uglovoj-800.jpg 800w, /img/shkaf-kupe-uglovoj.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Угловой шкаф-купе на заказ по индивидуальным размерам, Дзержинск" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>

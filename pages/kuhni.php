@@ -41,7 +41,7 @@ require PARTIALS . '/header.php';
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="/img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ, классические фасады, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="/img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ, классические фасады, Дзержинск" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>

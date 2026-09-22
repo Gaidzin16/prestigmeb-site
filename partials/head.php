@@ -21,6 +21,11 @@
 <meta property="og:description" content="<?= e($page['description']) ?>">
 <meta property="og:image" content="<?= SITE_URL . e($page['og_image'] ?? '/img/kuhnya-klassika-zoloto.jpg') ?>">
 <?php endif; ?>
+<?php if (!empty($page['lcp'])): /* картинка первого экрана — грузится параллельно с CSS */ ?>
+<link rel="preload" as="image" href="/img/<?= e($page['lcp']) ?>.jpg"
+      imagesrcset="/img/<?= e($page['lcp']) ?>-800.jpg 800w, /img/<?= e($page['lcp']) ?>.jpg 1600w"
+      imagesizes="(max-width: 700px) 100vw, 50vw" fetchpriority="high">
+<?php endif; ?>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantGaramond-600-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/Manrope-400-cyrillic.woff2" crossorigin>
 <link rel="stylesheet" href="/tokens.css?v=<?= ASSET_V ?>">

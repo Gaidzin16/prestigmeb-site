@@ -3,6 +3,7 @@ $page += [
   'title' => 'Кухни и мебель на заказ в Дзержинске — салон «Престиж»',
   'description' => 'Изготавливаем кухни, шкафы-купе и корпусную мебель по вашим размерам с 2004 года. Собственное производство в Дзержинске, работаем по всей Нижегородской области. Замер и дизайн-проект бесплатно, рассрочка на 8 месяцев без банка.',
   'og_image' => '/img/kuhnya-sinyaya-mramor.jpg',
+  'lcp' => 'kuhnya-sinyaya-mramor',
 ];
 require PARTIALS . '/head.php';
 require PARTIALS . '/header.php';
@@ -79,7 +80,7 @@ require PARTIALS . '/header.php';
       <div class="slider slider--hero rise" data-slider data-autoplay="6000" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши кухни">
         <div class="slider__viewport">
           <div class="slider__track">
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" srcset="/img/kuhnya-sinyaya-mramor-800.jpg 800w, /img/kuhnya-sinyaya-mramor.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" srcset="/img/kuhnya-sinyaya-mramor-800.jpg 800w, /img/kuhnya-sinyaya-mramor.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" fetchpriority="high" decoding="async"></div></div>
             <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-glyanec.jpg" srcset="/img/kuhnya-belaya-glyanec-800.jpg 800w, /img/kuhnya-belaya-glyanec.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
             <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-modern-bezruchek.jpg" srcset="/img/kuhnya-modern-bezruchek-800.jpg 800w, /img/kuhnya-modern-bezruchek.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
             <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ" loading="lazy" decoding="async"></div></div>
