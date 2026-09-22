@@ -7,7 +7,7 @@
 <title><?= e($titles[$section]) ?> — админка «Престиж»</title>
 <link rel="icon" href="/img/favicon-32.png">
 <link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/admin/admin.css?v=2">
+<link rel="stylesheet" href="/admin/admin.css?v=3">
 </head>
 <body>
 <header class="top">

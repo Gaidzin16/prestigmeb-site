@@ -133,6 +133,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         }
 
+        /* --- заявки: отметка «обработана» --- */
+        case 'leads/done': {
+            $key = preg_replace('/[^a-f0-9]/', '', (string)($_POST['key'] ?? ''));
+            if ($key !== '') {
+                lead_set_done($key, ($_POST['state'] ?? '') === '1');
+                alog('заявка ' . $key . ' → ' . (($_POST['state'] ?? '') === '1' ? 'обработана' : 'в работе'));
+            }
+            break;
+        }
+
         /* --- контакты --- */
         case 'contacts/save': {
             $site = load('site');

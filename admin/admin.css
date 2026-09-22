@@ -111,6 +111,10 @@ textarea { resize: vertical; }
 /* заявки */
 .lead__head { display: flex; gap: .4rem; align-items: baseline; flex-wrap: wrap; margin-bottom: .3rem; }
 .lead__row { font-size: var(--text-sm); }
+.lead__tools { margin-top: .6rem; }
+.lead--done { opacity: .6; }
+.lead--done .tag { background: var(--color-paper-3); }
+.btn--sm { padding: .3rem .7rem; font-size: var(--text-sm); }
 
 /* вход */
 body.login { display: grid; place-items: center; min-height: 100vh; padding: 1rem; }

@@ -216,10 +216,31 @@ function read_leads(int $limit = 200): array {
             if (preg_match('/^\s*\[(\w+) error\]/', $l)) { $fields['Ошибка'] = trim($l); continue; }
             if (preg_match('/^([^:]+): ?(.*)$/u', $l, $m)) $fields[$m[1]] = $m[2];
         }
-        $out[] = ['when' => $when, 'ip' => $ip, 'fields' => $fields];
+        /* ключ заявки — хеш её блока в журнале; по нему помечаем «обработана» */
+        $out[] = ['key' => substr(sha1($when . '|' . $ip . '|' . implode('|', $fields)), 0, 12),
+                  'when' => $when, 'ip' => $ip, 'fields' => $fields];
         if (count($out) >= $limit) break;
     }
     return $out;
+}
+
+/* Обработанные заявки: api/leads-done.json (только на сервере, в git не попадает).
+ * ключ заявки => ['at' => дата, 'by' => логин] */
+define('LEADS_DONE_FILE', ROOT . '/api/leads-done.json');
+function leads_done(): array {
+    return is_file(LEADS_DONE_FILE) ? (json_decode((string)file_get_contents(LEADS_DONE_FILE), true) ?: []) : [];
+}
+function lead_set_done(string $key, bool $done): void {
+    $all = leads_done();
+    if ($done) $all[$key] = ['at' => date('d.m.Y H:i'), 'by' => (string)($_SESSION['user'] ?? '')];
+    else unset($all[$key]);
+    /* журнал хранит 200 последних заявок — старые отметки чистим, чтобы файл не рос */
+    if (count($all) > 500) $all = array_slice($all, -500, null, true);
+    if (file_put_contents(LEADS_DONE_FILE, json_encode($all, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . "
+", LOCK_EX) === false) {
+        throw new RuntimeException('Не удалось сохранить отметку');
+    }
+    @chmod(LEADS_DONE_FILE, 0600);
 }
 
 /* ---------- git: каждое сохранение → коммит и push в GitHub ---------- */
