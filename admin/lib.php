@@ -188,12 +188,17 @@ function store_image(array $file, string $prefix): string {
     if (!is_dir(UPLOAD_DIR)) mkdir(UPLOAD_DIR, 0755, true);
     $name = translit($prefix) . '-' . date('Ymd') . '-' . substr(bin2hex(random_bytes(3)), 0, 4) . '.jpg';
     if (!imagejpeg($im, UPLOAD_DIR . '/' . $name, 82)) throw new RuntimeException('Не удалось сохранить файл');
+    /* Рядом — webp: nginx отдаст его вместо jpg браузерам, которые умеют (см. $webp_suffix) */
+    if (function_exists('imagewebp')) @imagewebp($im, UPLOAD_DIR . '/' . $name . '.webp', 80);
     imagedestroy($im);
     return UPLOAD_URL . $name;
 }
 /* Удаляем только то, что загрузили через админку (img/works/) */
 function remove_image(string $file): void {
-    if (str_starts_with($file, UPLOAD_URL) && !str_contains($file, '..')) @unlink(ROOT . '/img/' . $file);
+    if (str_starts_with($file, UPLOAD_URL) && !str_contains($file, '..')) {
+        @unlink(ROOT . '/img/' . $file);
+        @unlink(ROOT . '/img/' . $file . '.webp');
+    }
 }
 
 /* ---------- заявки ---------- */
