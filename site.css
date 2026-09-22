@@ -6,7 +6,8 @@
  * Pre-flight critique: P5 H5 E4 S5 R4 V5
  */
 
-@import url("tokens.css");
+/* tokens.css подключён отдельным <link> в partials/head.php:
+   @import грузится последовательно после site.css и задерживает первый рендер. */
 
 *, *::before, *::after { box-sizing: border-box; }
 

@@ -10,8 +10,14 @@ function t(?string $s): string {
     return preg_replace('/(\d) (₽|мм|см|м|мес|лет|года|год|дн|%)(?![\p{L}])/u', '$1&nbsp;$2', $s);
 }
 
+/* srcset: рядом с foto.jpg лежит foto-800.jpg (tools/make_sizes.py, админка делает при загрузке).
+ * Браузер сам берёт версию по ширине экрана; webp подменяет nginx по заголовку Accept. */
 function img_tag(array $w, string $extra = ''): string {
-    return '<img class="photo__img" src="/img/' . e($w['file']) . '" alt="' . e($w['alt']) . '"' . $extra . ' loading="lazy" decoding="async">';
+    $file = (string)$w['file'];
+    $small = preg_replace('/\.jpe?g$/i', '-800.jpg', $file);
+    $srcset = ($small !== $file && is_file(ROOT . '/img/' . $small))
+        ? ' srcset="/img/' . e($small) . ' 800w, /img/' . e($file) . ' 1600w" sizes="(max-width: 700px) 100vw, 33vw"' : '';
+    return '<img class="photo__img" src="/img/' . e($file) . '" alt="' . e($w['alt']) . '"' . $srcset . $extra . ' loading="lazy" decoding="async">';
 }
 
 /* Портфолио: все работы с флагом portfolio, первые 12 открыты, остальные под «Показать ещё» */

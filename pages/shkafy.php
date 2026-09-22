@@ -41,7 +41,7 @@ require PARTIALS . '/header.php';
         </ul>
       </div>
       <div class="pagehead__photo photo rise">
-        <img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" alt="Угловой шкаф-купе на заказ по индивидуальным размерам, Дзержинск" loading="eager" decoding="async">
+        <img class="photo__img" src="/img/shkaf-kupe-uglovoj.jpg" srcset="/img/shkaf-kupe-uglovoj-800.jpg 800w, /img/shkaf-kupe-uglovoj.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Угловой шкаф-купе на заказ по индивидуальным размерам, Дзержинск" loading="eager" decoding="async">
       </div>
     </div>
   </section>
@@ -529,11 +529,11 @@ require PARTIALS . '/header.php';
           <div class="cat__body"><h3 class="cat__name">Кухни</h3><p class="cat__desc">Прямые, угловые, классика и модерн</p></div>
         </a>
         <a class="cat" href="/detskie/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/detskaya-krovat.jpg" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/detskaya-krovat.jpg" srcset="/img/detskaya-krovat-800.jpg 800w, /img/detskaya-krovat.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Детские</h3><p class="cat__desc">С учётом возраста и роста</p></div>
         </a>
         <a class="cat" href="/prihozhie/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/prihozhaya-klassika.jpg" alt="Прихожая на заказ: кремовый шкаф с витриной, туалетный столик" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/prihozhaya-klassika.jpg" srcset="/img/prihozhaya-klassika-800.jpg 800w, /img/prihozhaya-klassika.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Прихожая на заказ: кремовый шкаф с витриной, туалетный столик" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Прихожие</h3><p class="cat__desc">Открытые, модульные, купе</p></div>
         </a>
       </div>

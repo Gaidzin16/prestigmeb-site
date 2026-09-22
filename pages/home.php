@@ -79,9 +79,9 @@ require PARTIALS . '/header.php';
       <div class="slider slider--hero rise" data-slider data-autoplay="6000" tabindex="0" role="group" aria-roledescription="слайдер" aria-label="Наши кухни">
         <div class="slider__viewport">
           <div class="slider__track">
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-glyanec.jpg" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
-            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-modern-bezruchek.jpg" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-sinyaya-mramor.jpg" srcset="/img/kuhnya-sinyaya-mramor-800.jpg 800w, /img/kuhnya-sinyaya-mramor.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Синяя классическая кухня с белой мраморной столешницей на заказ, Дзержинск" loading="eager" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-glyanec.jpg" srcset="/img/kuhnya-belaya-glyanec-800.jpg 800w, /img/kuhnya-belaya-glyanec.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Белая глянцевая кухня на заказ, Дзержинск" loading="lazy" decoding="async"></div></div>
+            <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-modern-bezruchek.jpg" srcset="/img/kuhnya-modern-bezruchek-800.jpg 800w, /img/kuhnya-modern-bezruchek.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Современная кухня без ручек на заказ" loading="lazy" decoding="async"></div></div>
             <div class="slider__slide"><div class="photo"><img class="photo__img" src="/img/kuhnya-shalfej.jpg" alt="Кухня цвета шалфея на заказ" loading="lazy" decoding="async"></div></div>
           </div>
           <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущее фото">‹</button>
@@ -116,22 +116,22 @@ require PARTIALS . '/header.php';
       <h2 class="section__title" id="cats-title">Что мы делаем</h2>
       <div class="cats">
         <a class="cat cat--lead" href="/kuhni/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-modern.jpg" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/kuhnya-belaya-modern.jpg" srcset="/img/kuhnya-belaya-modern-800.jpg 800w, /img/kuhnya-belaya-modern.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Белая угловая кухня в стиле модерн на заказ" loading="lazy" decoding="async"></div></div>
           <div class="cat__body">
             <h3 class="cat__name">Кухни на заказ</h3>
             <p class="cat__desc">Фасады из плёнки, пластика, эмали и массива. Прямые, угловые, с островом.</p>
           </div>
         </a>
         <a class="cat" href="/shkafy-kupe/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/shkaf-kupe-steklo.jpg" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/shkaf-kupe-steklo.jpg" srcset="/img/shkaf-kupe-steklo-800.jpg 800w, /img/shkaf-kupe-steklo.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Встроенный шкаф-купе с фасадами из сатинового стекла на заказ" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Шкафы-купе</h3><p class="cat__desc">Встроенные, угловые, радиусные</p></div>
         </a>
         <a class="cat" href="/detskie/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/detskaya-krovat.jpg" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/detskaya-krovat.jpg" srcset="/img/detskaya-krovat-800.jpg 800w, /img/detskaya-krovat.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Детская на заказ: угловой шкаф, комод и кровать" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Детские</h3><p class="cat__desc">С учётом возраста и роста</p></div>
         </a>
         <a class="cat" href="/prihozhie/">
-          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
+          <div class="cat__photo"><div class="photo"><img class="photo__img" src="/img/prihozhaya-mramor.jpg" srcset="/img/prihozhaya-mramor-800.jpg 800w, /img/prihozhaya-mramor.jpg 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Прихожая на заказ: мрамор, зеркало, встроенный шкаф" loading="lazy" decoding="async"></div></div>
           <div class="cat__body"><h3 class="cat__name">Прихожие</h3><p class="cat__desc">Открытые, модульные, купе</p></div>
         </a>
       </div>

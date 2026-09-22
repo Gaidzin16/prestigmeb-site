@@ -21,8 +21,13 @@
 <meta property="og:description" content="<?= e($page['description']) ?>">
 <meta property="og:image" content="<?= SITE_URL . e($page['og_image'] ?? '/img/kuhnya-klassika-zoloto.jpg') ?>">
 <?php endif; ?>
-<link rel="stylesheet" href="/fonts.css">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantGaramond-600-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Manrope-400-cyrillic.woff2" crossorigin>
+<link rel="stylesheet" href="/tokens.css?v=<?= ASSET_V ?>">
 <link rel="stylesheet" href="/site.css?v=<?= ASSET_V ?>">
+<!-- шрифты не блокируют первый экран: все @font-face объявлены с font-display: swap -->
+<link rel="stylesheet" href="/fonts.css?v=<?= ASSET_V ?>" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/fonts.css?v=<?= ASSET_V ?>"></noscript>
 </head>
 <body data-phone="<?= e($site['phones'][0]['text']) ?>" data-hours="<?= e($site['hours']) ?>">
 

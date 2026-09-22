@@ -190,14 +190,25 @@ function store_image(array $file, string $prefix): string {
     if (!imagejpeg($im, UPLOAD_DIR . '/' . $name, 82)) throw new RuntimeException('Не удалось сохранить файл');
     /* Рядом — webp: nginx отдаст его вместо jpg браузерам, которые умеют (см. $webp_suffix) */
     if (function_exists('imagewebp')) @imagewebp($im, UPLOAD_DIR . '/' . $name . '.webp', 80);
+    /* и уменьшенная копия для srcset (телефоны) — тоже с webp */
+    $small = preg_replace('/\.jpg$/', '-800.jpg', $name);
+    $w2 = imagesx($im); $h2 = imagesy($im);
+    if ($w2 > 800) {
+        $nh = (int)round($h2 * 800 / $w2);
+        $thumb = imagecreatetruecolor(800, $nh);
+        imagecopyresampled($thumb, $im, 0, 0, 0, 0, 800, $nh, $w2, $h2);
+        @imagejpeg($thumb, UPLOAD_DIR . '/' . $small, 82);
+        if (function_exists('imagewebp')) @imagewebp($thumb, UPLOAD_DIR . '/' . $small . '.webp', 80);
+        imagedestroy($thumb);
+    }
     imagedestroy($im);
     return UPLOAD_URL . $name;
 }
 /* Удаляем только то, что загрузили через админку (img/works/) */
 function remove_image(string $file): void {
     if (str_starts_with($file, UPLOAD_URL) && !str_contains($file, '..')) {
-        @unlink(ROOT . '/img/' . $file);
-        @unlink(ROOT . '/img/' . $file . '.webp');
+        $small = preg_replace('/\.jpe?g$/i', '-800.jpg', $file);
+        foreach ([$file, $file . '.webp', $small, $small . '.webp'] as $f) @unlink(ROOT . '/img/' . $f);
     }
 }
 

@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 const SITE_URL = 'https://prestigmeb.ru';
-const ASSET_V  = '20260921b';
+const ASSET_V  = '20260922';
 define('ROOT', __DIR__);
 define('PARTIALS', ROOT . '/partials');
 define('DATA_DIR', ROOT . '/data');
