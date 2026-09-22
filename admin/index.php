@@ -180,9 +180,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 /* ---------- вывод ---------- */
-$views = ['works', 'promos', 'reviews', 'contacts', 'leads', 'password'];
+$views = ['works', 'promos', 'reviews', 'contacts', 'leads', 'password', 'help'];
 if (!in_array($section, $views, true)) $section = 'works';
-$titles = ['works' => 'Работы', 'promos' => 'Акции', 'reviews' => 'Отзывы', 'contacts' => 'Контакты', 'leads' => 'Заявки', 'password' => 'Пароль'];
+$titles = ['works' => 'Работы', 'promos' => 'Акции', 'reviews' => 'Отзывы', 'contacts' => 'Контакты', 'leads' => 'Заявки', 'password' => 'Пароль', 'help' => 'Помощь'];
 require __DIR__ . '/views/layout-top.php';
 require __DIR__ . "/views/$section.php";
 require __DIR__ . '/views/layout-bottom.php';

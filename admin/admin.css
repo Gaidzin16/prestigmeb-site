@@ -122,3 +122,11 @@ body.login { display: grid; place-items: center; min-height: 100vh; padding: 1re
 .login__logo { display: block; width: 180px; height: auto; margin: 0 auto var(--space-md); }
 .login__box h1 { text-align: center; font-size: var(--text-xl); }
 .login__box .btn { width: 100%; margin-top: var(--space-sm); }
+
+/* Раздел «Помощь» */
+.help h2 { margin-top: 0; }
+.help h3 { font-size: var(--text-base); font-weight: 600; margin: var(--space-md) 0 .3rem; }
+.help p, .help li { max-width: 70ch; line-height: 1.6; }
+.help ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.help li { margin-bottom: .35rem; }
+.help code { background: var(--color-paper-3); padding: .05em .35em; border-radius: 4px; font-size: .9em; }
