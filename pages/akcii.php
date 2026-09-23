@@ -67,7 +67,7 @@ require PARTIALS . '/header.php';
             <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
           </div>
           <div class="field">
-            <label for="f-comment">Какая акция интересует <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
+            <label for="f-comment">Вопрос или пожелание <span style="color:var(--color-muted);font-weight:400">— необязательно</span></label>
             <textarea id="f-comment" name="comment" rows="3"></textarea>
           </div>
           <label class="consent">
