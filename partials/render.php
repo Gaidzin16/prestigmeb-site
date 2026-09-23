@@ -66,7 +66,7 @@ function render_reviews(): void {
 function render_promos(): void {
     foreach (data('promos') as $p) {
         if (empty($p['active'])) continue;
-        echo '        <a class="cat" href="#form" role="listitem">' . "\n"
+        echo '        <a class="cat" href="#form" role="listitem" data-lead-item="' . e($p['title']) . '">' . "\n"
            . '          <div class="cat__photo" style="flex:none"><div class="photo" style="aspect-ratio:3/2">'
            . '<img class="photo__img" src="/img/' . e($p['image']) . '" alt="' . e($p['alt']) . '" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'photo__label\',textContent:\'фото акции\'}))"></div></div>' . "\n"
            . '          <div class="cat__body">' . "\n"

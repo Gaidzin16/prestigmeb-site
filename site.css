@@ -908,7 +908,7 @@ a.matcard:focus-visible { outline: 3px solid var(--color-focus); outline-offset:
   box-shadow: 0 24px 60px rgba(0,0,0,.5);
 }
 .lightbox__cap {
-  position: absolute; left: 0; right: 0; bottom: var(--space-md);
+  position: absolute; left: 0; right: 0; bottom: calc(var(--space-md) + 3.1rem);
   text-align: center; color: var(--color-on-carbon);
   font-size: var(--text-sm); padding: 0 var(--space-lg);
 }
@@ -955,3 +955,34 @@ a.matcard:focus-visible { outline: 3px solid var(--color-focus); outline-offset:
 .pagehead::before{bottom:0;}
 .pagedecor::before{height:clamp(210px,34vh,340px);-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent);}
 @media (max-width:820px){.pagehead::before,.pagedecor::before{opacity:0.6;}}
+
+/* Отметка «по какой акции/работе» над формой + кнопка «Хочу такую же» в лайтбоксе */
+.form__pick {
+  display: flex; align-items: center; gap: .6rem;
+  margin: 0 0 var(--space-s);
+  padding: .55rem .75rem;
+  font-size: var(--text-sm); line-height: 1.4;
+  color: var(--color-ink);
+  background: color-mix(in oklch, var(--color-accent) 8%, transparent);
+  border-left: 2px solid var(--color-accent);
+  border-radius: 2px;
+}
+.form__pick-drop {
+  margin-left: auto; flex: none;
+  width: 1.6rem; height: 1.6rem;
+  font-size: .8rem; line-height: 1;
+  color: var(--color-ink-2);
+  background: none; border: 0; border-radius: 50%;
+  cursor: pointer;
+}
+.form__pick-drop:hover { color: var(--color-accent); background: color-mix(in oklch, var(--color-accent) 12%, transparent); }
+
+.lightbox__pick {
+  position: absolute; left: 50%; bottom: var(--space-md); transform: translateX(-50%);
+  padding: .55rem 1.1rem;
+  font: inherit; font-size: var(--text-sm);
+  color: var(--color-paper); background: var(--color-accent);
+  border: 0; border-radius: 2px; cursor: pointer;
+  white-space: nowrap;
+}
+.lightbox__pick:hover { filter: brightness(1.15); }

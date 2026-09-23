@@ -1,6 +1,6 @@
 <?php
 /* Приём заявок с форм сайта.
- * POST (JSON или form-data): name, phone, comment, consent, page, subject, website (honeypot).
+ * POST (JSON или form-data): name, phone, comment, consent, page, subject, item, website (honeypot).
  * Ответ JSON: {ok: true} либо {ok: false, error: "..."}.
  * Заявка уходит на почту и во ВКонтакте, дублируется в leads.log. */
 
@@ -70,6 +70,8 @@ $phone   = $get('phone', 30);
 $comment = $get('comment', 1000);
 $page    = $get('page', 200);
 $subject = $get('subject', 100);
+/* Что именно заинтересовало: название акции или подпись работы — ставит сайт, не посетитель */
+$item    = $get('item', 200);
 $consent = !empty($in['consent']) && $in['consent'] !== 'false';
 
 if ($name === '') fail('Напишите, как к вам обращаться');
@@ -93,6 +95,10 @@ $lines = [
     "Телефон: $phoneFmt",
 ];
 if ($subject !== '') $lines[] = "Тема: $subject";
+if ($item !== '') {
+    $itemLabel = ['Акции' => 'Акция', 'Портфолио' => 'Работа'][$subject] ?? 'Интересует';
+    $lines[] = "$itemLabel: $item";
+}
 if ($comment !== '') $lines[] = "Комментарий: $comment";
 $lines[] = "Страница: " . ($page ?: '—');
 $lines[] = "Время: $when";

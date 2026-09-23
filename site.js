@@ -227,7 +227,8 @@
       '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Предыдущее">‹</button>' +
       '<img class="lightbox__img" alt="">' +
       '<button class="lightbox__btn lightbox__next" type="button" aria-label="Следующее">›</button>' +
-      '<p class="lightbox__cap"></p>';
+      '<p class="lightbox__cap"></p>' +
+      '<button class="lightbox__pick" type="button">Хочу такую же</button>';
     document.body.appendChild(lb);
 
     var lbImg = lb.querySelector('.lightbox__img');
@@ -258,6 +259,15 @@
       });
     });
 
+    /* «Хочу такую же» — переносим подпись работы в форму и ведём к ней */
+    lb.querySelector('.lightbox__pick').addEventListener('click', function (e) {
+      e.stopPropagation();
+      setLeadItem(lbCap.textContent.trim());
+      close();
+      var target = document.getElementById('form');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
     lb.querySelector('.lightbox__close').addEventListener('click', close);
     lb.querySelector('.lightbox__prev').addEventListener('click', function (e) { e.stopPropagation(); show(cur - 1); });
     lb.querySelector('.lightbox__next').addEventListener('click', function (e) { e.stopPropagation(); show(cur + 1); });
@@ -269,6 +279,34 @@
       else if (e.key === 'ArrowRight') show(cur + 1);
     });
   }
+
+  /* --- «Хочу такую же»: сайт сам подставляет в заявку, какая акция или работа заинтересовала.
+         Кладём в скрытое поле item и показываем человеку отметку — её можно снять. --- */
+  function setLeadItem(text) {
+    var form = document.querySelector('form[data-lead]');
+    if (!form || !form.elements.item) return;
+    form.elements.item.value = text || '';
+    var pick = form.querySelector('.form__pick');
+    if (!pick) return;
+    pick.hidden = !text;
+    pick.textContent = '';
+    if (!text) return;
+    var label = document.createElement('span');
+    label.textContent = (form.getAttribute('data-item-label') || 'Интересует') + ': ' + text;
+    var drop = document.createElement('button');
+    drop.type = 'button';
+    drop.className = 'form__pick-drop';
+    drop.setAttribute('aria-label', 'Убрать отметку');
+    drop.textContent = '✕';
+    drop.addEventListener('click', function () { setLeadItem(''); });
+    pick.appendChild(label);
+    pick.appendChild(drop);
+  }
+
+  document.addEventListener('click', function (e) {
+    var el = e.target && e.target.closest ? e.target.closest('[data-lead-item]') : null;
+    if (el) setLeadItem(el.getAttribute('data-lead-item'));
+  });
 
   /* --- Формы заявок: проверка полей, отправка в api/lead.php, экран «Спасибо» --- */
   var leadForms = document.querySelectorAll('form[data-lead]');
@@ -302,6 +340,7 @@
         phone: phone.value.trim(),
         comment: (form.elements.comment && form.elements.comment.value || '').trim(),
         subject: (form.elements.subject && form.elements.subject.value) || '',
+        item: (form.elements.item && form.elements.item.value) || '',
         website: (form.elements.website && form.elements.website.value) || '',
         consent: true,
         page: location.href

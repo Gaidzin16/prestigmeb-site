@@ -53,8 +53,10 @@ require PARTIALS . '/header.php';
     <div class="wrap">
       <h2 class="section__title" id="form-title">Оставить заявку по акции</h2>
       <div class="form-grid">
-        <form class="form" novalidate data-lead action="/api/lead.php" method="post">
+        <form class="form" novalidate data-lead data-item-label="Акция" action="/api/lead.php" method="post">
           <input type="hidden" name="subject" value="Акции">
+          <input type="hidden" name="item" value="">
+          <p class="form__pick" hidden></p>
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="field">
             <label for="f-name">Ваше имя</label>
