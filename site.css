@@ -986,3 +986,28 @@ a.matcard:focus-visible { outline: 3px solid var(--color-focus); outline-offset:
   white-space: nowrap;
 }
 .lightbox__pick:hover { filter: brightness(1.15); }
+
+/* Баннер согласия на cookie — появляется, только когда на сайте есть счётчики */
+.cookiebar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-s) var(--space-md);
+  padding: var(--space-s) var(--space-md);
+  background: var(--color-carbon); color: var(--color-on-carbon);
+  border-top: 1px solid var(--color-rule-carbon);
+}
+.cookiebar[hidden] { display: none; }
+.cookiebar__text { flex: 1 1 22rem; margin: 0; font-size: var(--text-sm); line-height: 1.5; }
+.cookiebar__text a { color: var(--color-on-carbon); text-decoration: underline; }
+.cookiebar__acts { display: flex; gap: .6rem; flex: none; }
+.cookiebar__btn {
+  padding: .5rem 1rem; font: inherit; font-size: var(--text-sm); cursor: pointer;
+  color: var(--color-paper); background: var(--color-accent);
+  border: 1px solid var(--color-accent); border-radius: 2px;
+}
+.cookiebar__btn--ghost { color: var(--color-on-carbon); background: none; border-color: var(--color-rule-carbon); }
+.cookiebar__btn:hover { filter: brightness(1.15); }
+@media (max-width: 40rem) {
+  .cookiebar { padding-bottom: calc(var(--space-s) + 4.2rem); }  /* не перекрываем липкую кнопку замера */
+  .cookiebar__acts { width: 100%; }
+  .cookiebar__btn { flex: 1; }
+}

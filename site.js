@@ -280,6 +280,66 @@
     });
   }
 
+  /* --- Cookie: счётчики и пиксели включаются только после согласия посетителя.
+         Решение храним в localStorage; пока человек не ответил — ничего не грузим. --- */
+  (function () {
+    var holder = document.getElementById('counters-code');
+    var bar = document.getElementById('cookiebar');
+    if (!holder) return;                       /* счётчиков нет — и баннера нет */
+    var KEY = 'pm-cookie';
+    var get = function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
+    var set = function (v) { try { localStorage.setItem(KEY, v); } catch (e) {} };
+
+    var loaded = false;
+    var run = function () {
+      if (loaded) return;
+      loaded = true;
+      var code;
+      try {
+        var bin = atob(holder.getAttribute('data-code') || '');
+        var bytes = Uint8Array.from(bin, function (c) { return c.charCodeAt(0); });
+        code = new TextDecoder('utf-8').decode(bytes);
+      } catch (e) { return; }
+      var box = document.createElement('div');
+      box.innerHTML = code;
+      /* Скрипты, вставленные через innerHTML, не выполняются — пересобираем их руками */
+      Array.prototype.forEach.call(box.childNodes, function (node) {
+        if (node.tagName === 'SCRIPT') {
+          var sc = document.createElement('script');
+          Array.prototype.forEach.call(node.attributes, function (a) { sc.setAttribute(a.name, a.value); });
+          sc.text = node.textContent;
+          document.head.appendChild(sc);
+        } else if (node.nodeType === 1) {
+          document.body.appendChild(node.cloneNode(true));
+        }
+      });
+    };
+
+    var decide = function (answer) {
+      set(answer);
+      if (bar) bar.hidden = true;
+      if (answer === 'yes') run();
+    };
+
+    if (get() === 'yes') run();
+    else if (get() !== 'no' && bar) bar.hidden = false;
+
+    if (bar) {
+      Array.prototype.forEach.call(bar.querySelectorAll('[data-cookie]'), function (b) {
+        b.addEventListener('click', function () { decide(b.getAttribute('data-cookie')); });
+      });
+    }
+
+    var reset = document.querySelector('[data-cookie-reset]');
+    if (reset && bar) {
+      reset.addEventListener('click', function (e) {
+        e.preventDefault();
+        bar.hidden = false;
+        bar.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      });
+    }
+  })();
+
   /* --- «Хочу такую же»: сайт сам подставляет в заявку, какая акция или работа заинтересовала.
          Кладём в скрытое поле item и показываем человеку отметку — её можно снять. --- */
   function setLeadItem(text) {
