@@ -130,3 +130,7 @@ body.login { display: grid; place-items: center; min-height: 100vh; padding: 1re
 .help ul { margin: .4rem 0 0; padding-left: 1.1rem; }
 .help li { margin-bottom: .35rem; }
 .help code { background: var(--color-paper-3); padding: .05em .35em; border-radius: 4px; font-size: .9em; }
+
+/* Узкая карточка (смена пароля). Отдельный класс вместо style="" —
+   иначе CSP админки пришлось бы ослаблять до 'unsafe-inline'. */
+.card--narrow { max-width: 26rem; }

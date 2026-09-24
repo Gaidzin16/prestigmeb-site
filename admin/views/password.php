@@ -1,4 +1,4 @@
-<form class="card" method="post" autocomplete="off" style="max-width:26rem">
+<form class="card card--narrow" method="post" autocomplete="off">
   <?= csrf_field() ?>
   <input type="hidden" name="action" value="save">
   <p class="hint">Пользователь: <b><?= e($_SESSION['user']) ?></b></p>
