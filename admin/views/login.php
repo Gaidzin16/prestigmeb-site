@@ -12,7 +12,7 @@
 <body class="login">
 <form class="login__box" method="post" autocomplete="on">
   <?= csrf_field() ?>
-  <img src="/img/logo.png" alt="Престиж" width="200" height="76" class="login__logo">
+  <img src="/img/logo.svg" alt="Престиж" width="200" height="76" class="login__logo">
   <h1>Управление сайтом</h1>
   <?php if ($err): ?><p class="msg msg--err"><?= e($err) ?></p><?php endif; ?>
   <label>Логин<input name="login" type="text" autocomplete="username" required autofocus></label>

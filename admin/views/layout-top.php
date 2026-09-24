@@ -11,7 +11,7 @@
 </head>
 <body>
 <header class="top">
-  <a class="top__brand" href="./"><img src="/img/logo.png" alt="Престиж" width="120" height="45"></a>
+  <a class="top__brand" href="./"><img src="/img/logo.svg" alt="Престиж" width="120" height="45"></a>
   <nav class="top__nav">
     <?php foreach ($titles as $k => $t): ?>
       <a href="?s=<?= $k ?>"<?= $k === $section ? ' aria-current="page"' : '' ?>><?= e($t) ?></a>

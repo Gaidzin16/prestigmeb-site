@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="wrap masthead">
-    <a class="wordmark wordmark--logo" href="/" aria-label="Престиж — интерьер, дизайн"><img src="/img/logo.png" alt="Престиж — интерьер, дизайн" width="680" height="257" style="display:block;width:clamp(190px,42vw,300px);height:auto;margin:0 auto"></a>
+    <a class="wordmark wordmark--logo" href="/" aria-label="Престиж — интерьер, дизайн"><img src="/img/logo.svg" alt="Престиж — интерьер, дизайн" width="680" height="257" fetchpriority="high" style="display:block;width:clamp(190px,42vw,300px);height:auto;margin:0 auto"></a>
   </div>
   <nav class="mastnav" aria-label="Основное меню">
     <div class="wrap">

@@ -38,6 +38,8 @@ $ld = [
   'name' => 'Салон мебели «' . $site['name'] . '»',
   'url' => SITE_URL . '/',
   'image' => SITE_URL . '/img/kuhnya-klassika-zoloto.jpg',
+  // В разметке логотип — SVG, но в разметке Schema.org оставляем PNG:
+  // Google для поля logo принимает только растр.
   'logo' => SITE_URL . '/img/logo.png',
   'telephone' => array_column($site['phones'], 'tel'),
   'email' => $site['email'],
