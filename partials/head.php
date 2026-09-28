@@ -11,6 +11,14 @@
 <?php if (!empty($page['noindex'])): ?>
 <meta name="robots" content="noindex, follow">
 <?php endif; ?>
+<?php /* Подтверждение прав в Вебмастере и Search Console. Как и счётчики, это поле
+         в data/site.json — вставка кода не требует правок в шаблонах. */ ?>
+<?php if (!empty($site['yandex_verification'])): ?>
+<meta name="yandex-verification" content="<?= e($site['yandex_verification']) ?>">
+<?php endif; ?>
+<?php if (!empty($site['google_verification'])): ?>
+<meta name="google-site-verification" content="<?= e($site['google_verification']) ?>">
+<?php endif; ?>
 <?php if (!empty($page['url'])): ?>
 <link rel="canonical" href="<?= SITE_URL . $page['url'] ?>">
 <meta property="og:type" content="website">

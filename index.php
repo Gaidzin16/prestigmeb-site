@@ -90,6 +90,52 @@ if ($path !== '/' && substr($path, -1) !== '/' && isset($routes[$path . '/'])) {
     exit;
 }
 
+/* Карта сайта. Раньше это был статический файл, и в нём навсегда осталось
+ * lastmod = 18.09 — а Яндекс по этой дате решает, стоит ли переобходить страницу.
+ * Теперь дату берём из времени изменения шаблона и данных, которые он показывает:
+ * заказчик добавил работу или акцию — дата обновилась сама. */
+if ($path === '/sitemap.xml') {
+    $pages = [
+        '/'             => ['home',       1.0, ['works', 'promos', 'reviews']],
+        '/kuhni/'       => ['kuhni',      0.9, ['works']],
+        '/shkafy-kupe/' => ['shkafy',     0.8, ['works']],
+        '/portfolio/'   => ['portfolio',  0.8, ['works']],
+        '/detskie/'     => ['detskie',    0.7, ['works']],
+        '/prihozhie/'   => ['prihozhie',  0.7, ['works']],
+        '/akcii/'       => ['akcii',      0.7, ['promos']],
+        '/rassrochka/'  => ['rassrochka', 0.6, []],
+    ];
+    /* Общая для всех страниц обвязка: шапка, подвал, вывод карточек, контакты. */
+    $common = max(array_map(
+        fn($f) => is_file($f) ? filemtime($f) : 0,
+        [PARTIALS . '/head.php', PARTIALS . '/header.php', PARTIALS . '/footer.php',
+         PARTIALS . '/render.php', DATA_DIR . '/site.json']
+    ));
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "
+"
+         . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "
+";
+    foreach ($pages as $url => [$tpl, $priority, $feeds]) {
+        $times = [$common];
+        $f = ROOT . "/pages/$tpl.php";
+        if (is_file($f)) { $times[] = filemtime($f); }
+        foreach ($feeds as $feed) {
+            $d = DATA_DIR . "/$feed.json";
+            if (is_file($d)) { $times[] = filemtime($d); }
+        }
+        $xml .= '  <url><loc>' . SITE_URL . $url . '</loc>'
+              . '<lastmod>' . gmdate('Y-m-d', max($times)) . '</lastmod>'
+              . '<priority>' . number_format($priority, 1) . '</priority></url>' . "
+";
+    }
+    $xml .= '</urlset>' . "
+";
+    header('Content-Type: application/xml; charset=UTF-8');
+    header('X-Robots-Tag: noindex');
+    echo $xml;
+    exit;
+}
+
 $slug = $routes[$path] ?? null;
 $page = ['nav' => $slug, 'url' => $path];
 if ($slug === null) {
