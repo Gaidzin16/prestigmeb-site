@@ -26,8 +26,8 @@
       imagesrcset="/img/<?= e($page['lcp']) ?>-800.jpg 800w, /img/<?= e($page['lcp']) ?>.jpg 1600w"
       imagesizes="(max-width: 700px) 100vw, 50vw" fetchpriority="high">
 <?php endif; ?>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantGaramond-600-cyrillic.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/Manrope-400-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantGaramond-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Manrope-cyrillic.woff2" crossorigin>
 <?php if (!empty($page['url'])):
 /* Разметка организации для поиска: адрес, телефоны, часы, соцсети.
    Часы берём из site.json — если формат разошёлся с «Пн–Пт 10:00–19:00», блок часов опускаем. */
