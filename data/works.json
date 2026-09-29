@@ -1,5 +1,15 @@
 [
     {
+        "id": "e5c0cf26",
+        "file": "works/kuhni-20260929-23bc.jpg",
+        "alt": "Кухни на заказ, Дзержинск",
+        "type": "kuhni",
+        "material": null,
+        "portfolio": true,
+        "home": null,
+        "category": null
+    },
+    {
         "id": "dfe6b5b6",
         "file": "kuhnya-klassika-zoloto.jpg",
         "alt": "Классическая кухня в светлом цвете с фурнитурой под золото на заказ",
