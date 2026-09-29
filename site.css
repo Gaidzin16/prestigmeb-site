@@ -474,7 +474,9 @@ dl.contacts { margin: 0; display: grid; gap: var(--space-md); }
 .contacts dd { margin: 0.35rem 0 0; font-size: var(--text-md); font-weight: 500; line-height: 1.6; }
 .contacts dd a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule); }
 .contacts dd a:hover { border-color: var(--color-accent); color: var(--color-accent); }
-.contacts .map { aspect-ratio: 16 / 10; }
+/* Было `.contacts .map` — селектор мёртвый: dl.contacts карте не предок, а сосед
+   по .contacts-grid. Поэтому блок карты всегда был приплюснутым (598×100). */
+.contacts-grid .map { aspect-ratio: 16 / 10; }
 
 /* Карта: до клика — своя заглушка, после — iframe Яндекса (см. home.php) */
 .map--stub {
@@ -490,6 +492,7 @@ dl.contacts { margin: 0; display: grid; gap: var(--space-md); }
 .map__addr { font-size: var(--text-md); font-weight: 600; color: var(--color-ink); }
 .map__hint { font-size: var(--text-sm); }
 .map--frame { width: 100%; border: 1px solid var(--color-rule); border-radius: var(--radius-md); display: block; }
+@media (max-width: 700px) { .contacts-grid .map { aspect-ratio: 4 / 3; } }
 
 /* ---------- Ft1 · подвал ---------- */
 
