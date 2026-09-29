@@ -276,7 +276,7 @@ require PARTIALS . '/header.php';
 <?php endforeach; ?>
           </dd></div>
           <div><dt>Почта</dt><dd><a href="mailto:<?= e($site['email']) ?>"><?= e($site['email']) ?></a></dd></div>
-          <div><dt>Соцсети</dt><dd><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener">ВКонтакте</a> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener">Avito</a></dd></div>
+          <div><dt>Соцсети</dt><dd><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener">ВКонтакте</a><?php if (!empty($site['avito'])): ?> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener">Avito</a><?php endif; ?></dd></div>
           <div><dt>Часы</dt><dd><?= e($site['hours']) ?><br><span style="color:var(--color-muted);font-size:var(--text-sm)"><?= e($site['hours_note']) ?></span></dd></div>
           <div><a class="btn btn--ghost" href="<?= e($site['route']) ?>" target="_blank" rel="noopener">Построить маршрут</a></div>
         </dl>

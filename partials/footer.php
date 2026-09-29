@@ -30,7 +30,7 @@
     </div>
     <div class="foot__bottom">
       <span><?= e($site['address_short']) ?> · <?= e($site['phones'][0]['text']) ?></span>
-      <span><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">ВКонтакте</a> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">Avito</a></span>
+      <span><a href="<?= e($site['vk']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">ВКонтакте</a><?php if (!empty($site['avito'])): ?> · <a href="<?= e($site['avito']) ?>" target="_blank" rel="noopener" style="color:var(--color-on-carbon-2)">Avito</a><?php endif; ?></span>
       <span class="sp"></span>
       <a href="/policy/"<?= nav_current('policy') ?> style="color:var(--color-on-carbon-2)">Политика обработки данных</a>
       <a href="/soglasie/"<?= nav_current('soglasie') ?> style="color:var(--color-on-carbon-2)">Согласие на обработку</a>
