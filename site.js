@@ -245,7 +245,10 @@
       cur = (i + list.length) % list.length;
       var img = list[cur].querySelector('.photo__img');
       var cap = list[cur].querySelector('.work__cap');
-      lbImg.src = img.currentSrc || img.src;
+      /* Именно getAttribute('src'): в нём лежит оригинал 1600px, тогда как
+         currentSrc — это версия, выбранная под размер плитки (обычно 800px),
+         и во весь экран она выглядела бы мыльной. */
+      lbImg.src = img.getAttribute('src') || img.currentSrc || img.src;
       lbImg.alt = img.alt || '';
       lbCap.textContent = cap ? cap.textContent.trim() : (img.alt || '');
     };
