@@ -280,6 +280,24 @@
     });
   }
 
+  /* --- Карта салона: iframe Яндекса подставляем только по клику.
+         Постоянно висящий iframe ставил бы сторонние cookie без согласия,
+         а политика (п. 8) обещает, что так не делается. --- */
+  (function () {
+    var stub = document.querySelector('.map--stub');
+    if (!stub) return;
+    stub.addEventListener('click', function () {
+      var frame = document.createElement('iframe');
+      frame.className = 'map map--frame';
+      frame.src = stub.getAttribute('data-map');
+      frame.title = stub.getAttribute('data-map-title') || 'Карта';
+      frame.loading = 'lazy';
+      frame.setAttribute('allowfullscreen', '');
+      frame.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      stub.replaceWith(frame);
+    });
+  })();
+
   /* --- Cookie: счётчики и пиксели включаются только после согласия посетителя.
          Решение храним в localStorage; пока человек не ответил — ничего не грузим. --- */
   (function () {

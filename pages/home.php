@@ -280,7 +280,17 @@ require PARTIALS . '/header.php';
           <div><dt>Часы</dt><dd><?= e($site['hours']) ?><br><span style="color:var(--color-muted);font-size:var(--text-sm)"><?= e($site['hours_note']) ?></span></dd></div>
           <div><a class="btn btn--ghost" href="<?= e($site['route']) ?>" target="_blank" rel="noopener">Построить маршрут</a></div>
         </dl>
-        <div class="map photo"><span class="photo__label"><b>Карта</b>ул. Грибоедова, 3</span></div>
+<?php /* Карта грузится по клику: iframe Яндекса ставит свои cookie, а политика
+         обещает, что сторонние сервисы без согласия не подключаются. */ ?>
+        <button class="map map--stub" type="button"
+                data-map="https://yandex.ru/map-widget/v1/?ll=43.454592%2C56.243204&amp;z=17&amp;pt=43.454592,56.243204,pm2rdm"
+                data-map-title="Салон «Престиж» на карте — <?= e($site['address_short']) ?>">
+          <svg class="map__pin" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+          <b class="map__addr"><?= e($site['address_short']) ?></b>
+          <span class="map__hint">Нажмите, чтобы показать карту</span>
+        </button>
       </div>
     </div>
   </section>
