@@ -2,9 +2,9 @@
     {
         "id": "e5c0cf26",
         "file": "works/kuhni-20260929-23bc.jpg",
-        "alt": "Кухни на заказ, Дзержинск",
+        "alt": "Кухня угловая в современном стиле",
         "type": "kuhni",
-        "material": null,
+        "material": "plastik",
         "portfolio": true,
         "home": null,
         "category": null
